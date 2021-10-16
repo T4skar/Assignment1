@@ -25,7 +25,7 @@ ElJuegoDelTroll is a platformer game, for now is just about move the troll to th
    WASD --> player movement
    SPACE --> jumping
    
-## Debug Keys:
+### Debug Keys:
    F1/F2 --> Start from the first/second level
    
    F3 --> Start from the beginning of the current level
