@@ -1,1 +1,1 @@
-# El_Juego_del_trol-Plataformer-Alpha
+# El_Juego_del_troll-Plataformer-Alpha
