@@ -10,7 +10,7 @@ We are ElJuegoDelTroll, two students from CITM and here is where we are going to
 
 ## Members
 * [Laia Pachón Pérez](https://github.com/laiapachon)
-* [Albert Martin Lucena]
+* [Albert Martin Lucena](https://github.com/T4skar)
 
 ## Game Description
 ElJuegoDelTroll is a platformer game, for now is just about move the troll to the end of the levels without falling in the spaces between the platforms.
