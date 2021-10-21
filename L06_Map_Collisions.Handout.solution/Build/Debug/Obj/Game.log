@@ -1,0 +1,13 @@
+﻿  Main.cpp
+  App.cpp
+  Audio.cpp
+  Input.cpp
+  Map.cpp
+  Scene.cpp
+  Render.cpp
+  Textures.cpp
+  Window.cpp
+  Log.cpp
+  pugixml.cpp
+  Generando código...
+  Game.vcxproj -> C:\Users\Albert-Emma\Desktop\L06_Map_Collisions.Handout.solution\Build\Debug\Game.exe
