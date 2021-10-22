@@ -16,6 +16,7 @@
       <Filter>External\PugiXml</Filter>
     </ClCompile>
     <ClCompile Include="Source\Map.cpp" />
+    <ClCompile Include="..\..\..\SUPERSOUKOBAN LA VENGANZA\Serapios\super_soukoban\Super_Soukoban\ModuleFadeToBlack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -51,6 +52,7 @@
       <Filter>External\PugiXml</Filter>
     </ClInclude>
     <ClInclude Include="Source\Map.h" />
+    <ClInclude Include="..\..\..\SUPERSOUKOBAN LA VENGANZA\Serapios\super_soukoban\Super_Soukoban\ModuleFadeToBlack.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

@@ -33,6 +33,7 @@ bool Scene::Start()
 {
 	// L03: DONE: Load map
 	//app->map->Load("hello.tmx");
+	app->->("Assets/textures/logo troll.png");
 	app->map->Load("hello.tmx");
 	
 	// Load music
@@ -69,6 +70,7 @@ bool Scene::Update(float dt)
 	if(app->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 		app->render->camera.x += 1;
 
+
 	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
 
 	// Draw map
@@ -79,6 +81,12 @@ bool Scene::Update(float dt)
 				   app->map->mapData.width, app->map->mapData.height,
 				   app->map->mapData.tileWidth, app->map->mapData.tileHeight,
 				   app->map->mapData.tilesets.count());
+
+	if (app->input->GetKey(SDL_SCANCODE_INSERT) == KeyState::KEY_DOWN)
+	{
+
+		
+	}
 
 	app->win->SetTitle(title.GetString());
 

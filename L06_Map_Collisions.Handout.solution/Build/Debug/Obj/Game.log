@@ -1,3 +1,11 @@
-﻿  Map.cpp
-Map.obj : error LNK2019: símbolo externo "private: struct TileSet * __thiscall Map::GetTilesetFromTileId(int)const " (?GetTilesetFromTileId@Map@@ABEPAUTileSet@@H@Z) sin resolver al que se hace referencia en la función "public: void __thiscall Map::Draw(void)" (?Draw@Map@@QAEXXZ)
-C:\Users\Laia\Desktop\asignment1\L06_Map_Collisions.Handout.solution\Build\Debug\Game.exe : fatal error LNK1120: 1 externos sin resolver
+﻿  ModuleFadeToBlack.cpp
+C:\Users\Laia\Desktop\SUPERSOUKOBAN LA VENGANZA\Serapios\super_soukoban\Super_Soukoban\ModuleFadeToBlack.cpp(75,19): warning C4244: '=': conversión de 'float' a 'Uint32'; posible pérdida de datos
+ModuleFadeToBlack.obj : error LNK2019: símbolo externo "void __cdecl log(char const * const,int,char const *,...)" (?log@@YAXQBDHPBDZZ) sin resolver al que se hace referencia en la función "public: virtual bool __thiscall ModuleFadeToBlack::Start(void)" (?Start@ModuleFadeToBlack@@UAE_NXZ)
+ModuleFadeToBlack.obj : error LNK2019: símbolo externo "public: __thiscall Module::Module(bool)" (??0Module@@QAE@_N@Z) sin resolver al que se hace referencia en la función "public: __thiscall ModuleFadeToBlack::ModuleFadeToBlack(bool)" (??0ModuleFadeToBlack@@QAE@_N@Z)
+ModuleFadeToBlack.obj : error LNK2001: símbolo externo "public: virtual bool __thiscall Module::Init(void)" (?Init@Module@@UAE_NXZ) sin resolver
+ModuleFadeToBlack.obj : error LNK2001: símbolo externo "public: virtual enum update_status __thiscall Module::PreUpdate(void)" (?PreUpdate@Module@@UAE?AW4update_status@@XZ) sin resolver
+ModuleFadeToBlack.obj : error LNK2001: símbolo externo "public: virtual void __thiscall Module::OnCollision(struct Collider *,struct Collider *)" (?OnCollision@Module@@UAEXPAUCollider@@0@Z) sin resolver
+ModuleFadeToBlack.obj : error LNK2019: símbolo externo "public: void __thiscall Module::Enable(void)" (?Enable@Module@@QAEXXZ) sin resolver al que se hace referencia en la función "public: virtual enum update_status __thiscall ModuleFadeToBlack::Update(void)" (?Update@ModuleFadeToBlack@@UAE?AW4update_status@@XZ)
+ModuleFadeToBlack.obj : error LNK2019: símbolo externo "public: void __thiscall Module::Disable(void)" (?Disable@Module@@QAEXXZ) sin resolver al que se hace referencia en la función "public: virtual enum update_status __thiscall ModuleFadeToBlack::Update(void)" (?Update@ModuleFadeToBlack@@UAE?AW4update_status@@XZ)
+ModuleFadeToBlack.obj : error LNK2001: símbolo externo "class Application * App" (?App@@3PAVApplication@@A) sin resolver
+C:\Users\Laia\Desktop\asignment1\L06_Map_Collisions.Handout.solution\Build\Debug\Game.exe : fatal error LNK1120: 8 externos sin resolver
