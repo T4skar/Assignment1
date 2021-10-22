@@ -17,6 +17,7 @@ class Textures;
 class Audio;
 class Scene;
 class Map;
+class ModuleFadeToBlack;
 
 class App
 {
@@ -88,6 +89,8 @@ public:
 	Audio* audio;
 	Scene* scene;
 	Map* map;
+	ModuleFadeToBlack* fade;
+
 
 private:
 
