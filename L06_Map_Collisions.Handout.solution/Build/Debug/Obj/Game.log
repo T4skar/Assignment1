@@ -1,2 +1,3 @@
-﻿  Scene.cpp
-  Game.vcxproj -> C:\Users\Laia\Desktop\asignment1\L06_Map_Collisions.Handout.solution\Build\Debug\Game.exe
+﻿  Map.cpp
+Map.obj : error LNK2019: símbolo externo "private: struct TileSet * __thiscall Map::GetTilesetFromTileId(int)const " (?GetTilesetFromTileId@Map@@ABEPAUTileSet@@H@Z) sin resolver al que se hace referencia en la función "public: void __thiscall Map::Draw(void)" (?Draw@Map@@QAEXXZ)
+C:\Users\Laia\Desktop\asignment1\L06_Map_Collisions.Handout.solution\Build\Debug\Game.exe : fatal error LNK1120: 1 externos sin resolver
