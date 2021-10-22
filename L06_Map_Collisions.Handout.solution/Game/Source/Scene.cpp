@@ -33,7 +33,7 @@ bool Scene::Start()
 {
 	// L03: DONE: Load map
 	//app->map->Load("hello.tmx");
-	app->->("Assets/textures/logo troll.png");
+	app->scene->("Assets/textures/logo troll.png");
 	app->map->Load("hello.tmx");
 	
 	// Load music
