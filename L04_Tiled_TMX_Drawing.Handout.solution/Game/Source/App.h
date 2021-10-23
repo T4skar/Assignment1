@@ -16,9 +16,10 @@ class Render;
 class Textures;
 class Audio;
 class Scene;
+class ModulePlayer;
 class Map;
 class ModuleFadeToBlack;
-class ModulePlayer;
+
 
 enum class update_status
 {
@@ -96,9 +97,10 @@ public:
 	Textures* tex;
 	Audio* audio;
 	Scene* scene;
+	ModulePlayer* player;
 	Map* map;
 	ModuleFadeToBlack* fade;
-	ModulePlayer* player;
+	
 
 
 private:

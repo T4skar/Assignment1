@@ -113,10 +113,16 @@
 	boxrightAnim.speed = 0.2f;
 }*/
 
+ModulePlayer::ModulePlayer()
+{
+}
+
 ModulePlayer::~ModulePlayer()
 {
-
 }
+
+
+
 
 
 

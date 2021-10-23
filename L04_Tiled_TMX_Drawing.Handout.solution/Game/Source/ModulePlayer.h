@@ -2,6 +2,7 @@
 #define __MODULE_PLAYER_H__
 
 #include "Module.h"
+#include "List.h"
 #include "Scene.h"
 /*#include "Animation.h"*/
 #include "Point.h"
@@ -14,7 +15,7 @@ struct Collider;
 class ModulePlayer : public Module
 {
 public:
-	ModulePlayer(bool startEnabled);
+	ModulePlayer();
 	~ModulePlayer();
 
 	bool Start() override;

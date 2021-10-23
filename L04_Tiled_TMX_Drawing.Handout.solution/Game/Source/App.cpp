@@ -6,6 +6,8 @@
 #include "Audio.h"
 #include "Scene.h"
 #include "Map.h"
+#include "Module.h"
+#include "ModulePlayer.h"
 /*#include "ModuleFadeToBlack.h"*/
 
 #include "Defs.h"
