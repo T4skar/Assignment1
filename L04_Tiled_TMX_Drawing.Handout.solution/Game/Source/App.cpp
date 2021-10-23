@@ -26,6 +26,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	audio = new Audio();
 	scene = new Scene();
 	map = new Map();
+	player = new ModulePlayer();
 	//fade = new ModuleFadeToBlack();
 
 	// Ordered for awake / Start / Update
@@ -36,6 +37,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(audio);
 	AddModule(scene);
 	AddModule(map);
+	AddModule(player);
 	//AddModule(fade);
 
 	// Render last to swap buffer

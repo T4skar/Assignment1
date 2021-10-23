@@ -18,6 +18,14 @@ class Audio;
 class Scene;
 class Map;
 class ModuleFadeToBlack;
+class ModulePlayer;
+
+enum class update_status
+{
+	UPDATE_CONTINUE = 1,
+	UPDATE_STOP,
+	UPDATE_ERROR
+};
 
 class App
 {
@@ -90,6 +98,7 @@ public:
 	Scene* scene;
 	Map* map;
 	ModuleFadeToBlack* fade;
+	ModulePlayer* player;
 
 
 private:
