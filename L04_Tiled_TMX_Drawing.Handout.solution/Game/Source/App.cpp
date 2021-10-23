@@ -6,7 +6,7 @@
 #include "Audio.h"
 #include "Scene.h"
 #include "Map.h"
-#include "ModuleFadeToBlack.h"
+/*#include "ModuleFadeToBlack.h"*/
 
 #include "Defs.h"
 #include "Log.h"
@@ -26,7 +26,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	audio = new Audio();
 	scene = new Scene();
 	map = new Map();
-	fade = new ModuleFadeToBlack();
+	//fade = new ModuleFadeToBlack();
 
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -36,7 +36,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(audio);
 	AddModule(scene);
 	AddModule(map);
-	AddModule(fade);
+	//AddModule(fade);
 
 	// Render last to swap buffer
 	AddModule(render);

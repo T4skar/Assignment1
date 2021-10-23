@@ -1,14 +1,3 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  ModuleFadeToBlack.cpp
-c1xx : fatal error C1083: No se puede abrir el archivo origen: 'ModuleFadeToBlack.cpp': No such file or directory
-  Main.cpp
-  App.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(9,10): fatal error C1083: No se puede abrir el archivo incluir: 'ModuleFadeToBlack': No such file or directory
-  Audio.cpp
-  Input.cpp
-  Map.cpp
   Scene.cpp
-  Render.cpp
-  Textures.cpp
-  Window.cpp
-  Generando código...
+  Game.vcxproj -> C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
