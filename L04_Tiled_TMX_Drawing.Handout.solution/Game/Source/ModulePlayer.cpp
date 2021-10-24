@@ -25,7 +25,7 @@ ModulePlayer::ModulePlayer()
 	idleRightAnim.PushBack({ 40,55,14,24 });
 	idleDownAnim.PushBack({ 45,58,14,24 });
 
-	leftAnim.PushBack({ 42,55,14,24 });
+	/*leftAnim.PushBack({ 42,55,14,24 });
 	leftAnim.PushBack({ 33,9,14,24 });
 	leftAnim.PushBack({ 57,9,14,24 });
 	leftAnim.PushBack({ 81,9,14,24 });
@@ -56,7 +56,7 @@ ModulePlayer::ModulePlayer()
 	rightAnim.PushBack({ 355,9,14,24 });
 	rightAnim.PushBack({ 379,9,14,24 });
 	rightAnim.loop = true;
-	rightAnim.speed = 0.3f;
+	rightAnim.speed = 0.3f;*/
 
 	/*downAnim.PushBack({ 210,43,14,24 });
 	downAnim.PushBack({ 234,43,14,24 });
@@ -91,12 +91,12 @@ bool ModulePlayer::Start()
 
 	texture = app->tex->Load("Assets/Sprites/Natsu.png");
 	
-	//currentAnimation = &idleLeftAnim;
+	currentAnimation = &idleLeftAnim;
 	
 	// Posición inicial (depende del lvl)
 	position.x;
 	position.y;
-
+	 
 	// X, Y, anchura, altura, 
 	/*collider = App->collisions->AddCollider({ position.x-5, position.y, 24, 24 }, Collider::Type::PLAYER, this);*/
 
@@ -110,7 +110,7 @@ bool ModulePlayer::Update()
 {
 
 
-	/*if (playerMovement == true) {
+	if (playerMovement == true) {
 		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT ) ){		// mov Derecha
 			nPosX = position.x + 1;
 		}
@@ -123,7 +123,7 @@ bool ModulePlayer::Update()
 		if ((app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT ) ){		// mov abajo
 			nPosY = position.y - 1;
 		}
-	}*/
+	}
 
 
 
