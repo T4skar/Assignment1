@@ -24,7 +24,7 @@ public:
 	// Processes new input and handles player movement
 	bool Update();
 	// Performs the render call of the player sprite
-	//update_status PostUpdate() override;
+	bool PostUpdate() ;
 
 public:
 

@@ -20,12 +20,12 @@ ModulePlayer::ModulePlayer()
 {
 
 	// Aqui van las animaciones del player
-	/*idleLeftAnim.PushBack({ 9,9,14,24 });
-	idleUpAnim.PushBack({ 9,43,14,24 });
-	idleRightAnim.PushBack({ 211,9,14,24 });
-	idleDownAnim.PushBack({ 210,43,14,24 });
+	idleLeftAnim.PushBack({ 42,55,14,24 });
+	idleUpAnim.PushBack({ 38,55,14,24 });
+	idleRightAnim.PushBack({ 40,55,14,24 });
+	idleDownAnim.PushBack({ 45,58,14,24 });
 
-	leftAnim.PushBack({ 9,9,14,24 });
+	leftAnim.PushBack({ 42,55,14,24 });
 	leftAnim.PushBack({ 33,9,14,24 });
 	leftAnim.PushBack({ 57,9,14,24 });
 	leftAnim.PushBack({ 81,9,14,24 });
@@ -58,7 +58,7 @@ ModulePlayer::ModulePlayer()
 	rightAnim.loop = true;
 	rightAnim.speed = 0.3f;
 
-	downAnim.PushBack({ 210,43,14,24 });
+	/*downAnim.PushBack({ 210,43,14,24 });
 	downAnim.PushBack({ 234,43,14,24 });
 	downAnim.PushBack({ 258,43,14,24 });
 	downAnim.PushBack({ 282,43,14,24 });
@@ -108,7 +108,7 @@ bool ModulePlayer::Start()
 
 bool ModulePlayer::Update()
 {
-	
+
 
 	/*if (playerMovement == true) {
 		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT ) ){		// mov Derecha
@@ -125,12 +125,12 @@ bool ModulePlayer::Update()
 		}
 	}*/
 
-	
+
 
 	// player stop the animation when stop walking
-	/*if (nPosX == 0 && nPosY == 0) 
+	if (nPosX == 0 && nPosY == 0)
 	{
-		if (currentAnimation == &leftAnim) 
+		if (currentAnimation == &leftAnim)
 		{
 			if (currentAnimation != &idleLeftAnim) {
 				idleLeftAnim.Reset();
@@ -156,27 +156,26 @@ bool ModulePlayer::Update()
 			}
 		}
 	}
-	
-	
+
+
 	currentAnimation->Update();
 
-	return update_status::UPDATE_CONTINUE;
+	return true;
 }
 
-update_status ModulePlayer::PostUpdate()
+ bool ModulePlayer::PostUpdate()
 {
 	
-	if (IsEnabled())
-	{
-		SDL_Rect rect = currentAnimation->GetCurrentFrame();
-		App->render->Blit(texture, position.x, position.y, &rect);
-	}
-	else {
-		steps = 0000;
-		limit = 00;
-		stage = 00;
-		delete collider;
-	}*/
+	
+	 SDL_Rect rect = currentAnimation->GetCurrentFrame();
+	/* rect.h = 1035;
+	 rect.w = 1194;
+	 rect.x = 42;
+	 rect.y = 55;*/
+		app->render->DrawTexture(texture, position.x, position.y, &rect,1.0,0,0, 0);
+
+	//SDL_Texture* texture, int x, int y, const SDL_Rect* section, float speed, double angle, int pivotX, int pivotY
+	
 
 
 	/*sprintf_s(scoreText, 10, "%4d", steps);
