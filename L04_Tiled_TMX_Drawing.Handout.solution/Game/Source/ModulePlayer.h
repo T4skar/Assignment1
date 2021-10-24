@@ -4,7 +4,7 @@
 #include "Module.h"
 #include "List.h"
 #include "Scene.h"
-/*#include "Animation.h"*/
+#include "Animation.h"
 #include "Point.h"
 
 struct SDL_Texture;
@@ -20,10 +20,11 @@ public:
 
 	bool Start() override;
 
+
 	// Processes new input and handles player movement
-	/*update_status Update() override;
+	bool Update();
 	// Performs the render call of the player sprite
-	update_status PostUpdate() override;*/
+	//update_status PostUpdate() override;
 
 public:
 
@@ -38,7 +39,7 @@ public:
 	SDL_Texture* texture = nullptr;
 	SDL_Texture* table = nullptr;
 	// The pointer to the current player animation
-	/*Animation* currentAnimation = nullptr;
+	Animation* currentAnimation = nullptr;
 
 	// A set of animations
 	Animation idleLeftAnim;
@@ -53,7 +54,7 @@ public:
 	Animation boxupAnim;
 	Animation boxdownAnim;
 	Animation boxleftAnim;
-	Animation boxrightAnim;*/
+	Animation boxrightAnim;
 
 	Collider* collider = nullptr;
 

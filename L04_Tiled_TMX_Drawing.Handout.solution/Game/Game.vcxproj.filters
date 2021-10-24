@@ -53,6 +53,7 @@
     </ClInclude>
     <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\ModulePlayer.h" />
+    <ClInclude Include="Source\Animation.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">
