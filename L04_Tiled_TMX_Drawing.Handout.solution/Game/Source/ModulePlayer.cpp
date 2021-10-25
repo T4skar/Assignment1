@@ -20,10 +20,12 @@ ModulePlayer::ModulePlayer()
 {
 
 	// Aqui van las animaciones del player
-	idleLeftAnim.PushBack({ 42,55,14,24 });
-	idleUpAnim.PushBack({ 38,55,14,24 });
-	idleRightAnim.PushBack({ 40,55,14,24 });
-	idleDownAnim.PushBack({ 45,58,14,24 });
+	idleLeftAnim.PushBack({ 1050,670,110,170 });
+	idleUpAnim.PushBack({ 38,55,50,60 });
+	idleRightAnim.PushBack({ 40,55,50,60 });
+	idleDownAnim.PushBack({ 45,58,50,60 });
+	rightAnim.loop = true;
+	rightAnim.speed = 0.3f;
 
 	/*leftAnim.PushBack({ 42,55,14,24 });
 	leftAnim.PushBack({ 33,9,14,24 });

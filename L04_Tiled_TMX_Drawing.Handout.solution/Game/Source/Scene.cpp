@@ -37,8 +37,8 @@ bool Scene::Start()
 	app->audio->PlayMusic("Assets/audio/music/music_spy.ogg");
 
 
-	app->player->position.x = 0;
-	app->player->position.y = 0;
+	app->player->position.x = 300;
+	app->player->position.y = 3300;
 	
 
 	return true;
