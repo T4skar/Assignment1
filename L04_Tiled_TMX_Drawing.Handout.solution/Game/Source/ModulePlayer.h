@@ -22,24 +22,23 @@ public:
 
 
 	// Processes new input and handles player movement
-	bool Update();
+	bool Update(float dt);
 	// Performs the render call of the player sprite
 	bool PostUpdate() ;
 
 public:
-
+	List<SDL_Texture*> player;
 	// Position of the player in the map
 	iPoint position;	
-	int nPosX = 0;
-	int nPosY = 0;
+
 	// The speed in which we move the player (pixels per frame)
-	int speed = 1;
-	bool destroyed = false;
+	
+	
 	// The player spritesheet
 	SDL_Texture* texture = nullptr;
-	SDL_Texture* table = nullptr;
+	
 	// The pointer to the current player animation
-	Animation* currentAnimation = nullptr;
+	Animation* currentAnimation;
 
 	// A set of animations
 	Animation idleLeftAnim;
@@ -51,10 +50,7 @@ public:
 	Animation leftAnim;
 	Animation rightAnim;
 	
-	Animation boxupAnim;
-	Animation boxdownAnim;
-	Animation boxleftAnim;
-	Animation boxrightAnim;
+	
 
 	Collider* collider = nullptr;
 

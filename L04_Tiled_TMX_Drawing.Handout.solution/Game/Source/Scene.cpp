@@ -34,7 +34,7 @@ bool Scene::Start()
 {
 	// L03: DONE: Load map
 	app->map->Load("mapadef.tmx");
-	app->audio->PlayMusic("Assets/audio/music/music_spy.ogg");
+	app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg");
 
 
 	app->player->position.x = 300;
@@ -72,6 +72,9 @@ bool Scene::Update(float dt)
 
 	if(app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
 		app->render->camera.x -= 1;
+
+
+
 
 	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
 
