@@ -29,14 +29,14 @@ ModulePlayer::ModulePlayer() : Module()
 	idleRightAnim.loop = true;
 	idleRightAnim.speed = 0.003f;
 
-	rightAnim.PushBack({ 1657,690,124,135 });
-	rightAnim.PushBack({ 1797,684,124,135 });
-	rightAnim.PushBack({ 1915,684,124,135 });
-	rightAnim.PushBack({ 2060,684,124,135 });
-	rightAnim.PushBack({ 2196,684,124,135 });
-	rightAnim.PushBack({ 2310,684,124,135 });
+	rightAnim.PushBack({ 1657,684,124,135 });
+	rightAnim.PushBack({ 1790,680,125,135 });
+	rightAnim.PushBack({ 1922,680,127,135 });
+	rightAnim.PushBack({ 2060,680,127,135 });
+	rightAnim.PushBack({ 2187,680,124,135 });
+	rightAnim.PushBack({ 2315,680,127,135 });
 	rightAnim.loop = true;
-	rightAnim.speed = 0.03f;
+	rightAnim.speed = 0.005f;
 
 	/*upAnim.PushBack({ 9, 43,14,24 });
 	upAnim.PushBack({ 33,43,14,24 });
@@ -49,14 +49,13 @@ ModulePlayer::ModulePlayer() : Module()
 	upAnim.loop = true;
 	upAnim.speed = 0.3f;*/
 
-	leftAnim.PushBack({ 211,9,14,24 });
-	leftAnim.PushBack({ 235,9,14,24 });
-	leftAnim.PushBack({ 259,9,14,24 });
-	leftAnim.PushBack({ 280,9,14,24 });
-	leftAnim.PushBack({ 307,9,14,24 });
-	leftAnim.PushBack({ 331,9,14,24 });
-	leftAnim.PushBack({ 355,9,14,24 });
-	leftAnim.PushBack({ 379,9,14,24 });
+	leftAnim.PushBack({ 1961,1381,127,147 });
+	leftAnim.PushBack({ 2094,1381,124,147 });
+	leftAnim.PushBack({ 2215,1381,124,147 });
+	leftAnim.PushBack({ 2355,1381,127,147 });
+	leftAnim.PushBack({ 2489,1381,124,147});
+	leftAnim.PushBack({ 2625,1381,124,147});
+	
 	leftAnim.loop = true;
 	leftAnim.speed = 0.03f;
 
