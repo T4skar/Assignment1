@@ -315,7 +315,18 @@ bool App::SaveGame() const
 {
 	bool ret = true;
 
-	//...
+	//1 leer xml load document pugi
+	pugi::xml_document doc;
+	doc.load("ls.xml");
+
+	//iteracion sobre cada modulo para guardar informacion
+	doc.child("renderer").child("camera").attribute("x").set_value(3);
+	doc.child("renderer").child("camera").attribute("y").set_value(3);
+
+
+	//3 guardar xml llamando funcion pugi
+	doc.save_file("ls.xml");
+
 
 	saveGameRequested = false;
 
