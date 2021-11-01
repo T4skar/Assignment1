@@ -1,13 +1,15 @@
 #ifndef __APP_H__
 #define __APP_H__
 
-#include "Module.h"
+//#include "Module.h"
 #include "List.h"
 
 #include "PugiXml/src/pugixml.hpp"
 
 #define CONFIG_FILENAME		"config.xml"
 #define SAVE_STATE_FILENAME "save_game.xml"
+#define DEGTORAD 0.0174532925199432957f
+#define RADTODEG 57.295779513082320876f
 
 // Modules
 class Window;
@@ -31,7 +33,7 @@ enum class update_status
 class App
 {
 public:
-
+	
 	// Constructor
 	App(int argc, char* args[]);
 

@@ -2,6 +2,7 @@
 #define __MODULE_H__
 
 #include "SString.h"
+#include "App.h"
 
 #include "PugiXml/src/pugixml.hpp"
 
@@ -66,7 +67,9 @@ public:
 	{
 		return true;
 	}
-
+	virtual void OnCollision(PhysBody* bodyA, PhysBody* bodyB)
+	{
+	}
 public:
 
 	SString name;
