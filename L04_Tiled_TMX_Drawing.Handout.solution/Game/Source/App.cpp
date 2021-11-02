@@ -6,9 +6,10 @@
 #include "Audio.h"
 #include "Scene.h"
 #include "Map.h"
-#include "Module.h"
+
 #include "ModulePlayer.h"
 #include "Animation.h"
+
 /*#include "ModuleFadeToBlack.h"*/
 
 #include "Defs.h"

@@ -2,7 +2,6 @@
 #define __MODULE_H__
 
 #include "SString.h"
-#include "App.h"
 
 #include "PugiXml/src/pugixml.hpp"
 
@@ -57,7 +56,7 @@ public:
 		return true;
 	}
 
-    // L02: DONE 2: Create new virtual methods to Load / Save state
+	// L02: DONE 2: Create new virtual methods to Load / Save state
 	virtual bool LoadState(pugi::xml_node&)
 	{
 		return true;
@@ -67,9 +66,7 @@ public:
 	{
 		return true;
 	}
-	virtual void OnCollision(PhysBody* bodyA, PhysBody* bodyB)
-	{
-	}
+
 public:
 
 	SString name;

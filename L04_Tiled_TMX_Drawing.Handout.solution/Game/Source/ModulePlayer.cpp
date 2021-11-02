@@ -36,18 +36,15 @@ ModulePlayer::ModulePlayer() : Module()
 	rightAnim.PushBack({ 2187,680,124,135 });
 	rightAnim.PushBack({ 2315,680,127,135 });
 	rightAnim.loop = true;
-	rightAnim.speed = 0.005f;
+	rightAnim.speed = 0.02f;
 
-	/*upAnim.PushBack({ 9, 43,14,24 });
-	upAnim.PushBack({ 33,43,14,24 });
-	upAnim.PushBack({ 57,43,14,24 });
-	upAnim.PushBack({ 81,43,14,24 });
-	upAnim.PushBack({ 106,43,14,24 });
-	upAnim.PushBack({ 130,43,14,24 });
-	upAnim.PushBack({ 154,43,14,24 });
-	upAnim.PushBack({ 178,43,14,24 });
+	upAnim.PushBack({ 52, 924,124,135 });
+	upAnim.PushBack({ 188,887,124,135 });
+	upAnim.PushBack({ 309,920,124,135 });
+	upAnim.PushBack({ 482,893,124,135 });
+	
 	upAnim.loop = true;
-	upAnim.speed = 0.3f;*/
+	upAnim.speed = 0.003f;
 
 	leftAnim.PushBack({ 1961,1381,127,147 });
 	leftAnim.PushBack({ 2094,1381,124,147 });
@@ -57,7 +54,7 @@ ModulePlayer::ModulePlayer() : Module()
 	leftAnim.PushBack({ 2625,1381,124,147});
 	
 	leftAnim.loop = true;
-	leftAnim.speed = 0.03f;
+	leftAnim.speed = 0.02f;
 
 	
 
@@ -110,6 +107,21 @@ bool ModulePlayer::Update(float dt)
 					currentAnimation = &rightAnim;
 				}
 			
+		}
+		else if ((app->input->GetKey(SDL_SCANCODE_SPACE)== KEY_REPEAT && app->input->GetKey(SDL_SCANCODE_D)==KEY_REPEAT)) {
+			position.y -= 3;
+			position.x += 3;
+			if (currentAnimation != &upAnim) {
+				upAnim.Reset();
+				currentAnimation = &upAnim;
+			}
+		}
+		else if((app->input->GetKey(SDL_SCANCODE_SPACE)==KEY_DOWN)){
+			position.y -= 8;
+			if (currentAnimation != &upAnim) {
+				upAnim.Reset();
+				currentAnimation = &upAnim;
+			}
 		}
 		
 		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT )) {		// mov izquierda

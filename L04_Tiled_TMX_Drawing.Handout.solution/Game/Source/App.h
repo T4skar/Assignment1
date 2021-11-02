@@ -1,7 +1,8 @@
 #ifndef __APP_H__
 #define __APP_H__
+//
+#include "Module.h"
 
-//#include "Module.h"
 #include "List.h"
 
 #include "PugiXml/src/pugixml.hpp"
@@ -21,14 +22,10 @@ class Scene;
 class ModulePlayer;
 class Map;
 class ModuleFadeToBlack;
+class ModulePhysics;
 
 
-enum class update_status
-{
-	UPDATE_CONTINUE = 1,
-	UPDATE_STOP,
-	UPDATE_ERROR
-};
+
 
 class App
 {
@@ -112,7 +109,7 @@ private:
 	SString title;
 	SString organization;
 
-	List<Module *> modules;
+	List<Module*> modules;
 
 	// L01: DONE 2: Create new variables from pugui namespace
 	// NOTE: Redesigned LoadConfig() to avoid storing this variables
