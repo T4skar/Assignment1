@@ -1,6 +1,7 @@
 #include "App.h"
 #include "Window.h"
 #include "Render.h"
+#include"ModulePlayer.h"
 
 #include "Defs.h"
 #include "Log.h"
@@ -45,7 +46,7 @@ bool Render::Awake(pugi::xml_node& config)
 	{
 		camera.w = app->win->screenSurface->w;
 		camera.h = app->win->screenSurface->h;
-		camera.x = 300;
+		camera.x = app->player->position.x;
 		camera.y = -3000;
 
 	}
@@ -71,6 +72,8 @@ bool Render::PreUpdate()
 
 bool Render::Update(float dt)
 {
+	
+
 	return true;
 }
 
