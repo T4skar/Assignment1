@@ -23,8 +23,15 @@ class ModulePlayer;
 class Map;
 class ModuleFadeToBlack;
 class ModulePhysics;
+class ModuleRender;
+class ModuleCollisions;
 
-
+enum class update_status
+{
+	UPDATE_CONTINUE = 1,
+	UPDATE_STOP,
+	UPDATE_ERROR
+};
 
 
 class App
@@ -99,6 +106,7 @@ public:
 	ModulePlayer* player;
 	Map* map;
 	ModuleFadeToBlack* fade;
+	ModuleCollisions* collisions;
 	
 
 

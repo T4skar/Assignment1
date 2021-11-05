@@ -8,7 +8,7 @@
 #include "Point.h"
 
 struct SDL_Texture;
-struct Collider;
+//struct Collider;
 
 
 
