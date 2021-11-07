@@ -3,6 +3,7 @@
 #include "App.h"
 #include "Log.h"
 #include "Render.h"
+
 #include "Input.h"
 #include "SDL/include/SDL_Scancode.h"
 
@@ -13,6 +14,10 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 
 	matrix[Collider::Type::PLAYER][Collider::Type::GROUND] = true;
 	matrix[Collider::Type::GROUND][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::DEAD][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::DEAD] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::WIN] = true;
+	matrix[Collider::Type::WIN][Collider::Type::PLAYER] = true;
 }
 
 // Destructor
@@ -76,6 +81,34 @@ bool ModuleCollisions::Update(float dt)
 		}
 	}
 	
+	if (app->input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN) {
+		
+		app->player->God = !app->player->God;
+
+		app->player->gravity = 0.0f;
+		if (app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
+			app->player->position.y -= 1;
+			app->render->camera.y = -app->player->position.y;
+
+		}
+		if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
+			app->player->position.y = app->player->position.y;
+			app->render->camera.y = -app->player->position.y;
+
+		}
+		if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
+			app->player->position.x -= 1;
+			app->render->camera.x = -app->player->position.x;
+
+
+		}
+		if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
+			app->player->position.x += 1;
+			app->render->camera.x = -app->player->position.x;
+
+		}
+
+	}
 	return true;
 }
 
@@ -83,7 +116,7 @@ bool ModuleCollisions::PostUpdate()
 {
 	if (debug == true)
 		DebugDraw();
-
+	
 	return true;
 }
 
@@ -104,10 +137,18 @@ void ModuleCollisions::DebugDraw()
 			app->render->DrawRectangle(colliders[i]->rect, 0, 255, 0, alpha);
 			break;
 		case Collider::Type::GROUND: // green
-			app->render->DrawRectangle(colliders[i]->rect, 0, 255, 150, alpha);
+			app->render->DrawRectangle(colliders[i]->rect, 0, 300, 10, alpha);
+			break;
+
+		case Collider::Type::DEAD: // green
+			app->render->DrawRectangle(colliders[i]->rect, 80, 5, 150, alpha);
+			break;
+		case Collider::Type::WIN: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
 		}
 	}
+	
 }
 
 // Called before quitting

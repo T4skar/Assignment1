@@ -257,3 +257,24 @@ bool Render::DrawCircle(int x, int y, int radius, Uint8 r, Uint8 g, Uint8 b, Uin
 
 	return ret;
 }
+bool Render::Blit(SDL_Texture* texture, int x, int y, const SDL_Rect* section, float speed) {
+	bool ret = true;
+
+	SDL_Rect rect{ (int)(-camera.x * speed) + x * 100,(int)(-camera.y * speed) + y * 100,0,0 };
+
+	if (section != nullptr) {
+		rect.w = section->w;
+		rect.h = section->h;
+	}
+	else {
+		SDL_QueryTexture(texture, nullptr, nullptr, &rect.w, &rect.h);
+	}
+	rect.w *= 100;
+	rect.h *= 100;
+
+	if (SDL_RenderCopy(renderer, texture, section, &rect) != 0) {
+		LOG("Cannot blit to screen. SDL_RenderCopy error: %s", SDL_GetError());
+		ret = false;
+	}
+	return ret;
+}

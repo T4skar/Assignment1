@@ -9,7 +9,7 @@
 #include "ModulePlayer.h"
 #include "ModulePhysics.h"
 
-
+#include "SDL/include/SDL_Scancode.h"
 
 
 #include "Defs.h"
@@ -37,10 +37,11 @@ bool Scene::Awake()
 bool Scene::Start()
 {
 	// L03: DONE: Load map
-	
+	fondo = app->tex->Load("Assets/Sprites/fairy.png");
 	app->map->Load("mapadef.tmx");
 	app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg");
-
+	lose = app->tex->Load("Assets/Sprites/lose.png");
+	Win = app->tex->Load("Assets/Sprites/win.png");
 
 	app->player->position.x = 300;
 	app->player->position.y = 3300;
@@ -58,7 +59,7 @@ bool Scene::PreUpdate()
 // Called each loop iteration
 bool Scene::Update(float dt)
 {
-
+	app->render->DrawTexture(fondo, -900, -200);
 	/*active = false;*/
     // L02: DONE 3: Request Load / Save when pressing L/S
 	if(app->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)
@@ -67,8 +68,8 @@ bool Scene::Update(float dt)
 	if(app->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
 		app->SaveGameRequest();
 
-	if(app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
-		app->render->camera.y += 1;
+	if(app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
+		app->render->camera.y += 80;
 		
 
 	if(app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)
@@ -80,34 +81,20 @@ bool Scene::Update(float dt)
 	if(app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
 		app->render->camera.x -=1;
 	
+	if (app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN && app->scene->dLose == false) {
 
-	/*if (app->input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN) 
-		app->player->God = !app->player->God;
-
-		app->player->gravity = 0.0f;
-		if (app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
-			app->player->position.y -= 1;
-			app->render->camera.y = -app->player->position.y;
-
+		dWin = true;
+		if (dWin == true) {
+			app->render->Blit(Win, app->player->position.x, app->player->position.y, 0, 0);
 		}
-		if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
-			app->player->position.y = app->player->position.y;
-			app->render->camera.y = -app->player->position.y;
+	}
+	if (app->input->GetKey(SDL_SCANCODE_F7) == KEY_DOWN && app->scene->dWin == false) {
 
+		dLose = true;
+		if (dLose == true) {
+			app->render->Blit(lose, app->player->position.x, app->player->position.y, 0, 0);
 		}
-		if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-			app->player->position.x -= 1;
-			app->render->camera.x = -app->player->position.x;
-
-
-		}
-		if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
-			app->player->position.x += 1;
-			app->render->camera.x = -app->player->position.x;
-
-		}*/
-
-	
+	}
 
 	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
 
@@ -129,7 +116,7 @@ bool Scene::Update(float dt)
 bool Scene::PostUpdate()
 {
 	bool ret = true;
-
+	
 	if(app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
 		ret = false;
 
@@ -140,6 +127,8 @@ bool Scene::PostUpdate()
 bool Scene::CleanUp()
 {
 	LOG("Freeing scene");
-
+	dWin = false;
+	dLose = false;
+	app->tex->UnLoad(fondo);
 	return true;
 }

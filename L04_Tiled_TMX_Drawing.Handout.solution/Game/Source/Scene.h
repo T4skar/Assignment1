@@ -28,10 +28,13 @@ public:
 
 	// Called before all Updates
 	bool PostUpdate();
-
+	bool dWin = false;
+	bool dLose = false;
+	SDL_Texture* lose = nullptr;
+	SDL_Texture* Win = nullptr;
 	// Called before quitting
 	bool CleanUp();
-
+	SDL_Texture* fondo = nullptr;
 private:
 	SDL_Texture* img;
 };

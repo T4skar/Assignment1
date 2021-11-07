@@ -1811,7 +1811,7 @@ PUGI__NS_BEGIN
         }
             
         // Push new gap, move s count bytes further (skipping the gap).
-        // Collapse previous gap.
+        // apse previous gap.
         void push(char_t*& s, size_t count)
         {
             if (end) // there was a gap already; collapse it

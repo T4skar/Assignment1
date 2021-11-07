@@ -44,7 +44,7 @@ ModulePlayer::ModulePlayer() : Module()
 	upAnim.PushBack({ 482,893,124,135 });
 	
 	upAnim.loop = true;
-	upAnim.speed = 0.003f;
+	upAnim.speed = 0.02f;
 
 	leftAnim.PushBack({ 1961,1381,127,147 });
 	leftAnim.PushBack({ 2094,1381,124,147 });
@@ -77,8 +77,9 @@ bool ModulePlayer::Start()
 	LOG("Loading player textures");
 
 	bool ret = true;
-
+	
 	texture = app->tex->Load("Assets/Sprites/Natsu3.png");
+	
 	
 	currentAnimation = &idleRightAnim;
 	
@@ -101,10 +102,14 @@ bool ModulePlayer::Update(float dt)
 	collider->SetPos(position.x, position.y);
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
+
+
 	if (gravity = true && collision == false) {
 		position.y += 2;
 	}
 	
+
+
 		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT )){		// mov Derecha
 			
 			position.x += 1;
@@ -117,11 +122,12 @@ bool ModulePlayer::Update(float dt)
 				
 			
 		}
-		else if ((app->input->GetKey(SDL_SCANCODE_SPACE)== KEY_REPEAT && app->input->GetKey(SDL_SCANCODE_D)==KEY_REPEAT)) {
-			
-			position.y -= 3;
-			position.x += 3;
-			
+		else if ((app->input->GetKey(SDL_SCANCODE_SPACE)== KEY_REPEAT && app->input->GetKey(SDL_SCANCODE_D)==KEY_REPEAT && app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)) {
+			jump = true;
+			if (jump == true) {
+				position.y -= 80;
+				position.x -= 3;
+			}
 			if (currentAnimation != &upAnim) {
 				upAnim.Reset();
 				currentAnimation = &upAnim;
@@ -129,13 +135,18 @@ bool ModulePlayer::Update(float dt)
 			}
 		}
 		else if((app->input->GetKey(SDL_SCANCODE_SPACE)==KEY_DOWN)){
+			jump = true;
 			
-			position.y -= 8;
+			
 			if (currentAnimation != &upAnim) {
 				upAnim.Reset();
 				currentAnimation = &upAnim;
 			}
-			
+			if (jump == true) {
+
+				position.y -= 80;
+				gravity = true;
+			}
 		}
 		
 		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT )) {		// mov izquierda
@@ -194,38 +205,47 @@ bool ModulePlayer::Update(float dt)
 	 rect.x = 42;
 	 rect.y = 55;*/
 		app->render->DrawTexture(texture, position.x, position.y, &rect,1.0f,0,0, 0);
-
-	//SDL_Texture* texture, int x, int y, const SDL_Rect* section, float speed, double angle, int pivotX, int pivotY
+		
 	
 
-
-	/*sprintf_s(scoreText, 10, "%4d", steps);
-	App->fonts->BlitText(339, 24, scoreFont, scoreText);
-
-	sprintf_s(limitText, 10, "%4d", limit);
-	App->fonts->BlitText(339, 34, scoreFont, limitText);
-
-	sprintf_s(stageText, 10, "%2d", stage);
-	App->fonts->BlitText(356, 12, scoreFont, stageText);
-
-	App->render->Blit(table, 310, 10, NULL);*/
 
 	return true;
 }
 
  void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
  {
-	 for (int i = 0; i <= MAX_COLLIDERS; i++) {
+	
 		 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::GROUND) {
 			 
 			 collision = true;
 			 gravity = false;
 		 }
 		
+
 		 
-		 
-	 }
 	 
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::DEAD) {
+
+		 collision = true;
+		 gravity = false;
+		 vida = false;
+		 if (vida == false) {
+			 app->render->Blit(app->scene->lose, position.x, position.y,0,0);
+		 }
+	 }
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::WIN) {
+
+		 collision = true;
+		 gravity = false;
+		 vida = true;
+		 win = true;
+
+		 if (win == true) {
+			 app->render->Blit(app->scene->Win, position.x, position.y,0,0);
+		 }
+	 }
+	
+	
  }
 
 

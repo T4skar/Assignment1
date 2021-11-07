@@ -148,6 +148,8 @@ private:
 	bool LoadProperties(pugi::xml_node& node, Properties& properties);
 	iPoint Map::WorldToMap(int x, int y) const;
 	void Colliders();
+	void Dead();
+	void Win();
 	TileSet* GetTilesetFromTileId(int id) const;
 	Collider* mapcollider[MAX_COLLIDERS];
 public:

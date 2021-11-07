@@ -12,6 +12,8 @@ struct Collider
 		NONE = -1,
 		PLAYER,
 		GROUND,
+		DEAD,
+		WIN,
 		
 
 		MAX

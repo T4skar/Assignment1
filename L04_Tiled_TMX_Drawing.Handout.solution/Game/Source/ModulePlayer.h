@@ -34,9 +34,11 @@ public:
 
 	// The speed in which we move the player (pixels per frame)
 	
-	
+	bool jump = false;
 	// The player spritesheet
 	SDL_Texture* texture = nullptr;
+	
+	
 	
 	// The pointer to the current player animation
 	Animation* currentAnimation;
@@ -52,7 +54,8 @@ public:
 	Animation rightAnim;
 	
 	bool God = false;
-
+	bool vida = true;
+	bool win = false;
 	Collider* collider = nullptr;
 	Collider* right = nullptr;
 	Collider* left = nullptr;

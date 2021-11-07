@@ -20,6 +20,8 @@ Map::~Map()
 
 bool Map::Start() {
 	Colliders();
+	Dead();
+	Win();
 	return true;
 }
 int Properties::GetProperty(const char* value, int defaultValue) const
@@ -435,6 +437,124 @@ void Map::Colliders()
 						iPoint pos = MapToWorld(x, y);
 
 						mapcollider[i] = app->physics->AddCollider({ pos.x,pos.y,r.w,r.h }, Collider::Type::GROUND, this);
+						i++;
+						app->render->DrawTexture(tileset->texture,
+							pos.x,
+							pos.y,
+							&r);
+					}
+
+				}
+			}
+
+
+
+		}
+		mapLayerItem = mapLayerItem->next;
+	}
+
+
+
+}
+void Map::Dead()
+{
+	if (mapLoaded == false) return;
+
+	// L03: DONE 6: Iterate all tilesets and draw all their 
+	// images in 0,0 (you should have only one tileset for now)
+	/*
+	ListItem<TileSet*>* tileset;
+	tileset = mapData.tilesets.start;
+
+	while (tileset != NULL)
+	{
+		app->render->DrawTexture(tileset->data->texture,0,0);
+		tileset = tileset->next;
+	}
+	*/
+
+	// L04: TODO 5: Prepare the loop to draw all tiles in a layer + DrawTexture()
+
+	ListItem<MapLayer*>* mapLayerItem;
+	mapLayerItem = mapData.maplayers.start;
+	int i = 0;
+	while (mapLayerItem != NULL) {
+		if (mapLayerItem->data->properties.GetProperty("DEAD") == 1) {
+			for (int x = 0; x < mapLayerItem->data->width; x++)
+			{
+				for (int y = 0; y < mapLayerItem->data->height; y++)
+				{
+					// L04: TODO 9: Complete the draw function
+
+					int gid = mapLayerItem->data->Get(x, y);
+
+
+					if (gid > 0) {
+
+						TileSet* tileset = GetTilesetFromTileId(gid);
+						SDL_Rect r = tileset->GetTileRect(gid);
+						iPoint pos = MapToWorld(x, y);
+
+						mapcollider[i] = app->physics->AddCollider({ pos.x,pos.y,r.w,r.h }, Collider::Type::DEAD, this);
+						i++;
+						app->render->DrawTexture(tileset->texture,
+							pos.x,
+							pos.y,
+							&r);
+					}
+
+				}
+			}
+
+
+
+		}
+		mapLayerItem = mapLayerItem->next;
+	}
+
+
+
+}
+void Map::Win()
+{
+	if (mapLoaded == false) return;
+
+	// L03: DONE 6: Iterate all tilesets and draw all their 
+	// images in 0,0 (you should have only one tileset for now)
+	/*
+	ListItem<TileSet*>* tileset;
+	tileset = mapData.tilesets.start;
+
+	while (tileset != NULL)
+	{
+		app->render->DrawTexture(tileset->data->texture,0,0);
+		tileset = tileset->next;
+	}
+	*/
+
+	// L04: TODO 5: Prepare the loop to draw all tiles in a layer + DrawTexture()
+
+	ListItem<MapLayer*>* mapLayerItem;
+	mapLayerItem = mapData.maplayers.start;
+	int i = 0;
+	while (mapLayerItem != NULL) {
+		if (mapLayerItem->data->properties.GetProperty("WIN") == 1) {
+			for (int x = 0; x < mapLayerItem->data->width; x++)
+			{
+				for (int y = 0; y < mapLayerItem->data->height; y++)
+				{
+					// L04: TODO 9: Complete the draw function
+
+					int gid = mapLayerItem->data->Get(x, y);
+
+
+					if (gid > 0) {
+
+						TileSet* tileset = GetTilesetFromTileId(gid);
+						SDL_Rect r = tileset->GetTileRect(gid);
+						iPoint pos = MapToWorld(x, y);
+
+						mapcollider[i] = app->physics->AddCollider({ pos.x,pos.y,r.w,r.h }, Collider::Type::WIN, this);
 						i++;
 						app->render->DrawTexture(tileset->texture,
 							pos.x,
