@@ -4,7 +4,7 @@
 #include "Module.h"
 #include "List.h"
 #include "Point.h"
-
+#include"ModulePhysics.h"
 #include "PugiXml\src\pugixml.hpp"
 
 // L03: DONE 2: Create a struct to hold information for a TileSet
@@ -41,12 +41,43 @@ enum MapTypes
 };
 
 // L04: TODO 1: Create a struct for the map layer
+struct Properties
+{
+	struct Property
+	{
+		//...
+		SString name;
+		int value;
+	};
+
+	~Properties()
+	{
+		//...
+		ListItem<Property*>* item;
+		item = list.start;
+
+		while (item != NULL)
+		{
+			RELEASE(item->data);
+			item = item->next;
+		}
+
+		list.clear();
+	}
+
+	// L06: TODO 7: Method to ask for the value of a custom property
+	int GetProperty(const char* name, int default_value = 0) const;
+
+	List<Property*> list;
+};
 struct MapLayer
 {
 	SString	name;
 	int width;
 	int height;
 	uint* data;
+
+	Properties properties;
 
 	MapLayer() : data(NULL)
 	{}
@@ -86,7 +117,7 @@ public:
 
     // Destructor
     virtual ~Map();
-
+	bool Start();
     // Called before render is available
     bool Awake(pugi::xml_node& conf);
 
@@ -114,7 +145,11 @@ private:
 	// L04
 	bool LoadLayer(pugi::xml_node& node, MapLayer* layer);
 	bool LoadAllLayers(pugi::xml_node mapNode);
-
+	bool LoadProperties(pugi::xml_node& node, Properties& properties);
+	iPoint Map::WorldToMap(int x, int y) const;
+	void Colliders();
+	TileSet* GetTilesetFromTileId(int id) const;
+	Collider* mapcollider[MAX_COLLIDERS];
 public:
 
     // L03: DONE 1: Add your struct for map info

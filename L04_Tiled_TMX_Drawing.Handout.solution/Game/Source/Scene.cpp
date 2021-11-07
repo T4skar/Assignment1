@@ -7,6 +7,7 @@
 #include "Scene.h"
 #include "Map.h"
 #include "ModulePlayer.h"
+#include "ModulePhysics.h"
 
 
 
@@ -75,7 +76,9 @@ bool Scene::Update(float dt)
 
 	if(app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
 		app->render->camera.x -=1;
-
+	/*if (app->input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN) {
+		app->physics->gravity = 0.0f;
+	}*/
 
 
 

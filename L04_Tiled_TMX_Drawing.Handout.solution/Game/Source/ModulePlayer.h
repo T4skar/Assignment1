@@ -7,6 +7,7 @@
 #include "Animation.h"
 #include "Point.h"
 
+
 struct SDL_Texture;
 //struct Collider;
 
@@ -53,6 +54,8 @@ public:
 	
 
 	Collider* collider = nullptr;
+	Collider* right = nullptr;
+	Collider* left = nullptr;
 
 	uint steps = 0000;
 	uint limit = 00;
@@ -70,9 +73,10 @@ public:
 	bool canMove = true;
 	int currentScene;
 	uint numBox=0;
-
-
+	bool gravity = true;
+	void OnCollision(Collider* c1, Collider* C2)override;
 	bool playerMovement = true;
+	bool collision;
 };
 
 #endif //!__MODULE_PLAYER_H__

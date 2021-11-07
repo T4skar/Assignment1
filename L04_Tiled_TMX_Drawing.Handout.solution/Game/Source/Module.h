@@ -2,8 +2,9 @@
 #define __MODULE_H__
 
 #include "SString.h"
-#include "Collider.h"
 #include "PugiXml/src/pugixml.hpp"
+#include "Collider.h"
+//#include "ModulePhysics.h"
 
 class App;
 
@@ -12,7 +13,8 @@ class Module
 public:
 
 	Module() : active(false)
-	{}
+	{
+	}
 
 	void Init()
 	{
@@ -66,10 +68,11 @@ public:
 	{
 		return true;
 	}
-	virtual void OnCollision(Collider* c1, Collider* c2) 
-	{
+	virtual void OnCollision(Collider* c1, Collider* c2) {
 
 	}
+
+	
 public:
 
 	SString name;

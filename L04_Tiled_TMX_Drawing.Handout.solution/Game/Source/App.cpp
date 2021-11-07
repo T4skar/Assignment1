@@ -6,7 +6,8 @@
 #include "Audio.h"
 #include "Scene.h"
 #include "Map.h"
-#include "ModuleCollisions.h"
+#include"ModulePhysics.h"
+
 
 #include "ModulePlayer.h"
 #include "Animation.h"
@@ -32,7 +33,8 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	scene = new Scene();
 	map = new Map();
 	player = new ModulePlayer();
-	collisions = new  ModuleCollisions();
+	physics = new ModuleCollisions(true);
+	
 	//fade = new ModuleFadeToBlack();
 
 	// Ordered for awake / Start / Update
@@ -44,7 +46,8 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(scene);
 	AddModule(map);
 	AddModule(player);
-	AddModule(collisions);
+	AddModule(physics);
+	
 	//AddModule(fade);
 
 	// Render last to swap buffer

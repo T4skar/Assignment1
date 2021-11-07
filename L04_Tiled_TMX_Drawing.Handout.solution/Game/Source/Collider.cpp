@@ -1,9 +1,8 @@
 #include "Collider.h"
 
-
-Collider::Collider(SDL_Rect rectangle, Type type, Module* listener): rect(rectangle), type(type), listener(listener)
+Collider::Collider(SDL_Rect rectangle, Type type, Module* listener): rect(rectangle), type(type)
 {
-
+	listeners[0] = listener;
 }
 
 void Collider::SetPos(int x, int y)

@@ -7,8 +7,8 @@
 #include "Defs.h"
 #include "Log.h"
 #include "Animation.h"
-
-
+#include "Module.h"
+#include "ModulePhysics.h"
 //#include "ModuleCollisions.h"
 
 
@@ -86,9 +86,9 @@ bool ModulePlayer::Start()
 
 	 
 	// X, Y, anchura, altura, 
-	/*collider = App->collisions->AddCollider({ position.x-5, position.y, 24, 24 }, Collider::Type::PLAYER, this);*/
-
-	
+	collider = app->physics->AddCollider({ position.x, position.y, 130, 171 }, Collider::Type::PLAYER, this);
+	right = app->physics->AddCollider({ position.x, position.y, 24, 24 }, Collider::Type::PLAYER, this);
+	left = app->physics->AddCollider({ position.x, position.y, 24, 24 }, Collider::Type::PLAYER, this);
 	
 	return ret;
 }
@@ -97,34 +97,47 @@ bool ModulePlayer::Start()
 bool ModulePlayer::Update(float dt)
 {
 
-
-	
+	collider->SetPos(position.x, position.y);
+	right->SetPos(position.x+107, position.y);
+	left->SetPos(position.x, position.y);
+	if (gravity = true) {
+		position.y += 8;
+	}
 		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT )){		// mov Derecha
-			 position.x += 1;
+			
+			position.x += 1;
 			
 				if (currentAnimation != &rightAnim) {
 					rightAnim.Reset();
 					currentAnimation = &rightAnim;
+
 				}
+				
 			
 		}
 		else if ((app->input->GetKey(SDL_SCANCODE_SPACE)== KEY_REPEAT && app->input->GetKey(SDL_SCANCODE_D)==KEY_REPEAT)) {
+			
 			position.y -= 3;
 			position.x += 3;
+			
 			if (currentAnimation != &upAnim) {
 				upAnim.Reset();
 				currentAnimation = &upAnim;
+				
 			}
 		}
 		else if((app->input->GetKey(SDL_SCANCODE_SPACE)==KEY_DOWN)){
+			
 			position.y -= 8;
 			if (currentAnimation != &upAnim) {
 				upAnim.Reset();
 				currentAnimation = &upAnim;
 			}
+			
 		}
 		
 		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT )) {		// mov izquierda
+			
 			 position.x -= 1;
 			
 			
@@ -133,8 +146,10 @@ bool ModulePlayer::Update(float dt)
 					currentAnimation = &leftAnim;
 				}
 			
+			
 		}
 		else  {
+			
 			if (currentAnimation != &idleRightAnim) {
 				idleRightAnim.Reset();
 				currentAnimation = &idleRightAnim;
@@ -144,13 +159,14 @@ bool ModulePlayer::Update(float dt)
 		//	nPosY = position.y - 1;
 		//}
 	
-
-
+		
+		
 
 	// player stop the animation when stop walking
 
 	
 		
+	
 		if (currentAnimation == &upAnim) {
 			if (currentAnimation != &idleUpAnim) {
 				idleUpAnim.Reset();
@@ -158,9 +174,8 @@ bool ModulePlayer::Update(float dt)
 			}
 		}
 		
-	
-	
 
+		
 
 	currentAnimation->Update();
 
@@ -195,3 +210,36 @@ bool ModulePlayer::Update(float dt)
 
 	return true;
 }
+
+ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
+ {
+	 for (int i = 0; i <= MAX_COLLIDERS; i++) {
+		 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::GROUND) {
+			 gravity = false;
+			 collision = true;
+		 }
+		 if (collision == false) {
+
+			 gravity = true;
+		 }
+		 
+		 
+	 }
+	 
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

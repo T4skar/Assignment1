@@ -22,7 +22,6 @@ class Scene;
 class ModulePlayer;
 class Map;
 class ModuleFadeToBlack;
-class ModulePhysics;
 class ModuleRender;
 class ModuleCollisions;
 
@@ -106,7 +105,8 @@ public:
 	ModulePlayer* player;
 	Map* map;
 	ModuleFadeToBlack* fade;
-	ModuleCollisions* collisions;
+	ModuleCollisions* physics;
+	
 	
 
 
