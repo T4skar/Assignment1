@@ -75,7 +75,7 @@ bool ModuleCollisions::Update(float dt)
 			debug = true;
 		}
 	}
-
+	
 	return true;
 }
 

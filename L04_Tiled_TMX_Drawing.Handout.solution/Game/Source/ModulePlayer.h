@@ -51,7 +51,7 @@ public:
 	Animation leftAnim;
 	Animation rightAnim;
 	
-	
+	bool God = false;
 
 	Collider* collider = nullptr;
 	Collider* right = nullptr;

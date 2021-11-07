@@ -7,6 +7,7 @@
 #include "Scene.h"
 #include "Map.h"
 #include"ModulePhysics.h"
+#include "SceneCredits.h"
 
 
 #include "ModulePlayer.h"
@@ -34,6 +35,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	map = new Map();
 	player = new ModulePlayer();
 	physics = new ModuleCollisions(true);
+	LOGO = new SceneLogo(true);
 	
 	//fade = new ModuleFadeToBlack();
 
@@ -47,6 +49,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(map);
 	AddModule(player);
 	AddModule(physics);
+	AddModule(LOGO);
 	
 	//AddModule(fade);
 

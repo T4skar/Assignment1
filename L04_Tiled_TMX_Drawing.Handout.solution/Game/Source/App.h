@@ -24,6 +24,7 @@ class Map;
 class ModuleFadeToBlack;
 class ModuleRender;
 class ModuleCollisions;
+class SceneLogo;
 
 enum class update_status
 {
@@ -106,6 +107,7 @@ public:
 	Map* map;
 	ModuleFadeToBlack* fade;
 	ModuleCollisions* physics;
+	SceneLogo* LOGO;
 	
 	
 

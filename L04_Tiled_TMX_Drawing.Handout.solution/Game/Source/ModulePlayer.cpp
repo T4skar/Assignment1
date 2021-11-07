@@ -82,6 +82,7 @@ bool ModulePlayer::Start()
 	
 	currentAnimation = &idleRightAnim;
 	
+
 	// Posición inicial (depende del lvl)
 
 	 
@@ -96,13 +97,14 @@ bool ModulePlayer::Start()
 
 bool ModulePlayer::Update(float dt)
 {
-
+	/*active = false;*/
 	collider->SetPos(position.x, position.y);
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
-	if (gravity = true) {
-		position.y += 8;
+	if (gravity = true && collision == false) {
+		position.y += 2;
 	}
+	
 		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT )){		// mov Derecha
 			
 			position.x += 1;
@@ -148,19 +150,19 @@ bool ModulePlayer::Update(float dt)
 			
 			
 		}
-		else  {
-			
-			if (currentAnimation != &idleRightAnim) {
-				idleRightAnim.Reset();
-				currentAnimation = &idleRightAnim;
-			}
-		}
+		
 		//if ((app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT && nPosX == 0 && nPosY == 0)){		// mov abajo
 		//	nPosY = position.y - 1;
 		//}
 	
 		
-		
+		else {
+
+			if (currentAnimation != &idleRightAnim) {
+				idleRightAnim.Reset();
+				currentAnimation = &idleRightAnim;
+			}
+		}
 
 	// player stop the animation when stop walking
 
@@ -174,7 +176,7 @@ bool ModulePlayer::Update(float dt)
 			}
 		}
 		
-
+		
 		
 
 	currentAnimation->Update();
@@ -215,13 +217,11 @@ bool ModulePlayer::Update(float dt)
  {
 	 for (int i = 0; i <= MAX_COLLIDERS; i++) {
 		 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::GROUND) {
-			 gravity = false;
+			 
 			 collision = true;
+			 gravity = false;
 		 }
-		 if (collision == false) {
-
-			 gravity = true;
-		 }
+		
 		 
 		 
 	 }

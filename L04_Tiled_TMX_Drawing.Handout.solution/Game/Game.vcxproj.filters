@@ -19,6 +19,7 @@
     <ClCompile Include="Source\ModulePlayer.cpp" />
     <ClCompile Include="Source\ModulePhysics.cpp" />
     <ClCompile Include="Source\Collider.cpp" />
+    <ClCompile Include="Source\SceneCredits.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -58,6 +59,7 @@
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\ModulePhysics.h" />
     <ClInclude Include="Source\Collider.h" />
+    <ClInclude Include="Source\SceneCredits.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">
