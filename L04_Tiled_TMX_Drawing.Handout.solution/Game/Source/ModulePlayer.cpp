@@ -29,12 +29,12 @@ ModulePlayer::ModulePlayer() : Module()
 	idleRightAnim.loop = true;
 	idleRightAnim.speed = 0.003f;
 
-	rightAnim.PushBack({ 1657,684,124,135 });
-	rightAnim.PushBack({ 1790,680,125,135 });
-	rightAnim.PushBack({ 1922,680,127,135 });
-	rightAnim.PushBack({ 2060,680,127,135 });
-	rightAnim.PushBack({ 2187,680,124,135 });
-	rightAnim.PushBack({ 2315,680,127,135 });
+	rightAnim.PushBack({ 1657,687,124,151 });
+	rightAnim.PushBack({ 1790,682,125,151 });
+	rightAnim.PushBack({ 1922,682,127,151 });
+	rightAnim.PushBack({ 2060,682,127,151 });
+	rightAnim.PushBack({ 2187,682,124,151 });
+	rightAnim.PushBack({ 2315,682,127,151 });
 	rightAnim.loop = true;
 	rightAnim.speed = 0.02f;
 
@@ -99,16 +99,18 @@ bool ModulePlayer::Start()
 bool ModulePlayer::Update(float dt)
 {
 	/*active = false;*/
-	collider->SetPos(position.x, position.y);
+	collider->SetPos(position.x, position.y - 14);
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
 
-
-	if (gravity = true && collision == false) {
+	if (collision == true) {
+		gravity = false;
+	}
+	if (gravity = true  ) {
 		position.y += 2;
 	}
 	
-
+	
 
 		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT )){		// mov Derecha
 			
