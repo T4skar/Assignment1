@@ -103,12 +103,17 @@ bool ModulePlayer::Update(float dt)
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
 
+	if (gravity == false) {
+		position.y += 0;
+	}
 	if (collision == true) {
 		gravity = false;
 	}
-	if (gravity = true  ) {
+	if (gravity == true  ) {
 		position.y += 2;
 	}
+	if (collision == false) {
+		gravity = true;	}
 	
 	
 
@@ -219,9 +224,12 @@ bool ModulePlayer::Update(float dt)
 	
 		 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::GROUND) {
 			 
+			// app->player->position.y = 3198;
 			 collision = true;
 			 gravity = false;
+			 
 		 }
+		
 		
 
 		 
