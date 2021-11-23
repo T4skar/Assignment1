@@ -80,6 +80,8 @@ public:
 	void OnCollision(Collider* c1, Collider* C2)override;
 	bool playerMovement = true;
 	bool collision;
+	bool dead;
+	bool Win;
 };
 
 #endif //!__MODULE_PLAYER_H__

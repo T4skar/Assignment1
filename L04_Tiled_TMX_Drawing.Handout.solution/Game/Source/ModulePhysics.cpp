@@ -90,23 +90,23 @@ bool ModuleCollisions::Update(float dt)
 		app->player->gravity = 0.0f;
 		if (app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
 			app->player->position.y -= 1;
-			app->render->camera.y = -app->player->position.y;
+			app->render->camera.y = app->player->position.y;
 
 		}
 		if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
 			app->player->position.y = app->player->position.y;
-			app->render->camera.y = -app->player->position.y;
+			app->render->camera.y = app->player->position.y;
 
 		}
 		if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
 			app->player->position.x -= 1;
-			app->render->camera.x = -app->player->position.x;
+			app->render->camera.x = app->player->position.x;
 
 
 		}
 		if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
 			app->player->position.x += 1;
-			app->render->camera.x = -app->player->position.x;
+			app->render->camera.x = app->player->position.x;
 
 		}
 

@@ -115,7 +115,9 @@ bool ModulePlayer::Update(float dt)
 	if (collision == false) {
 		gravity = true;	}
 	
-	
+	if (dead == true) {
+		app->render->Blit(app->scene->lose, position.x, position.y, 0, 0);
+	}
 
 		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT )){		// mov Derecha
 			
@@ -151,7 +153,8 @@ bool ModulePlayer::Update(float dt)
 			}
 			if (jump == true) {
 
-				position.y -= 80;
+				position.y -= 150;
+				app->render->camera.y += 150;
 				gravity = true;
 			}
 		}
@@ -234,23 +237,21 @@ bool ModulePlayer::Update(float dt)
 
 		 
 	 
-	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::DEAD) {
+		if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::DEAD) {
 
-		 collision = true;
+		 dead = true;
 		 gravity = false;
-		 vida = false;
-		 if (vida == false) {
-			 app->render->Blit(app->scene->lose, position.x, position.y,0,0);
-		 }
-	 }
+		// vida = false;
+		 
+		}
 	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::WIN) {
 
-		 collision = true;
+		Win = true;
 		 gravity = false;
-		 vida = true;
-		 win = true;
+		 //vida = true;
+		
 
-		 if (win == true) {
+		 if (Win == true) {
 			 app->render->Blit(app->scene->Win, position.x, position.y,0,0);
 		 }
 	 }

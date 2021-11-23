@@ -68,8 +68,8 @@ bool Scene::Update(float dt)
 	if(app->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
 		app->SaveGameRequest();
 
-	if(app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
-		app->render->camera.y += 80;
+	/*if(app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
+		app->render->camera.y += 80;*/
 		
 
 	if(app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)
