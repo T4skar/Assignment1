@@ -18,6 +18,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::PLAYER][Collider::Type::DEAD] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::WIN] = true;
 	matrix[Collider::Type::WIN][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::LEFT][Collider::Type::GROUND] = true;
+	matrix[Collider::Type::RIGHT][Collider::Type::GROUND] = true;
 }
 
 // Destructor
@@ -56,7 +58,8 @@ bool ModuleCollisions::PreUpdate() {
 					{
 						c1->listeners[i]->OnCollision(c1, c2);
 					}
-					app->player->collision = false;
+					app->player->Right = true;
+					app->player->Left = true;
 				}
 				for (uint i = 0; i < MAX_LISTENERS; ++i)
 				{
@@ -64,6 +67,8 @@ bool ModuleCollisions::PreUpdate() {
 						c2->listeners[i]->OnCollision(c2, c1);
 					}
 					app->player->collision = false;
+					app->player->Right = true;
+					app->player->Left = true;
 				}
 			}
 		}
@@ -146,6 +151,12 @@ void ModuleCollisions::DebugDraw()
 			app->render->DrawRectangle(colliders[i]->rect, 80, 5, 150, alpha);
 			break;
 		case Collider::Type::WIN: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
+		case Collider::Type::RIGHT: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
+		case Collider::Type::LEFT: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
 		}

@@ -11,6 +11,8 @@ struct Collider
 	{
 		NONE = -1,
 		PLAYER,
+		RIGHT,
+		LEFT,
 		GROUND,
 		DEAD,
 		WIN,

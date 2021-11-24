@@ -82,6 +82,8 @@ public:
 	bool collision;
 	bool dead;
 	bool Win;
+	bool Right;
+	bool Left;
 };
 
 #endif //!__MODULE_PLAYER_H__
