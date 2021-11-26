@@ -255,7 +255,8 @@ public:
 		char* end = str + size;
 		while(*--end == ' ') *end = '\0';
 
-		// cut left --
+		// cut 
+	
 		char* start = str;
 		while(*++start == ' ');
 

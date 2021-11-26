@@ -13,6 +13,7 @@ struct Collider
 		PLAYER,
 		RIGHT,
 		LEFT,
+		UP,
 		GROUND,
 		DEAD,
 		WIN,

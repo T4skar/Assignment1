@@ -59,6 +59,7 @@ public:
 	Collider* collider = nullptr;
 	Collider* right = nullptr;
 	Collider* left = nullptr;
+	Collider* up = nullptr;
 
 	uint steps = 0000;
 	uint limit = 00;

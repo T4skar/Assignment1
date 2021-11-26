@@ -88,9 +88,10 @@ bool ModulePlayer::Start()
 
 	 
 	// X, Y, anchura, altura, 
-	collider = app->physics->AddCollider({ position.x, position.y, 130, 171 }, Collider::Type::PLAYER, this);
-	right = app->physics->AddCollider({ position.x, position.y, 24, 80 }, Collider::Type::RIGHT, this);
+	collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
+	right = app->physics->AddCollider({ position.x, position.y, 8, 80 }, Collider::Type::RIGHT, this);
 	left = app->physics->AddCollider({ position.x, position.y, 24, 80 }, Collider::Type::LEFT, this);
+	up = app->physics->AddCollider({ position.x, position.y, 24, 24 }, Collider::Type::UP, this);
 	
 	return ret;
 }
@@ -102,6 +103,7 @@ bool ModulePlayer::Update(float dt)
 	collider->SetPos(position.x, position.y - 14);
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
+	up->SetPos(position.x, position.y);
 
 	if (gravity == false) {
 		position.y += 0;
@@ -254,6 +256,13 @@ bool ModulePlayer::Update(float dt)
 		 gravity = false;
 		// vida = false;
 		 
+		}
+		if (c1->type == Collider::Type::UP && c2->type == Collider::Type::GROUND) {
+
+			dead = true;
+			gravity = false;
+			// vida = false;
+
 		}
 	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::WIN) {
 

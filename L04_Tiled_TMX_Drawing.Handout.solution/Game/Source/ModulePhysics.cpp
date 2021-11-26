@@ -19,7 +19,11 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::PLAYER][Collider::Type::WIN] = true;
 	matrix[Collider::Type::WIN][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::LEFT][Collider::Type::GROUND] = true;
+	matrix[Collider::Type::GROUND][Collider::Type::LEFT] = true;
 	matrix[Collider::Type::RIGHT][Collider::Type::GROUND] = true;
+	matrix[Collider::Type::GROUND][Collider::Type::RIGHT] = true;
+	matrix[Collider::Type::UP][Collider::Type::GROUND] = true;
+	matrix[Collider::Type::GROUND][Collider::Type::UP] = true;
 }
 
 // Destructor
@@ -157,6 +161,9 @@ void ModuleCollisions::DebugDraw()
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
 		case Collider::Type::LEFT: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
+		case Collider::Type::UP: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
 		}
