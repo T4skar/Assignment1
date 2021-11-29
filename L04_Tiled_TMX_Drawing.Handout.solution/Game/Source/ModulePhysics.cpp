@@ -62,6 +62,7 @@ bool ModuleCollisions::PreUpdate() {
 					{
 						c1->listeners[i]->OnCollision(c1, c2);
 					}
+					app->player->collision = false;
 					app->player->Right = true;
 					app->player->Left = true;
 				}

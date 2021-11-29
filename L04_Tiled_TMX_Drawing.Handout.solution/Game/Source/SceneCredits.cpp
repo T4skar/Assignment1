@@ -26,7 +26,7 @@ bool SceneLogo::Start()
 
 	bool ret = true;
 
-	logo = app->tex->Load("Assets/textures/test.png");
+	logo = app->tex->Load("Assets/textures/logotroll.png");
 
 	
 

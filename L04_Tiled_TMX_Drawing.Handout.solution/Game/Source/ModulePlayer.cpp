@@ -105,27 +105,50 @@ bool ModulePlayer::Update(float dt)
 	left->SetPos(position.x, position.y);
 	up->SetPos(position.x, position.y);
 
+	//desactivacion gravedad
 	if (gravity == false) {
 		position.y += 0;
 	}
+
+
+	//colision con parte superior plataformas
 	if (collision == true) {
 		gravity = false;
 	}
+
+
+	//activacion gravedad
 	if (gravity == true  ) {
 		position.y += 2;
 	}
+
+
+	//se activa la gravedad si ya no colisiona
 	if (collision == false) {
-		gravity = true;	}
+		gravity = true;	
+	}
+
 	
+
+	//pantalla de lose
 	if (dead == true) {
 		app->render->Blit(app->scene->lose, position.x, position.y, 0, 0);
 	}
-	if (Left == false && Right == false) {
-		
+
+
+	//no avanzar horizontalmente
 	
+
+	//pantalla victoria
+	if (Win == true) {
+		app->render->Blit(app->scene->Win, position.x, position.y, 0, 0);
 	}
 
-		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)) {		// mov Derecha
+
+
+
+
+		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)&&Right==true) {		
 
 			position.x += 1;
 
@@ -137,11 +160,11 @@ bool ModulePlayer::Update(float dt)
 
 
 		}
-		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT && app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT && app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)) {
+		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)) {
 			jump = true;
 			if (jump == true) {
 				position.y -= 80;
-				position.x -= 3;
+				position.x += 3;
 			}
 			if (currentAnimation != &upAnim) {
 				upAnim.Reset();
@@ -164,8 +187,20 @@ bool ModulePlayer::Update(float dt)
 				gravity = true;
 			}
 		}
+		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)){
+			jump = true;
+			if (jump == true) {
+				position.y -= 80;
+				position.x -= 3;
+			}
+			if (currentAnimation != &upAnim) {
+				upAnim.Reset();
+				currentAnimation = &upAnim;
 
-		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)) {		// mov izquierda
+			}
+		}
+
+		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&Left==true) {		// mov izquierda
 
 			position.x -= 1;
 
@@ -259,10 +294,10 @@ bool ModulePlayer::Update(float dt)
 		}
 		if (c1->type == Collider::Type::UP && c2->type == Collider::Type::GROUND) {
 
-			dead = true;
-			gravity = false;
-			// vida = false;
-
+			
+			//aqui va el bumper
+			
+			
 		}
 	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::WIN) {
 
@@ -271,9 +306,7 @@ bool ModulePlayer::Update(float dt)
 		 //vida = true;
 		
 
-		 if (Win == true) {
-			 app->render->Blit(app->scene->Win, position.x, position.y,0,0);
-		 }
+		 
 	 }
 	
 	
