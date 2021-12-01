@@ -119,7 +119,7 @@ bool ModuleCollisions::Update(float dt)
 			app->render->camera.x = app->player->position.x;
 
 		}
-
+		
 	}
 	return true;
 }
@@ -171,6 +171,8 @@ void ModuleCollisions::DebugDraw()
 	}
 	
 }
+
+
 
 // Called before quitting
 bool ModuleCollisions::CleanUp()

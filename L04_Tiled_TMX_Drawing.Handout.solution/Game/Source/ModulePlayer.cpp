@@ -9,6 +9,7 @@
 #include "Animation.h"
 #include "Module.h"
 #include "ModulePhysics.h"
+#include "Map.h"
 //#include "ModuleCollisions.h"
 
 
@@ -183,7 +184,7 @@ bool ModulePlayer::Update(float dt)
 			if (jump == true) {
 
 				position.y -= 150;
-				app->render->camera.y += 150;
+				
 				gravity = true;
 			}
 		}
@@ -313,8 +314,33 @@ bool ModulePlayer::Update(float dt)
  }
 
 
+ void ModulePlayer::set_camera()
+ {
+	 //Center the camera over the dot
+	 app->render->camera.x = (position.x + 127 / 2) - 30 / 2;
+	 app->render->camera.y = (position.y + 170 / 2) - 30 / 2;
+
+	 //Keep the camera in bounds.
+	 if (app->render->camera.x < 0)
+	 {
+		 app->render->camera.x = 0;
+	 }
+	 if (app->render->camera.y < 0)
+	 {
+		 app->render->camera.y = 0;
+	 }
+	 if (app->render->camera.x > app->map->mapData.tileWidth - app->render->camera.w)
+	 {
+		 app->render->camera.x = app->map->mapData.tileWidth - app->render->camera.w;
+	 }
+	 if (app->render->camera.y > app->map->mapData.tileHeight - app->render->camera.h)
+	 {
+		 app->render->camera.y = app->map->mapData.tileHeight - app->render->camera.h;
+	 }
+ }
 
 
+ 
 
 
 

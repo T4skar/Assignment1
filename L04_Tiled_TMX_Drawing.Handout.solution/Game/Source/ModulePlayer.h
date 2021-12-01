@@ -6,7 +6,8 @@
 #include "Scene.h"
 #include "Animation.h"
 #include "Point.h"
-
+#include "Map.h"
+#include "Render.h"
 
 struct SDL_Texture;
 //struct Collider;
@@ -85,6 +86,9 @@ public:
 	bool Win;
 	bool Right;
 	bool Left;
+
+	//Sets the camera over the dot
+	void set_camera();
 };
 
 #endif //!__MODULE_PLAYER_H__

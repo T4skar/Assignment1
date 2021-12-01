@@ -1,5 +1,5 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  ModulePlayer.cpp
-C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
-C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Game.vcxproj -> C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
+  Scene.cpp
+C:\Users\Joandr4\Documents\GitHub\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\Joandr4\Documents\GitHub\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Game.vcxproj -> C:\Users\Joandr4\Documents\GitHub\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
