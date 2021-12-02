@@ -149,7 +149,7 @@ bool ModulePlayer::Update(float dt)
 
 
 
-		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)&&Right==true) {		
+		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)&&Right==false) {		
 
 			position.x += 1;
 
@@ -278,11 +278,11 @@ bool ModulePlayer::Update(float dt)
 		 }
 		
 		 if (c1->type == Collider::Type::RIGHT && c2->type == Collider::Type::GROUND) {
-			 Right = false;
+			 Right = true;
 		 }
 
 		 if (c1->type == Collider::Type::LEFT && c2->type == Collider::Type::GROUND) {
-			 Left=false;
+			 Left=true;
 		 }
 		 
 	 
