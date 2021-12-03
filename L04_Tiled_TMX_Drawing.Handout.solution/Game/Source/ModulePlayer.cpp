@@ -201,7 +201,7 @@ bool ModulePlayer::Update(float dt)
 			}
 		}
 
-		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&Left==true) {		// mov izquierda
+		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&Left==false) {		// mov izquierda
 
 			position.x -= 1;
 

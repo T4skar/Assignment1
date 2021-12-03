@@ -159,10 +159,10 @@ void ModuleCollisions::DebugDraw()
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
 		case Collider::Type::RIGHT: // green
-			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			app->render->DrawRectangle(colliders[i]->rect, 65, 2, 0, alpha);
 			break;
 		case Collider::Type::LEFT: // green
-			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			app->render->DrawRectangle(colliders[i]->rect, 65, 2, 0, alpha);
 			break;
 		case Collider::Type::UP: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
