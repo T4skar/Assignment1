@@ -30,29 +30,29 @@ ModulePlayer::ModulePlayer() : Module()
 	idleRightAnim.loop = true;
 	idleRightAnim.speed = 0.003f;
 
-	rightAnim.PushBack({ 1657,687,124,151 });
-	rightAnim.PushBack({ 1790,682,125,151 });
-	rightAnim.PushBack({ 1922,682,127,151 });
-	rightAnim.PushBack({ 2060,682,127,151 });
-	rightAnim.PushBack({ 2187,682,124,151 });
-	rightAnim.PushBack({ 2315,682,127,151 });
+	rightAnim.PushBack({ 1657,687,110,170 });
+	rightAnim.PushBack({ 1790,682,110,170 });
+	rightAnim.PushBack({ 1922,682,110,170 });
+	rightAnim.PushBack({ 2060,682,110,170 });
+	rightAnim.PushBack({ 2187,682,110,170 });
+	rightAnim.PushBack({ 2315,682,110,170 });
 	rightAnim.loop = true;
 	rightAnim.speed = 0.02f;
 
-	upAnim.PushBack({ 52, 924,124,135 });
-	upAnim.PushBack({ 188,887,124,135 });
-	upAnim.PushBack({ 309,920,124,135 });
-	upAnim.PushBack({ 482,893,124,135 });
+	upAnim.PushBack({ 52, 924,110,170 });
+	upAnim.PushBack({ 188,887,110,170 });
+	upAnim.PushBack({ 309,920,110,170 });
+	upAnim.PushBack({ 482,893,110,170 });
 	
 	upAnim.loop = true;
 	upAnim.speed = 0.02f;
 
-	leftAnim.PushBack({ 1961,1381,127,147 });
-	leftAnim.PushBack({ 2094,1381,124,147 });
-	leftAnim.PushBack({ 2215,1381,124,147 });
-	leftAnim.PushBack({ 2355,1381,127,147 });
-	leftAnim.PushBack({ 2489,1381,124,147});
-	leftAnim.PushBack({ 2625,1381,124,147});
+	leftAnim.PushBack({ 1961,1381,110,170 });
+	leftAnim.PushBack({ 2094,1381,110,170 });
+	leftAnim.PushBack({ 2215,1381,110,170 });
+	leftAnim.PushBack({ 2355,1381,110,170 });
+	leftAnim.PushBack({ 2489,1381,110,170 });
+	leftAnim.PushBack({ 2625,1381,110,170 });
 	
 	leftAnim.loop = true;
 	leftAnim.speed = 0.02f;
@@ -133,7 +133,8 @@ bool ModulePlayer::Update(float dt)
 
 	//pantalla de lose
 	if (dead == true) {
-		app->render->Blit(app->scene->lose, position.x, position.y, 0, 0);
+
+		app->render->DrawTexture(app->scene->lose, app->render->camera.x, app->render->camera.y);
 	}
 
 
@@ -142,7 +143,7 @@ bool ModulePlayer::Update(float dt)
 
 	//pantalla victoria
 	if (Win == true) {
-		app->render->Blit(app->scene->Win, position.x, position.y, 0, 0);
+		app->render->DrawTexture(app->scene->Win, app->render->camera.x, app->render->camera.y);
 	}
 
 
@@ -161,18 +162,21 @@ bool ModulePlayer::Update(float dt)
 
 
 		}
-		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)) {
+		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&left==false) {
 			jump = true;
 			if (jump == true) {
 				position.y -= 80;
-				position.x += 3;
+				position.x -= 3;
 			}
-			if (currentAnimation != &upAnim) {
-				upAnim.Reset();
-				currentAnimation = &upAnim;
+			if (currentAnimation == &upAnim) {
+				if (currentAnimation != &idleUpAnim) {
+					idleUpAnim.Reset();
+					currentAnimation = &idleUpAnim;
+				}
+			}
 
-			}
 		}
+
 		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)) {
 			jump = true;
 
@@ -194,11 +198,13 @@ bool ModulePlayer::Update(float dt)
 				position.y -= 80;
 				position.x -= 3;
 			}
-			if (currentAnimation != &upAnim) {
-				upAnim.Reset();
-				currentAnimation = &upAnim;
-
+			if (currentAnimation == &upAnim) {
+				if (currentAnimation != &idleUpAnim) {
+					idleUpAnim.Reset();
+					currentAnimation = &idleUpAnim;
+				}
 			}
+
 		}
 
 		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&Left==false) {		// mov izquierda
@@ -234,13 +240,7 @@ bool ModulePlayer::Update(float dt)
 
 
 
-		if (currentAnimation == &upAnim) {
-			if (currentAnimation != &idleUpAnim) {
-				idleUpAnim.Reset();
-				currentAnimation = &idleUpAnim;
-			}
-		}
-
+		
 	
 		
 
@@ -289,7 +289,7 @@ bool ModulePlayer::Update(float dt)
 		if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::DEAD) {
 
 		 dead = true;
-		 gravity = false;
+		 
 		// vida = false;
 		 
 		}
