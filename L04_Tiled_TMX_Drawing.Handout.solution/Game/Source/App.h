@@ -25,7 +25,7 @@ class ModuleFadeToBlack;
 class ModuleRender;
 class ModuleCollisions;
 class SceneLogo;
-
+class ModuleCamera;
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
