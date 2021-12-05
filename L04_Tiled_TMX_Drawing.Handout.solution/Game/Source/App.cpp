@@ -8,6 +8,7 @@
 #include "Map.h"
 #include"ModulePhysics.h"
 #include "SceneCredits.h"
+#include "ModuleEnemy.h"
 
 
 #include "ModulePlayer.h"
@@ -36,7 +37,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	player = new ModulePlayer();
 	physics = new ModuleCollisions(true);
 	LOGO = new SceneLogo(true);
-	
+	enemy = new ModuleEnemy();
 	//fade = new ModuleFadeToBlack();
 
 	// Ordered for awake / Start / Update
@@ -50,6 +51,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(player);
 	AddModule(physics);
 	AddModule(LOGO);
+	AddModule(enemy);
 	
 	//AddModule(fade);
 

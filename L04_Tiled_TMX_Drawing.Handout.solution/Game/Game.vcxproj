@@ -90,6 +90,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ModuleCamera.cpp" />
+    <ClCompile Include="ModuleEnemy.cpp" />
     <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\App.cpp" />
@@ -104,6 +105,7 @@
     <ClCompile Include="Source\Textures.cpp" />
     <ClCompile Include="Source\Window.cpp" />
     <ClInclude Include="ModuleCamera.h" />
+    <ClInclude Include="ModuleEnemy.h" />
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\Map.h" />
