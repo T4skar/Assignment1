@@ -59,6 +59,13 @@ bool Scene::PreUpdate()
 // Called each loop iteration
 bool Scene::Update(float dt)
 {
+
+	
+
+		
+
+	
+	
 	app->render->DrawTexture(fondo, -900, -200);
 	/*active = false;*/
     // L02: DONE 3: Request Load / Save when pressing L/S
@@ -69,10 +76,10 @@ bool Scene::Update(float dt)
 		app->SaveGameRequest();
 
 
-	/*if (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
-		app->render->camera.y += 80;*/
+	if (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
+		app->render->camera.y += 80;
 		
-	/*if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)
+	if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)
 		app->render->camera.y -=1;
 
 	if(app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)
@@ -80,7 +87,7 @@ bool Scene::Update(float dt)
 
 	if(app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
 		app->render->camera.x -=1;
-	*/
+	
 	if (app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN && app->scene->dLose == false) {
 
 		dWin = true;

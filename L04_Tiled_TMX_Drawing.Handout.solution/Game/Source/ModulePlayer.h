@@ -84,8 +84,8 @@ public:
 	bool collision;
 	bool dead;
 	bool Win;
-	bool Right;
-	bool Left;
+	bool Right=true;
+	bool Left=true;
 
 	//Sets the camera over the dot
 	void set_camera();

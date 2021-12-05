@@ -30,12 +30,12 @@ ModulePlayer::ModulePlayer() : Module()
 	idleRightAnim.loop = true;
 	idleRightAnim.speed = 0.003f;
 
-	rightAnim.PushBack({ 1657,687,110,170 });
-	rightAnim.PushBack({ 1790,682,110,170 });
-	rightAnim.PushBack({ 1922,682,110,170 });
-	rightAnim.PushBack({ 2060,682,110,170 });
-	rightAnim.PushBack({ 2187,682,110,170 });
-	rightAnim.PushBack({ 2315,682,110,170 });
+	rightAnim.PushBack({ 1662,687,110,170 });
+	rightAnim.PushBack({ 1795,682,110,170 });
+	rightAnim.PushBack({ 1927,682,110,170 });
+	rightAnim.PushBack({ 2065,682,110,170 });
+	rightAnim.PushBack({ 2192,682,110,170 });
+	rightAnim.PushBack({ 2320,682,110,170 });
 	rightAnim.loop = true;
 	rightAnim.speed = 0.02f;
 
@@ -86,7 +86,7 @@ bool ModulePlayer::Start()
 	
 
 	// Posición inicial (depende del lvl)
-
+	//app->audio->PlayMusic("Assets/audio/music/lose.ogg");
 	 
 	// X, Y, anchura, altura, 
 	collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
@@ -100,7 +100,10 @@ bool ModulePlayer::Start()
 
 bool ModulePlayer::Update(float dt)
 {
-	/*active = false;*/
+	collision = false;
+	/*Right = true;
+	Left = true;*/
+	
 	collider->SetPos(position.x, position.y - 14);
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
@@ -133,8 +136,10 @@ bool ModulePlayer::Update(float dt)
 
 	//pantalla de lose
 	if (dead == true) {
-
-		app->render->DrawTexture(app->scene->lose, app->render->camera.x, app->render->camera.y);
+		app->render->camera.x = 0;
+		app->render->camera.y = 0;
+		app->render->DrawTexture(app->scene->lose, 200,100);
+		
 	}
 
 
@@ -146,23 +151,26 @@ bool ModulePlayer::Update(float dt)
 		app->render->DrawTexture(app->scene->Win, app->render->camera.x, app->render->camera.y);
 	}
 
+	/*if (Right == true) {
+		position.x = NULL;
+	}*/
+	 
 
 
 
-
-		if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)&&Right==false) {		
+		else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
 
 			position.x += 1;
+
 
 			if (currentAnimation != &rightAnim) {
 				rightAnim.Reset();
 				currentAnimation = &rightAnim;
-
 			}
 
 
 		}
-		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&left==false) {
+		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&Left == true) {
 			jump = true;
 			if (jump == true) {
 				position.y -= 80;
@@ -207,7 +215,7 @@ bool ModulePlayer::Update(float dt)
 
 		}
 
-		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&Left==false) {		// mov izquierda
+		else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left ==true) {		// mov izquierda
 
 			position.x -= 1;
 
@@ -219,14 +227,6 @@ bool ModulePlayer::Update(float dt)
 
 
 		}
-
-	
-
-		//if ((app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT && nPosX == 0 && nPosY == 0)){		// mov abajo
-		//	nPosY = position.y - 1;
-		//}
-
-
 		else {
 
 			if (currentAnimation != &idleRightAnim) {
@@ -278,18 +278,21 @@ bool ModulePlayer::Update(float dt)
 		 }
 		
 		 if (c1->type == Collider::Type::RIGHT && c2->type == Collider::Type::GROUND) {
-			 Right = true;
+			 Right = false;
+			 LOG("colisiona weon");
 		 }
+		 
 
 		 if (c1->type == Collider::Type::LEFT && c2->type == Collider::Type::GROUND) {
-			 Left=true;
+			 Left = false;
+			 
 		 }
 		 
 	 
 		if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::DEAD) {
 
 		 dead = true;
-		 
+		 gravity = false;
 		// vida = false;
 		 
 		}

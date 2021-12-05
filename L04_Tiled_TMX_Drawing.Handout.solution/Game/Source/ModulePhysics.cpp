@@ -62,18 +62,14 @@ bool ModuleCollisions::PreUpdate() {
 					{
 						c1->listeners[i]->OnCollision(c1, c2);
 					}
-					app->player->collision = false;
-					app->player->Right = true;
-					app->player->Left = true;
+					
 				}
 				for (uint i = 0; i < MAX_LISTENERS; ++i)
 				{
 					if (c2->listeners[i] != nullptr) {
 						c2->listeners[i]->OnCollision(c2, c1);
 					}
-					app->player->collision = false;
-					app->player->Right = false;
-					app->player->Left = false;
+					
 				}
 			}
 		}
