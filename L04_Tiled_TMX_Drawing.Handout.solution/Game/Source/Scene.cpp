@@ -37,7 +37,7 @@ bool Scene::Awake()
 bool Scene::Start()
 {
 	// L03: DONE: Load map
-	fondo = app->tex->Load("Assets/Sprites/fairy.png");
+	fondo = app->tex->Load("Assets/Sprites/fairy_tail.png");
 	app->map->Load("mapadef.tmx");
 	app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
@@ -118,6 +118,7 @@ bool Scene::Update(float dt)
 
 	return true;
 }
+
 
 // Called each loop iteration
 bool Scene::PostUpdate()

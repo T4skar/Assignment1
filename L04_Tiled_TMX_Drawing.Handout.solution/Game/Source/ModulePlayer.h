@@ -45,7 +45,8 @@ public:
 	Animation* currentAnimation;
 
 	// A set of animations
-	Animation idleLeftAnim;
+	Animation idle
+		;
 	Animation idleRightAnim;
 	Animation idleUpAnim;
 	Animation idleDownAnim;
@@ -53,6 +54,8 @@ public:
 	Animation downAnim;
 	Animation leftAnim;
 	Animation rightAnim;
+	Animation atackRightAnim;
+	Animation atackLeftAnim;
 	
 	bool God = false;
 	bool vida = true;

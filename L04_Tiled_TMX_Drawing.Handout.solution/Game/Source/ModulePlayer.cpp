@@ -57,8 +57,13 @@ ModulePlayer::ModulePlayer() : Module()
 	leftAnim.loop = true;
 	leftAnim.speed = 0.02f;
 
-	
+	atackRightAnim.PushBack({907, 1272, 110, 170});
+	atackRightAnim.PushBack({1243, 1272, 110, 170});
+	atackRightAnim.PushBack({1414, 1273, 110, 170});
+	atackRightAnim.PushBack({1567, 1275, 110, 170});
 
+	atackRightAnim.loop = true;
+	atackRightAnim.speed = 0.002f;
 }
 
 
@@ -135,12 +140,12 @@ bool ModulePlayer::Update(float dt)
 	
 
 	//pantalla de lose
-	if (dead == true) {
+	/*if (dead == true) {
 		app->render->camera.x = 0;
 		app->render->camera.y = 0;
 		app->render->DrawTexture(app->scene->lose, 200,100);
 		
-	}
+	}*/
 
 
 	//no avanzar horizontalmente
@@ -155,10 +160,14 @@ bool ModulePlayer::Update(float dt)
 		position.x = NULL;
 	}*/
 	 
+	if (Right == false) {
+		position.x -= 0.1;
+	}
+	if (Left == false) {
+		position.x += 0.1;
+	}
 
-
-
-		else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
+		 if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
 
 			position.x += 1;
 
@@ -170,11 +179,11 @@ bool ModulePlayer::Update(float dt)
 
 
 		}
-		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)&&Left == true) {
+		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)&&Right == true) {
 			jump = true;
 			if (jump == true) {
-				position.y -= 80;
-				position.x -= 3;
+				position.y -= 150;
+				position.x += 3;
 			}
 			if (currentAnimation == &upAnim) {
 				if (currentAnimation != &idleUpAnim) {
@@ -203,7 +212,7 @@ bool ModulePlayer::Update(float dt)
 		else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)){
 			jump = true;
 			if (jump == true) {
-				position.y -= 80;
+				position.y -= 150;
 				position.x -= 3;
 			}
 			if (currentAnimation == &upAnim) {
@@ -226,6 +235,18 @@ bool ModulePlayer::Update(float dt)
 			}
 
 
+		 }
+		else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN)) {
+			
+			 position.x += 1;
+			
+					 if (currentAnimation != &atackRightAnim) {
+						 atackRightAnim.Reset();
+						 currentAnimation = &atackRightAnim;
+					 }
+		
+			
+			
 		}
 		else {
 
