@@ -43,8 +43,8 @@ bool Scene::Start()
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
 
-	app->player->position.x = 300;
-	app->player->position.y = 3098;
+	app->player->position.x = 30;
+	app->player->position.y = 309;
 	
 
 	return true;
@@ -76,7 +76,7 @@ bool Scene::Update(float dt)
 		app->SaveGameRequest();
 
 
-	if (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
+	/*if (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
 		app->render->camera.y += 80;
 		
 	if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)
@@ -86,7 +86,7 @@ bool Scene::Update(float dt)
 		app->render->camera.x +=1;
 
 	if(app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
-		app->render->camera.x -=1;
+		app->render->camera.x -=1;*/
 	
 	if (app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN && app->scene->dLose == false) {
 

@@ -51,8 +51,8 @@ bool Render::Awake(pugi::xml_node& config)
 			camera.y = 0;
 		}
 		else {*/
-			camera.x = 300;
-			camera.y = -3000;
+			/*camera.x = 300;
+			camera.y = -3000;*/
 		//}
 		
 
@@ -79,6 +79,37 @@ bool Render::PreUpdate()
 
 bool Render::Update(float dt)
 {
+	
+	if (app->player->dead == false && app->player->Win == false) {
+		camera.x = (-app->player->position.x) + app->win->screenSurface->w / 2;
+		camera.y = (-app->player->position.y) + app->win->screenSurface->h / 3;
+	}
+	else {
+		camera.x = 0;
+		camera.y = 0;
+	}
+		//Center the camera over the dot
+		
+		
+		//Keep the camera in bounds.
+	/*	if (camera.x < 0)
+		{
+			camera.x = 0;
+		}
+		if (camera.y < 0)
+		{
+			camera.y = 0;
+		}*/
+
+
+		/*if (camera.x > app->map->mapData.tileWidth - camera.w)
+		{
+			camera.x = app->map->mapData.tileWidth - camera.w;
+		}
+		if (camera.y > app->map->mapData.tileHeight - camera.h)
+		{
+			camera.y = app->map->mapData.tileHeight - camera.h;
+		}*/
 	
 
 	return true;

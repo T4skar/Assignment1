@@ -61,6 +61,8 @@ bool ModuleCollisions::PreUpdate() {
 					if (c1->listeners[i] != nullptr)
 					{
 						c1->listeners[i]->OnCollision(c1, c2);
+						app->player->Right = true;
+						app->player->Left = true;
 					}
 					
 				}
@@ -68,6 +70,8 @@ bool ModuleCollisions::PreUpdate() {
 				{
 					if (c2->listeners[i] != nullptr) {
 						c2->listeners[i]->OnCollision(c2, c1);
+						app->player->Right = true;
+						app->player->Left = true;
 					}
 					
 				}
@@ -89,34 +93,34 @@ bool ModuleCollisions::Update(float dt)
 		}
 	}
 	
-	if (app->input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN) {
-		
-		app->player->God = !app->player->God;
+	//if (app->input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN) {
+	//	
+	//	app->player->God = !app->player->God;
 
-		app->player->gravity = 0.0f;
-		if (app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
-			app->player->position.y -= 1;
-			app->render->camera.y = app->player->position.y;
+	//	app->player->gravity = 0.0f;
+	//	if (app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
+	//		app->player->position.y -= 1;
+	//		
 
-		}
-		if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
-			app->player->position.y = app->player->position.y;
-			app->render->camera.y = app->player->position.y;
+	//	}
+	//	if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
+	//		app->player->position.y = app->player->position.y;
+	//		app->render->camera.y = app->player->position.y;
 
-		}
-		if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-			app->player->position.x -= 1;
-			app->render->camera.x = app->player->position.x;
+	//	}
+	//	if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
+	//		app->player->position.x -= 1;
+	//		app->render->camera.x = app->player->position.x;
 
 
-		}
-		if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
-			app->player->position.x += 1;
-			app->render->camera.x = app->player->position.x;
+	//	}
+	//	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
+	//		app->player->position.x += 1;
+	//		
 
-		}
-		
-	}
+	//	}
+	//	
+	//}
 	return true;
 }
 

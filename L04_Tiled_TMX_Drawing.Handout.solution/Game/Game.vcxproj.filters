@@ -20,7 +20,6 @@
     <ClCompile Include="Source\ModulePhysics.cpp" />
     <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\SceneCredits.cpp" />
-    <ClCompile Include="ModuleCamera.cpp" />
     <ClCompile Include="ModuleEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -62,7 +61,6 @@
     <ClInclude Include="Source\ModulePhysics.h" />
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\SceneCredits.h" />
-    <ClInclude Include="ModuleCamera.h" />
     <ClInclude Include="ModuleEnemy.h" />
   </ItemGroup>
   <ItemGroup>

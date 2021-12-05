@@ -155,23 +155,25 @@ bool ModulePlayer::Update(float dt)
 
 	//pantalla victoria
 	if (Win == true) {
-		app->render->DrawTexture(app->scene->Win, app->render->camera.x, app->render->camera.y);
+		app->render->camera.x = 0;
+		app->render->camera.y = 0;
+		app->render->DrawTexture(app->scene->Win, 200, 100);
 	}
 
 	/*if (Right == true) {
 		position.x = NULL;
 	}*/
 	 
-	if (Right == false) {
+	/*if (Right == false) {
 		position.x -= 0.001;
 	}
 	if (Left == false) {
 		position.x += 0.001;
-	}
+	}*/
 	
 
 
-	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
+	 if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
 
 		position.x += 1;
 
@@ -186,8 +188,8 @@ bool ModulePlayer::Update(float dt)
 	  if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)&&Right == true) {
 			jump = true;
 			if (jump == true) {
-				position.y -= 150;
-				position.x += 20;
+				position.y -= 500;
+				position.x += 80;
 			}
 			
 				if (currentAnimation != &rightAnim) {
@@ -201,7 +203,7 @@ bool ModulePlayer::Update(float dt)
 			jump = true;
 			if (jump == true) {
 
-				position.y -= 150;
+				position.y -= 500;
 
 				gravity = true;
 			}
@@ -215,8 +217,8 @@ bool ModulePlayer::Update(float dt)
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true){
 			jump = true;
 			if (jump == true) {
-				position.y -= 150;
-				position.x -= 3;
+				position.y -= 500;
+				position.x -= 80;
 			}
 			if (currentAnimation == &upAnim) {
 				if (currentAnimation != &idleUpAnim) {
@@ -341,30 +343,7 @@ bool ModulePlayer::Update(float dt)
  }
 
 
- void ModulePlayer::set_camera()
- {
-	 //Center the camera over the dot
-	 app->render->camera.x = (position.x + 127 / 2) - 30 / 2;
-	 app->render->camera.y = (position.y + 170 / 2) - 30 / 2;
 
-	 //Keep the camera in bounds.
-	 if (app->render->camera.x < 0)
-	 {
-		 app->render->camera.x = 0;
-	 }
-	 if (app->render->camera.y < 0)
-	 {
-		 app->render->camera.y = 0;
-	 }
-	 if (app->render->camera.x > app->map->mapData.tileWidth - app->render->camera.w)
-	 {
-		 app->render->camera.x = app->map->mapData.tileWidth - app->render->camera.w;
-	 }
-	 if (app->render->camera.y > app->map->mapData.tileHeight - app->render->camera.h)
-	 {
-		 app->render->camera.y = app->map->mapData.tileHeight - app->render->camera.h;
-	 }
- }
 
 
  
