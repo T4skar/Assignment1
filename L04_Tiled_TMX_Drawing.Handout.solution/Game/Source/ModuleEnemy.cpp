@@ -81,7 +81,7 @@ bool ModuleEnemy::Start()
 
 	
 	// X, Y, anchura, altura, 
-	collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
+	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
 
 
 	return ret;

@@ -45,8 +45,7 @@ public:
 	Animation* currentAnimation;
 
 	// A set of animations
-	Animation idle
-		;
+	Animation idle;
 	Animation idleRightAnim;
 	Animation idleUpAnim;
 	Animation idleDownAnim;

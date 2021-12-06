@@ -23,10 +23,10 @@ public:
 	bool Start() override;
 
 
-	// Processes new input and handles player movement
-	bool Update(float dt);
-	// Performs the render call of the player sprite
-	bool PostUpdate();
+	
+	/*bool Update(float dt);
+	
+	bool PostUpdate();*/
 
 public:
 	List<SDL_Texture*> player;
@@ -45,8 +45,7 @@ public:
 	Animation* currentAnimation;
 
 	// A set of animations
-	Animation idle
-		;
+	Animation idle;
 	Animation idleRightAnim;
 	Animation idleUpAnim;
 	Animation idleDownAnim;
@@ -82,7 +81,7 @@ public:
 	int currentScene;
 	uint numBox = 0;
 	bool gravity = true;
-	void OnCollision(Collider* c1, Collider* C2)override;
+	//void OnCollision(Collider* c1, Collider* C2)override;
 	bool playerMovement = true;
 	bool collision;
 	bool dead;
