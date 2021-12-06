@@ -44,7 +44,7 @@ bool Scene::Start()
 	Win = app->tex->Load("Assets/Sprites/win.png");
 
 	app->player->position.x = 250;
-	app->player->position.y = 309;
+	app->player->position.y = 760;
 	
 
 	return true;

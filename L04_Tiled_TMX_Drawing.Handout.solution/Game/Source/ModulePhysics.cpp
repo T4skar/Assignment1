@@ -61,8 +61,7 @@ bool ModuleCollisions::PreUpdate() {
 					if (c1->listeners[i] != nullptr)
 					{
 						c1->listeners[i]->OnCollision(c1, c2);
-						app->player->Right = true;
-						app->player->Left = true;
+						
 					}
 					
 				}
@@ -70,8 +69,7 @@ bool ModuleCollisions::PreUpdate() {
 				{
 					if (c2->listeners[i] != nullptr) {
 						c2->listeners[i]->OnCollision(c2, c1);
-						app->player->Right = true;
-						app->player->Left = true;
+						
 					}
 					
 				}

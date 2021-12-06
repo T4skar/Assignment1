@@ -105,6 +105,8 @@ bool ModulePlayer::Update(float dt)
 
 
 	collision = false;
+	Right = true;
+	Left = true;
 	/*Right = true;
 	Left = true;*/
 	
@@ -159,12 +161,12 @@ bool ModulePlayer::Update(float dt)
 
 	
 	 
-	/*if (Right == false) {
-		position.x -= 0.001;
+	if (Right == false) {
+		position.x -= 1;
 	}
 	if (Left == false) {
-		position.x += 0.001;
-	}*/
+		position.x += 1;
+	}
 	
 	   if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true) {
 
@@ -178,7 +180,18 @@ bool ModulePlayer::Update(float dt)
 		}
 
 	}
+	   else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN)) {
 
+		  
+
+		   if (currentAnimation != &atackRightAnim) {
+			   atackRightAnim.Reset();
+			   currentAnimation = &atackRightAnim;
+		   }
+
+
+
+	   }
 	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
 
 		position.x += 1;
@@ -232,18 +245,7 @@ bool ModulePlayer::Update(float dt)
 
 
 	  }
-	  else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN)) {
-			
-			 position.x += 1;
-			
-					 if (currentAnimation != &atackRightAnim) {
-						 atackRightAnim.Reset();
-						 currentAnimation = &atackRightAnim;
-					 }
-		
-			
-			
-	 }
+	 
 	else {
 
 		if (currentAnimation != &idleRightAnim) {
