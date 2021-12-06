@@ -37,7 +37,7 @@ bool Scene::Awake()
 bool Scene::Start()
 {
 	// L03: DONE: Load map
-	fondo = app->tex->Load("Assets/Sprites/fairy_tail.png");
+	fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	app->map->Load("mapadef.tmx");
 	app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
@@ -66,7 +66,8 @@ bool Scene::Update(float dt)
 
 	
 	
-	app->render->DrawTexture(fondo, 250, 309);
+	app->render->DrawTexture(fondo, 0, 509);
+	
 	/*active = false;*/
     // L02: DONE 3: Request Load / Save when pressing L/S
 	if(app->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)

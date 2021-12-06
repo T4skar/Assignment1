@@ -24,18 +24,18 @@ public:
 
 
 	
-	/*bool Update(float dt);
+	bool Update(float dt);
 	
-	bool PostUpdate();*/
+	bool PostUpdate();
 
 public:
-	List<SDL_Texture*> player;
+	List<SDL_Texture*> enemy;
 	// Position of the player in the map
 	iPoint position;
 
 	// The speed in which we move the player (pixels per frame)
 
-	bool jump = false;
+	
 	// The player spritesheet
 	SDL_Texture* texture = nullptr;
 
@@ -56,41 +56,32 @@ public:
 	Animation atackRightAnim;
 	Animation atackLeftAnim;
 
-	bool God = false;
+	
 	bool vida = true;
 	bool win = false;
-	Collider* collider = nullptr;
-	Collider* right = nullptr;
-	Collider* left = nullptr;
+	Collider* colliderE = nullptr;
+	Collider* enemyRight = nullptr;
+	Collider* enemyLeft = nullptr;
 	Collider* up = nullptr;
 
 	uint steps = 0000;
 	uint limit = 00;
 	uint stage = 00;
 
-	int scoreFont = -1;
-	char scoreText[10] = { "\0" };
-
-	int limitFont = -1;
-	char limitText[10] = { "\0" };
-
-	int stageFont = -1;
-	char stageText[10] = { "\0" };
-
+	
 	bool canMove = true;
 	int currentScene;
 	uint numBox = 0;
 	bool gravity = true;
-	//void OnCollision(Collider* c1, Collider* C2)override;
-	bool playerMovement = true;
+	void OnCollision(Collider* c1, Collider* C2)override;
+	bool enemyMovement = true;
 	bool collision;
 	bool dead;
-	bool Win;
-	bool Right = true;
-	bool Left = true;
+	//bool enemyRight = true;
+	//bool enemyLeft = true;
 
 	//Sets the camera over the dot
-	void set_camera();
+	
 };
 
 #endif //!__MODULE_PLAYER_H__

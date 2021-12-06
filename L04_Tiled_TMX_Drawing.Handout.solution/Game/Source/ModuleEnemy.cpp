@@ -75,14 +75,88 @@ ModuleEnemy::~ModuleEnemy()
 
 bool ModuleEnemy::Start()
 {
-	LOG("Loading player textures");
+	LOG("Loading enemy textures");
 
 	bool ret = true;
-
 	
+	texture = app->tex->Load("Assets/Sprites/Natsu3.png");
+
+
+	position.x = 500;
+	position.y = 760;
 	// X, Y, anchura, altura, 
-	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
+	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
 
-
+	colliderE = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
+	enemyRight = app->physics->AddCollider({ position.x, position.y, 500, 80 }, Collider::Type::ENEMYR, this);
+	enemyLeft = app->physics->AddCollider({ position.x, position.y, -500, 80 }, Collider::Type::ENEMYL, this);
 	return ret;
+}
+
+bool ModuleEnemy::Update(float dt)
+{
+	collision = false;
+
+	colliderE->SetPos(position.x, position.y - 14);
+	enemyRight->SetPos(position.x, position.y - 14);
+	enemyLeft->SetPos(position.x, position.y - 14);
+
+	if (gravity == false) {
+		position.y += 0;
+	}
+
+	if (gravity == true) {
+		position.y += 2;
+	}
+
+	if (collision == false) {
+		gravity = true;
+	}
+	return true;
+}
+
+
+
+bool ModuleEnemy::PostUpdate()
+{
+
+
+	//SDL_Rect rect = currentAnimation->GetCurrentFrame();
+	/* rect.h = 1035;
+	 rect.w = 1194;
+	 rect.x = 42;
+	 rect.y = 55;*/
+	//app->render->DrawTexture(texture, position.x, position.y, &rect, 1.0f, 0, 0, 0);
+
+
+
+
+	return true;
+}
+
+void ModuleEnemy::OnCollision(Collider* c1, Collider* c2)
+{
+
+	if (c1->type == Collider::Type::ENEMY && c2->type == Collider::Type::GROUND) {
+
+		// app->player->position.y = 3198;
+		collision = true;
+		gravity = false;
+
+	}
+	if (c1->type == Collider::Type::ENEMYR && c2->type == Collider::Type::GROUND) {
+
+		// app->player->position.y = 3198;
+		collision = true;
+		gravity = false;
+
+	}
+	if (c1->type == Collider::Type::ENEMYL && c2->type == Collider::Type::GROUND) {
+
+		// app->player->position.y = 3198;
+		collision = true;
+		gravity = false;
+
+	}
+
 }
