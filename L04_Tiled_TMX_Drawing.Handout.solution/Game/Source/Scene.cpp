@@ -43,7 +43,7 @@ bool Scene::Start()
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
 
-	app->player->position.x = 30;
+	app->player->position.x = 250;
 	app->player->position.y = 309;
 	
 
@@ -66,7 +66,7 @@ bool Scene::Update(float dt)
 
 	
 	
-	app->render->DrawTexture(fondo, -900, -200);
+	app->render->DrawTexture(fondo, 250, 309);
 	/*active = false;*/
     // L02: DONE 3: Request Load / Save when pressing L/S
 	if(app->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)
