@@ -166,7 +166,18 @@ bool ModulePlayer::Update(float dt)
 		position.x += 0.001;
 	}*/
 	
+	   if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true) {
 
+		position.y -= 500;
+		position.x += 80;
+
+
+		if (currentAnimation != &rightAnim) {
+			rightAnim.Reset();
+			currentAnimation = &rightAnim;
+		}
+
+	}
 
 	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
 
@@ -208,20 +219,7 @@ bool ModulePlayer::Update(float dt)
 			}
 
 	  }
-	  else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true) {
-
-		position.y -= 500;
-		position.x += 80;
-
-
-		if (currentAnimation == &upAnim) {
-			if (currentAnimation != &idleUpAnim) {
-				idleUpAnim.Reset();
-				currentAnimation = &idleUpAnim;
-			}
-		}
-
-	}
+	
 	  else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left ==true) {		// mov izquierda
 
 			position.x -= 1;
