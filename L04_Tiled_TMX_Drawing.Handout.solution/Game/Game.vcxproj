@@ -89,13 +89,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ModuleEnemy.cpp" />
     <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\App.cpp" />
     <ClCompile Include="Source\Audio.cpp" />
     <ClCompile Include="Source\Input.cpp" />
     <ClCompile Include="Source\Map.cpp" />
+    <ClCompile Include="Source\ModuleEnemy.cpp" />
     <ClCompile Include="Source\ModulePhysics.cpp" />
     <ClCompile Include="Source\ModulePlayer.cpp" />
     <ClCompile Include="Source\Scene.cpp" />
@@ -103,10 +103,10 @@
     <ClCompile Include="Source\SceneCredits.cpp" />
     <ClCompile Include="Source\Textures.cpp" />
     <ClCompile Include="Source\Window.cpp" />
-    <ClInclude Include="ModuleEnemy.h" />
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\Map.h" />
+    <ClInclude Include="Source\ModuleEnemy.h" />
     <ClInclude Include="Source\ModulePhysics.h" />
     <ClInclude Include="Source\ModulePlayer.h" />
     <ClInclude Include="Source\Scene.h" />

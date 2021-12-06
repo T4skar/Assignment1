@@ -20,7 +20,7 @@
     <ClCompile Include="Source\ModulePhysics.cpp" />
     <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\SceneCredits.cpp" />
-    <ClCompile Include="ModuleEnemy.cpp" />
+    <ClCompile Include="Source\ModuleEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -61,7 +61,7 @@
     <ClInclude Include="Source\ModulePhysics.h" />
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\SceneCredits.h" />
-    <ClInclude Include="ModuleEnemy.h" />
+    <ClInclude Include="Source\ModuleEnemy.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">
