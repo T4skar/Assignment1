@@ -88,7 +88,8 @@ public:
 	bool Win;
 	bool Right=true;
 	bool Left=true;
-
+	bool godmode = false;
+	bool playingM = false;
 	//Sets the camera over the dot
 	void set_camera();
 };

@@ -88,7 +88,7 @@ bool ModulePlayer::Start()
 	
 
 	// Posición inicial (depende del lvl)
-	//app->audio->PlayMusic("Assets/audio/music/lose.ogg");
+	
 	 
 	// X, Y, anchura, altura, 
 	collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
@@ -112,6 +112,29 @@ bool ModulePlayer::Update(float dt)
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
 	up->SetPos(position.x, position.y);
+
+	if(godmode==true){
+		collision = false;
+		gravity = false;
+		Right = true;
+		Left = true;
+		if ((app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)) {
+			position.y += 1;
+		}
+		if ((app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT)) {
+			position.y -= 1;
+		}
+		if (playingM==false) {
+			playingM = true;
+			app->scene->playMusic = false;
+		}
+		
+	}
+	else {
+		
+		playingM = false;
+	}
+	
 
 	//desactivacion gravedad
 	if (gravity == false) {
@@ -144,10 +167,13 @@ bool ModulePlayer::Update(float dt)
 		app->render->camera.y = 0;
 		app->render->DrawTexture(app->scene->lose, 200,100);
 		
+	
+			app->scene->playMusic = false;
+		
 	}
 
 
-	//no avanzar horizontalmente
+	
 	
 
 	//pantalla victoria
@@ -158,7 +184,7 @@ bool ModulePlayer::Update(float dt)
 	}
 
 	
-	 
+	 //COLISIONES HORIZONTALES
 	if (Right == false) {
 		position.x -= 1;
 	}
@@ -232,18 +258,7 @@ bool ModulePlayer::Update(float dt)
 
 
 	  }
-	  else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN)) {
-
-
-
-		   if (currentAnimation != &atackRightAnim) {
-			   atackRightAnim.Reset();
-			   currentAnimation = &atackRightAnim;
-		   }
-
-
-
-	   } 
+	    
 	else {
 
 		if (currentAnimation != &idleRightAnim) {
@@ -256,14 +271,22 @@ bool ModulePlayer::Update(float dt)
 
 
 
-
+	 
 		
 	
 	   Right = true;
 	   Left = true;
 
 	currentAnimation->Update();
+	if ((app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN)) {
+		godmode = true;
+		
+	}
+	if ((app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)) {
+		godmode = false;
+		app->scene->playMusic = false;
 
+	}
 	return true;
 }
 
@@ -272,10 +295,7 @@ bool ModulePlayer::Update(float dt)
 	
 	
 	 SDL_Rect rect = currentAnimation->GetCurrentFrame();
-	/* rect.h = 1035;
-	 rect.w = 1194;
-	 rect.x = 42;
-	 rect.y = 55;*/
+	
 		app->render->DrawTexture(texture, position.x, position.y, &rect,1.0f,0,0, 0);
 		
 	
@@ -289,7 +309,7 @@ bool ModulePlayer::Update(float dt)
 	
 		 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::GROUND) {
 			 
-			// app->player->position.y = 3198;
+			
 			 collision = true;
 			 gravity = false;
 			 
@@ -297,7 +317,7 @@ bool ModulePlayer::Update(float dt)
 		
 		 if (c1->type == Collider::Type::RIGHT && c2->type == Collider::Type::GROUND) {
 			 Right = false;
-			 LOG("colisiona weon");
+			
 		 }
 		 
 

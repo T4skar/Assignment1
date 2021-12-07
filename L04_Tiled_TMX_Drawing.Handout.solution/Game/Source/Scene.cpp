@@ -39,10 +39,10 @@ bool Scene::Start()
 	// L03: DONE: Load map
 	fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	app->map->Load("mapadef.tmx");
-	app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg");
+	checkpoint = app->tex->Load("Assets/Sprites/Natsu3.png");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
-
+	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
 	app->player->position.y = 760;
 	
@@ -59,14 +59,42 @@ bool Scene::PreUpdate()
 // Called each loop iteration
 bool Scene::Update(float dt)
 {
+	//musica godmode
+	if (playMusic == false) {
+		if (app->player->godmode == true) {
+			god = app->audio->PlayMusic("Assets/audio/music/godmode.ogg", 0.3f);
+		}
+		else {
+			level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
+		}
+		playMusic = true;
+	}
 
-	
+	//musica pantalla morir
+	if (playMusic == false&& app->player->godmode == false) {
+		if (app->player->dead == true) {
+			Mdead = app->audio->PlayMusic("Assets/audio/music/lose.ogg", 0.3f);
+		}
+		else {
+			level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
+		}
+		playMusic = true;
+	}
 
+
+	if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN))		// Reset lvl 1
+	{
+		app->audio->PlayFx(nextFx);
+		CleanUp();
+		
+
+	}
 		
 
 	
 	
 	app->render->DrawTexture(fondo, 0, 509);
+	app->render->DrawTexture(checkpoint, 0, 509);
 	
 	/*active = false;*/
     // L02: DONE 3: Request Load / Save when pressing L/S
@@ -77,17 +105,7 @@ bool Scene::Update(float dt)
 		app->SaveGameRequest();
 
 
-	/*if (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)
-		app->render->camera.y += 80;
-		
-	if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)
-		app->render->camera.y -=1;
-
-	if(app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT)
-		app->render->camera.x +=1;
-
-	if(app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT)
-		app->render->camera.x -=1;*/
+	
 	
 	if (app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN && app->scene->dLose == false) {
 
@@ -138,6 +156,7 @@ bool Scene::CleanUp()
 	LOG("Freeing scene");
 	dWin = false;
 	dLose = false;
+	playMusic = false;
 	app->tex->UnLoad(fondo);
 	return true;
 }
