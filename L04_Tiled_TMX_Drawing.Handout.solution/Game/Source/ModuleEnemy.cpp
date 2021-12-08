@@ -95,6 +95,45 @@ bool ModuleEnemy::Start()
 
 bool ModuleEnemy::Update(float dt)
 {
+
+	/*ListItem<Enemies*>* c = enemies.start;
+	while (c != NULL) {
+
+			// ENEMIES ALIVE:
+
+			// Detect player 
+			int chaseDistance = 200, limitVel = 100;
+
+			if (app->player->position.x - c->data->position.x < chaseDistance && app->player->position.x - c->data->position.x > -chaseDistance /*&& app->player->position.y - c->data->position.y < chaseDistance / 4 && app->player->position.y - c->data->position.y > -chaseDistance / 4) {
+				// Play sfx
+				if (c->data->playDetectFx != true) {
+					app->audio->PlayFx(detectPlayerFx);
+					c->data->playDetectFx = true;
+
+					c->data->alert = true;
+					c->data->lost = false;
+				}
+
+				// Chase player
+				int vel = METERS_TO_PIXELS(c->data->body->body->GetLinearVelocity().x);	 // limit velocity
+
+				if (-limitVel < vel && vel < limitVel) {
+					if (app->player->position.x < c->data->position.x) {
+						c->data->body->body->ApplyLinearImpulse(b2Vec2(-0.05f, 0), b2Vec2(0, 0), 1);
+
+						/*if (c->data->currentAnimation != &animRunL) {
+							c->data->currentAnimation = &animRunL;
+						}
+					}
+					else {
+						c->data->body->body->ApplyLinearImpulse(b2Vec2(0.05f, 0), b2Vec2(0, 0), 1);
+
+						/*if (c->data->currentAnimation != &animRunR) {
+							c->data->currentAnimation = &animRunR;
+						}
+					}
+				}
+			}*/
 	collision = false;
 
 	colliderE->SetPos(position.x, position.y - 14);

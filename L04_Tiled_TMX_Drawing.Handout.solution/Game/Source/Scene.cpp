@@ -97,15 +97,12 @@ bool Scene::Update(float dt)
 	app->render->DrawTexture(checkpoint, 0, 509);
 	
 	/*active = false;*/
-    // L02: DONE 3: Request Load / Save when pressing L/S
-	if(app->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)
+    // L02: DONE 3: Request Load / Save when pressing F3/F4
+	if(app->input->GetKey(SDL_SCANCODE_F3) == KEY_DOWN)
 		app->LoadGameRequest();
 
-	if(app->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN)
+	if(app->input->GetKey(SDL_SCANCODE_F4) == KEY_DOWN)
 		app->SaveGameRequest();
-
-
-	
 	
 	if (app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN && app->scene->dLose == false) {
 
@@ -121,6 +118,8 @@ bool Scene::Update(float dt)
 			app->render->Blit(lose, app->player->position.x, app->player->position.y, 0, 0);
 		}
 	}
+
+
 
 	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
 

@@ -39,7 +39,8 @@ public:
 	// The player spritesheet
 	SDL_Texture* texture = nullptr;
 	
-	
+	bool loadState(pugi::xml_node&);
+	bool saveState(pugi::xml_node&) const;
 	
 	// The pointer to the current player animation
 	Animation* currentAnimation;

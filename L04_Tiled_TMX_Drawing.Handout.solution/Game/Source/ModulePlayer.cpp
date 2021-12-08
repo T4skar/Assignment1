@@ -354,7 +354,20 @@ bool ModulePlayer::Update(float dt)
 	
  }
 
+ bool ModulePlayer::loadState(pugi::xml_node& data)
+ {
+	 position.x = data.child("position").attribute("x").as_int();
+	 position.y = data.child("position").attribute("y").as_int();
+	// pbody->body->SetTransform({ PIXEL_TO_METERS(position.x), PIXEL_TO_METERS(position.y) }, 0.0f);
+	 return true;
+ }
 
+ bool ModulePlayer::saveState(pugi::xml_node& data) const
+ {
+	 data.child("position").attribute("x").set_value(position.x);
+	 data.child("position").attribute("y").set_value(position.y);
+	 return true;
+ }
 
 
 
