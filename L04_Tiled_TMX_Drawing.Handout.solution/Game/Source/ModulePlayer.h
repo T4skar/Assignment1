@@ -39,6 +39,7 @@ public:
 	// The player spritesheet
 	SDL_Texture* texture = nullptr;
 	
+	//Save i load
 	bool loadState(pugi::xml_node&);
 	bool saveState(pugi::xml_node&) const;
 	
