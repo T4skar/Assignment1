@@ -9,7 +9,7 @@
 #include"ModulePhysics.h"
 #include "SceneCredits.h"
 #include "ModuleEnemy.h"
-
+#include "SceneTitle.h"
 
 #include "ModulePlayer.h"
 #include "Animation.h"
@@ -32,12 +32,13 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	render = new Render();
 	tex = new Textures();
 	audio = new Audio();
-	scene = new Scene();
+	scene = new Scene(true);
 	map = new Map();
 	player = new ModulePlayer();
 	physics = new ModuleCollisions(true);
 	LOGO = new SceneLogo(true);
 	enemy = new ModuleEnemy();
+	title = new SceneTitle(true);
 	//fade = new ModuleFadeToBlack();
 
 	// Ordered for awake / Start / Update
@@ -52,6 +53,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(physics);
 	AddModule(LOGO);
 	AddModule(enemy);
+	AddModule(title);
 	
 	//AddModule(fade);
 

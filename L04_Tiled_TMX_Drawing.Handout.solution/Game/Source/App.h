@@ -27,6 +27,7 @@ class ModuleCollisions;
 class SceneLogo;
 class ModuleCamera;
 class ModuleEnemy;
+class SceneTitle;
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -38,7 +39,7 @@ enum class update_status
 class App
 {
 public:
-	
+
 	// Constructor
 	App(int argc, char* args[]);
 
@@ -66,7 +67,7 @@ public:
 	const char* GetTitle() const;
 	const char* GetOrganization() const;
 
-    // L02: DONE 1: Create methods to request Load / Save
+	// L02: DONE 1: Create methods to request Load / Save
 	void LoadGameRequest();
 	void SaveGameRequest() const;
 
@@ -110,8 +111,8 @@ public:
 	ModuleCollisions* physics;
 	SceneLogo* LOGO;
 	ModuleEnemy* enemy;
-	
-	
+	SceneTitle* title;
+
 
 
 private:
@@ -123,16 +124,11 @@ private:
 
 	List<Module*> modules;
 
-	// L01: DONE 2: Create new variables from pugui namespace
-	// NOTE: Redesigned LoadConfig() to avoid storing this variables
-	//pugi::xml_document configFile;
-	//pugi::xml_node config;
-	//pugi::xml_node configApp;
+
 
 	uint frames;
 	float dt;
 
-	// L02: DONE 1: Create variables to control when to execute the request load / save
 	mutable bool saveGameRequested;
 	bool loadGameRequested;
 };

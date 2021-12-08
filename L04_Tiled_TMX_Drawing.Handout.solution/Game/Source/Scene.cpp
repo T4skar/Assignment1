@@ -15,7 +15,7 @@
 #include "Defs.h"
 #include "Log.h"
 
-Scene::Scene() : Module()
+Scene::Scene(bool enabled) : Module()
 {
 	name.Create("scene");
 }
@@ -39,7 +39,7 @@ bool Scene::Start()
 	// L03: DONE: Load map
 	fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	app->map->Load("mapadef.tmx");
-	checkpoint = app->tex->Load("Assets/Sprites/Natsu3.png");
+	//checkpoint = app->tex->Load("Assets/Sprites/bandoleiro.png");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
@@ -82,13 +82,13 @@ bool Scene::Update(float dt)
 	}
 
 
-	if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN))		// Reset lvl 1
-	{
-		app->audio->PlayFx(nextFx);
-		CleanUp();
-		
+	//if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN))		// Reset lvl 1
+	//{
+	//	app->audio->PlayFx(nextFx);
+	//	CleanUp();
+	//	
 
-	}
+	//}
 		
 
 	
@@ -104,19 +104,14 @@ bool Scene::Update(float dt)
 	if(app->input->GetKey(SDL_SCANCODE_F4) == KEY_DOWN)
 		app->SaveGameRequest();
 	
-	if (app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN && app->scene->dLose == false) {
+	if (app->input->GetKey(SDL_SCANCODE_F3) == KEY_DOWN ) {
 
-		dWin = true;
-		if (dWin == true) {
-			app->render->Blit(Win, app->player->position.x, app->player->position.y, 0, 0);
-		}
+		app->player->Win = true;
+
 	}
-	if (app->input->GetKey(SDL_SCANCODE_F7) == KEY_DOWN && app->scene->dWin == false) {
+	if (app->input->GetKey(SDL_SCANCODE_F4) == KEY_DOWN ) {
 
-		dLose = true;
-		if (dLose == true) {
-			app->render->Blit(lose, app->player->position.x, app->player->position.y, 0, 0);
-		}
+		app->player->dead = true;
 	}
 
 

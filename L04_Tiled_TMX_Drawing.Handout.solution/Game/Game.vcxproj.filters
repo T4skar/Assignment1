@@ -21,6 +21,7 @@
     <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\SceneCredits.cpp" />
     <ClCompile Include="Source\ModuleEnemy.cpp" />
+    <ClCompile Include="Source\SceneTitle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -62,6 +63,7 @@
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\SceneCredits.h" />
     <ClInclude Include="Source\ModuleEnemy.h" />
+    <ClInclude Include="Source\SceneTitle.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

@@ -113,6 +113,7 @@ bool ModulePlayer::Update(float dt)
 	left->SetPos(position.x, position.y);
 	up->SetPos(position.x, position.y);
 
+	//godmode
 	if(godmode==true){
 		collision = false;
 		gravity = false;
@@ -282,9 +283,20 @@ bool ModulePlayer::Update(float dt)
 		godmode = true;
 		
 	}
-	if ((app->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)) {
+	if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)) {
 		godmode = false;
 		app->scene->playMusic = false;
+		dead = false;
+		if (dead == false) {
+			app->tex->UnLoad(app->scene->lose);
+		}
+		Win = false;
+		if (win == false) {
+			app->tex->UnLoad(app->scene->Win);
+		}
+		
+		position.y = 250;
+		position.y = 760;
 
 	}
 	return true;
