@@ -12,7 +12,7 @@ public:
 	SceneTitle(bool startEnabled);
 
 	// Destructor
-	 SceneTitle();
+	~SceneTitle();
 
 	// Called before render is available
 	bool Awake();
@@ -34,6 +34,7 @@ public:
 	bool CleanUp();
 	SDL_Texture* fondo = nullptr;
 	bool playMusic = false;
+	uint TitleMusic = 0;
 	
 private:
 	SDL_Texture* img;

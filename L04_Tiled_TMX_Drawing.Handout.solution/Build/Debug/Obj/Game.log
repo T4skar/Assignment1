@@ -1,53 +1,48 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   Main.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Main.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Obj\vc142.idb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
   App.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(35,19): error C2512: 'Scene::Scene': no hay disponible un constructor predeterminado adecuado
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(17,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Audio.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
   Input.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
   Map.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Map.cpp(39,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Map.cpp(39,20): warning C4018: '<': signed/unsigned mismatch
   ModuleEnemy.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  ModuleFadeToBlack.cpp
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(8,65): error C2664: 'Module::Module(const Module &)': cannot convert argument 1 from 'bool' to 'const Module &'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(9,2): message : Reason: cannot convert from 'bool' to 'const Module'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(9,2): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Module.h(103,1): message : see declaration of 'Module::Module'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(10,21): error C2065: 'SCREEN_WIDTH': undeclared identifier
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(10,36): error C2065: 'SCREEN_SIZE': undeclared identifier
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(10,48): error C2065: 'SCREEN_HEIGHT': undeclared identifier
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(10,64): error C2065: 'SCREEN_SIZE': undeclared identifier
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(75,19): warning C4244: '=': conversion from 'float' to 'Uint32', possible loss of data
   ModulePhysics.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(171,68): warning C4305: 'argumento': truncamiento de 'int' a 'Uint8'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(171,54): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(171,68): warning C4305: 'argument': truncation from 'int' to 'Uint8'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(171,54): warning C4309: 'argument': truncation of constant value
   ModulePlayer.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Scene.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(68,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(79,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(68,75): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(79,75): warning C4305: 'argument': truncation from 'double' to 'float'
   Render.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   SceneCredits.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   SceneTitle.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\SceneTitle.cpp(25,1): error C2600: 'SceneTitle::~SceneTitle': no se puede definir una función miembro especial generada por el compilador (se debe declarar primero en la clase)
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'initializing': conversion from 'const float' to 'int', possible loss of data
+C:\Users\laiapp4\Desktop\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Textures.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
   Window.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(122,10): error C2040: 'App::title: 'SString' se diferencia en los niveles de direccionamiento indirecto de 'SceneTitle *'
-  Generando código...
+  Generating Code...

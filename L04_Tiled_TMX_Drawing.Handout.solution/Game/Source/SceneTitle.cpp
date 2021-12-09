@@ -37,13 +37,11 @@ bool SceneTitle::Awake()
 bool SceneTitle::Start()
 {
 	// L03: DONE: Load map
-	fondo = app->tex->Load("Assets/Sprites/fondo.png");
-	app->map->Load("mapadef.tmx");
-	//checkpoint = app->tex->Load("Assets/Sprites/bandoleiro.png");
+	//fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	
-	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
-	app->player->position.x = 250;
-	app->player->position.y = 760;
+	/*Scene.Disable;*/
+	//TitleMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
+	
 
 
 	return true;
@@ -58,6 +56,7 @@ bool SceneTitle::PreUpdate()
 // Called each loop iteration
 bool SceneTitle::Update(float dt)
 {
+	
 	
 	app->render->DrawTexture(fondo, 0, 509);
 	

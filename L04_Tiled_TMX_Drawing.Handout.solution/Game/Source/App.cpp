@@ -14,7 +14,7 @@
 #include "ModulePlayer.h"
 #include "Animation.h"
 
-/*#include "ModuleFadeToBlack.h"*/
+#include "ModuleFadeToBlack.h"*/
 
 #include "Defs.h"
 #include "Log.h"
@@ -38,8 +38,8 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	physics = new ModuleCollisions(true);
 	LOGO = new SceneLogo(true);
 	enemy = new ModuleEnemy();
-	title = new SceneTitle(true);
-	//fade = new ModuleFadeToBlack();
+	Title = new SceneTitle(true);
+	fade = new ModuleFadeToBlack(true);
 
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -53,9 +53,9 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(physics);
 	AddModule(LOGO);
 	AddModule(enemy);
-	AddModule(title);
+	AddModule(Title);
 	
-	//AddModule(fade);
+	AddModule(fade);
 
 	// Render last to swap buffer
 	AddModule(render);

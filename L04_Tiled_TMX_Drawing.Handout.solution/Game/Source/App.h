@@ -28,6 +28,7 @@ class SceneLogo;
 class ModuleCamera;
 class ModuleEnemy;
 class SceneTitle;
+class ModuleFadeToBlack;
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -111,8 +112,8 @@ public:
 	ModuleCollisions* physics;
 	SceneLogo* LOGO;
 	ModuleEnemy* enemy;
-	SceneTitle* title;
-
+	SceneTitle* Title;
+	
 
 
 private:
