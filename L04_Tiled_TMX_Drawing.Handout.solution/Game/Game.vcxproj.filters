@@ -23,6 +23,7 @@
     <ClCompile Include="Source\ModuleEnemy.cpp" />
     <ClCompile Include="Source\SceneTitle.cpp" />
     <ClCompile Include="Source\ModuleFadeToBlack.cpp" />
+    <ClCompile Include="Source\ModuleEnemyVolador.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -66,6 +67,7 @@
     <ClInclude Include="Source\ModuleEnemy.h" />
     <ClInclude Include="Source\SceneTitle.h" />
     <ClInclude Include="Source\ModuleFadeToBlack.h" />
+    <ClInclude Include="Source\ModuleEnemyVolador.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

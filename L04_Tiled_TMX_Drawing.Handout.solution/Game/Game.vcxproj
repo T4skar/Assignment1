@@ -96,6 +96,7 @@
     <ClCompile Include="Source\Input.cpp" />
     <ClCompile Include="Source\Map.cpp" />
     <ClCompile Include="Source\ModuleEnemy.cpp" />
+    <ClCompile Include="Source\ModuleEnemyVolador.cpp" />
     <ClCompile Include="Source\ModuleFadeToBlack.cpp" />
     <ClCompile Include="Source\ModulePhysics.cpp" />
     <ClCompile Include="Source\ModulePlayer.cpp" />
@@ -109,6 +110,7 @@
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\ModuleEnemy.h" />
+    <ClInclude Include="Source\ModuleEnemyVolador.h" />
     <ClInclude Include="Source\ModuleFadeToBlack.h" />
     <ClInclude Include="Source\ModulePhysics.h" />
     <ClInclude Include="Source\ModulePlayer.h" />

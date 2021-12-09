@@ -29,6 +29,8 @@ class ModuleCamera;
 class ModuleEnemy;
 class SceneTitle;
 class ModuleFadeToBlack;
+class ModuleEnemyVolador;
+
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -113,7 +115,7 @@ public:
 	SceneLogo* LOGO;
 	ModuleEnemy* enemy;
 	SceneTitle* Title;
-	
+	ModuleEnemyVolador* enemyvol;
 
 
 private:

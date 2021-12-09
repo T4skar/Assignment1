@@ -10,7 +10,8 @@
 #include "ModulePhysics.h"
 #include "Log.h"
 #include "SDL/include/SDL_Scancode.h"
-
+#include "Scene.h"
+#include "ModuleFadeToBlack.h"
 
 #include "Defs.h"
 #include "Log.h"
@@ -37,9 +38,9 @@ bool SceneTitle::Awake()
 bool SceneTitle::Start()
 {
 	// L03: DONE: Load map
-	//fondo = app->tex->Load("Assets/Sprites/fondo.png");
+	fondo = app->tex->Load("Assets/textures/logo.png");
 	
-	/*Scene.Disable;*/
+	
 	//TitleMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	
 
@@ -60,7 +61,7 @@ bool SceneTitle::Update(float dt)
 	
 	app->render->DrawTexture(fondo, 0, 509);
 	
-
+	app->fade->FadeToBlack(this, (Module*)app->scene, 60);
 	
 	
 

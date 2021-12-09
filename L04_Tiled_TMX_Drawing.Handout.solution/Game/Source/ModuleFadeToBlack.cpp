@@ -7,7 +7,13 @@
 
 ModuleFadeToBlack::ModuleFadeToBlack(bool startEnabled) : Module()
 	{
-		screenRect = {0,0,((app->win->screenSurface->w )* (app->win->screenSurface)),((app->win->screenSurface->h) * (app->win->screenSurface)) };
+	name.Create("FadeToBlack");
+	if (app != nullptr) {
+		int x=0, y=0, scale=0;
+		app->win->GetWindowSize(x, y);
+		scale = app->win->GetScale();
+		screenRect = { 0, 0, x * y * scale };
+	}
 	}
 ModuleFadeToBlack::~ModuleFadeToBlack()
 {

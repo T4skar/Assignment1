@@ -9,7 +9,7 @@ class ModuleFadeToBlack : public Module
 public:
 	ModuleFadeToBlack(bool startEnabled);
 
-	~ModuleFadeToBlack();
+	virtual ~ModuleFadeToBlack();
 
 	bool Start()override;
 

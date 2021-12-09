@@ -10,11 +10,11 @@
 #include "SceneCredits.h"
 #include "ModuleEnemy.h"
 #include "SceneTitle.h"
-
+#include "ModuleEnemyVolador.h"
 #include "ModulePlayer.h"
 #include "Animation.h"
 
-#include "ModuleFadeToBlack.h"*/
+#include "ModuleFadeToBlack.h"
 
 #include "Defs.h"
 #include "Log.h"
@@ -32,15 +32,15 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	render = new Render();
 	tex = new Textures();
 	audio = new Audio();
-	scene = new Scene(true);
+	scene = new Scene(false);
 	map = new Map();
 	player = new ModulePlayer();
-	physics = new ModuleCollisions(true);
-	LOGO = new SceneLogo(true);
+	physics = new ModuleCollisions(false);
+	LOGO = new SceneLogo(false);
 	enemy = new ModuleEnemy();
 	Title = new SceneTitle(true);
 	fade = new ModuleFadeToBlack(true);
-
+	enemyvol = new ModuleEnemyVolador();
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
 	AddModule(win);
@@ -54,7 +54,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(LOGO);
 	AddModule(enemy);
 	AddModule(Title);
-	
+	AddModule(enemyvol);
 	AddModule(fade);
 
 	// Render last to swap buffer
