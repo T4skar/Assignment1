@@ -61,15 +61,13 @@ public:
 	bool God = false;
 	bool vida = true;
 	bool win = false;
-	Collider* collider = nullptr;
-	Collider* right = nullptr;
-	Collider* left = nullptr;
-	Collider* up = nullptr;
+	Collider* cora = nullptr;
+
 
 	uint steps = 0000;
 	uint limit = 00;
 	uint stage = 00;
-
+	bool corazon;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 

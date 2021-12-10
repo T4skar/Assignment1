@@ -11,6 +11,7 @@ struct Collider
 	{
 		NONE = -1,
 		PLAYER,
+		CORAZON,
 		RIGHT,
 		LEFT,
 		UP,

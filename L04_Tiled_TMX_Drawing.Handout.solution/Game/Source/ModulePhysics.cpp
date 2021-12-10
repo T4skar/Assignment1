@@ -1,5 +1,6 @@
 #include "ModulePhysics.h"
 #include"ModulePlayer.h"
+#include"Corazones.h"
 #include "App.h"
 #include "Log.h"
 #include "Render.h"
@@ -36,6 +37,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::GROUND][Collider::Type::ENEMYL] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYL] = true;
 	matrix[Collider::Type::ENEMYL][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::CORAZON][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::CORAZON] = true;
 }
 
 // Destructor
@@ -185,7 +188,11 @@ void ModuleCollisions::DebugDraw()
 			break;
 		case Collider::Type::UP: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
-			break;
+			break; 
+		case Collider::Type::CORAZON: // green
+				app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+				break;
+		
 		}
 	}
 	
