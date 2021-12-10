@@ -12,6 +12,7 @@
 #include "SceneTitle.h"
 #include "ModuleEnemyVolador.h"
 #include "ModulePlayer.h"
+#include "Corazones.h"
 #include "Animation.h"
 //#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
@@ -41,6 +42,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	Title = new SceneTitle(true);
 	fade = new ModuleFadeToBlack(true);
 	enemyvol = new ModuleEnemyVolador(true);
+	corazon = new Corazones();
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -57,6 +59,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(Title);
 	AddModule(enemyvol);
 	AddModule(fade);
+	AddModule(corazon);
 	//AddModule(pathfinding);
 	// Render last to swap buffer
 	AddModule(render);

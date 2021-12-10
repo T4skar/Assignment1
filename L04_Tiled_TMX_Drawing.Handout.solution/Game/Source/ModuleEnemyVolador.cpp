@@ -81,7 +81,6 @@ bool ModuleEnemyVolador::Start()
 	
 	texture = app->tex->Load("Assets/Sprites/Natsu3.png");
 
-
 	position.x = 500;
 	position.y = 760;
 	// X, Y, anchura, altura, 
