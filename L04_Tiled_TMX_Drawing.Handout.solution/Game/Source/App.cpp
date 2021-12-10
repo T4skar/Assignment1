@@ -37,10 +37,11 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	player = new ModulePlayer();
 	physics = new ModuleCollisions(false);
 	LOGO = new SceneLogo(false);
-	enemy = new ModuleEnemy();
+	enemy = new ModuleEnemy(true);
 	Title = new SceneTitle(true);
 	fade = new ModuleFadeToBlack(true);
-	enemyvol = new ModuleEnemyVolador();
+	enemyvol = new ModuleEnemyVolador(true);
+	
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
 	AddModule(win);

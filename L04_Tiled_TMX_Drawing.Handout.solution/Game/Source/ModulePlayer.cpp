@@ -258,7 +258,16 @@ bool ModulePlayer::Update(float dt)
 			}
 
 
-	  }
+	   }
+	  else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN)) {
+		   if (currentAnimation == &idleRightAnim) {
+			   if (currentAnimation != &atackRightAnim) {
+				   atackRightAnim.Reset();
+				   currentAnimation = &atackRightAnim;
+			   }
+		   }
+		  
+	   }
 	    
 	else {
 

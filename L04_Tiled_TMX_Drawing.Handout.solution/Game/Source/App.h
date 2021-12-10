@@ -2,7 +2,8 @@
 #define __APP_H__
 //
 #include "Module.h"
-
+#include "ModuleEnemyVolador.h"
+#include "ModuleEnemy.h"
 #include "List.h"
 
 #include "PugiXml/src/pugixml.hpp"
@@ -28,7 +29,7 @@ class SceneLogo;
 class ModuleCamera;
 class ModuleEnemy;
 class SceneTitle;
-class ModuleFadeToBlack;
+
 class ModuleEnemyVolador;
 
 enum class update_status

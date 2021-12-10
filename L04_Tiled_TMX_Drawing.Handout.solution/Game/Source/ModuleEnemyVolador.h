@@ -1,5 +1,5 @@
-#ifndef __MODULE_ENEMY_H__
-#define __MODULE_ENEMY_H__
+#ifndef __MODULE_ENEMYVOLADOR_H__
+#define __MODULE_ENEMYVOLADOR_H__
 
 #include "Module.h"
 #include "List.h"
@@ -17,7 +17,7 @@ struct SDL_Texture;
 class ModuleEnemyVolador : public Module
 {
 public:
-	ModuleEnemyVolador();
+	ModuleEnemyVolador(bool startEnabled);
 	~ModuleEnemyVolador();
 
 	bool Start() override;

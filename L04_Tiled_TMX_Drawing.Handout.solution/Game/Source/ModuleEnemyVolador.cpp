@@ -19,7 +19,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-ModuleEnemyVolador::ModuleEnemyVolador() : Module()
+ModuleEnemyVolador::ModuleEnemyVolador(bool startEnabled) : Module()
 {
 
 	// Aqui van las animaciones del player
