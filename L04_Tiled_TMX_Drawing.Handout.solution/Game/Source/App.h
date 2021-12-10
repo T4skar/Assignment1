@@ -29,7 +29,7 @@ class SceneLogo;
 class ModuleCamera;
 class ModuleEnemy;
 class SceneTitle;
-
+class PathFinding;
 class ModuleEnemyVolador;
 
 enum class update_status
@@ -117,7 +117,7 @@ public:
 	ModuleEnemy* enemy;
 	SceneTitle* Title;
 	ModuleEnemyVolador* enemyvol;
-
+	PathFinding* pathfinding;
 
 private:
 
