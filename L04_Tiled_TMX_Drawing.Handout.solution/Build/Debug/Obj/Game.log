@@ -1,33 +1,68 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  App.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Collider.cpp
   Corazones.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Corazones.cpp(67,27): warning C4305: '=': truncamiento de 'int' a 'bool'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Corazones.cpp(85,27): warning C4305: '=': truncamiento de 'int' a 'bool'
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Corazones.cpp(67,27): warning C4305: '=': truncamiento de 'int' a 'bool'
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Corazones.cpp(85,27): warning C4305: '=': truncamiento de 'int' a 'bool'
+  Main.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  App.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Audio.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Input.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Map.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Map.cpp(39,20): warning C4018: '<': no coinciden signed/unsigned
+  ModuleEnemy.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  ModuleEnemyVolador.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  ModuleFadeToBlack.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(81,19): warning C4244: '=': conversión de 'float' a 'Uint32'; posible pérdida de datos
   ModulePhysics.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(174,68): warning C4305: 'argumento': truncamiento de 'int' a 'Uint8'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(174,54): warning C4309: 'argumento': truncamiento de valor constante
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(178,68): warning C4305: 'argumento': truncamiento de 'int' a 'Uint8'
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(178,54): warning C4309: 'argumento': truncamiento de valor constante
   ModulePlayer.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Render.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Pathfinding.cpp
   Scene.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(68,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(79,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(68,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(79,75): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Render.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
   SceneCredits.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
   SceneTitle.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Textures.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Window.cpp
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Log.cpp
   Generando código...
-  Game.vcxproj -> C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
+  Compilando...
+  pugixml.cpp
+  Generando código...
+  Game.vcxproj -> C:\Users\usuari\OneDrive\Escriptori\Apunts\Apunts Projecte\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe

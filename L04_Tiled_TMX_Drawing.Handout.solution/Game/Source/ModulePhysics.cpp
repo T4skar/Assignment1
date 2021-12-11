@@ -39,6 +39,9 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::ENEMYL][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::CORAZON][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::CORAZON] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT] = true;
+	matrix[Collider::Type::CHECKPOINT][Collider::Type::PLAYER] = true;
+
 }
 
 // Destructor
@@ -192,7 +195,10 @@ void ModuleCollisions::DebugDraw()
 		case Collider::Type::CORAZON: // green
 				app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 				break;
-		
+		case Collider::Type::CHECKPOINT: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
+
 		}
 	}
 	

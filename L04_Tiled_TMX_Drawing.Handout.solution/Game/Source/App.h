@@ -32,7 +32,7 @@ class SceneTitle;
 class PathFinding;
 class ModuleEnemyVolador;
 class Corazones;
-
+class Checkpoint;
 
 enum class update_status
 {
@@ -121,6 +121,7 @@ public:
 	ModuleEnemyVolador* enemyvol;
 	PathFinding* pathfinding;
 	Corazones* corazon;
+	Checkpoint* checkp;
 
 private:
 

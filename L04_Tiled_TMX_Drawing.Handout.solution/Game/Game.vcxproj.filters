@@ -26,6 +26,7 @@
     <ClCompile Include="Source\ModuleEnemyVolador.cpp" />
     <ClCompile Include="Source\Pathfinding.cpp" />
     <ClCompile Include="Source\Corazones.cpp" />
+    <ClCompile Include="Source\Checkpoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -72,6 +73,7 @@
     <ClInclude Include="Source\ModuleEnemyVolador.h" />
     <ClInclude Include="Source\Pathfinding.h" />
     <ClInclude Include="Source\Corazones.h" />
+    <ClInclude Include="Source\Checkpoint.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

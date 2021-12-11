@@ -10,6 +10,7 @@
 #include "Module.h"
 #include "ModulePhysics.h"
 #include "Map.h"
+#include "Checkpoint.h"
 //#include "ModuleCollisions.h"
 
 
@@ -376,7 +377,10 @@ bool ModulePlayer::Update(float dt)
 
 		 
 	 }
-	
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT)
+	 {
+		 app->checkp->checkpoint = true;
+	 }
 	
  }
 

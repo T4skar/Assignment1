@@ -21,7 +21,7 @@ struct Collider
 		GROUND,
 		DEAD,
 		WIN,
-		
+		CHECKPOINT,
 
 		MAX
 	};

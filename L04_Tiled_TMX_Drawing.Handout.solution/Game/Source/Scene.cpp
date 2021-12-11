@@ -8,7 +8,7 @@
 #include "Map.h"
 #include "ModulePlayer.h"
 #include "ModulePhysics.h"
-
+#include "Checkpoint.h"
 #include "SDL/include/SDL_Scancode.h"
 
 
@@ -114,7 +114,13 @@ bool Scene::Update(float dt)
 		app->player->dead = true;
 	}
 
-
+	//Checkpoint teleportation
+	app->checkp->PChpoint.x = 1500;
+	app->checkp->PChpoint.y = 790;
+	app->checkp->active = false;
+	app->checkp->checkpoint = false;
+	//app->checkp->FlagGreen = false;
+	app->SaveGameRequest();
 
 	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
 
