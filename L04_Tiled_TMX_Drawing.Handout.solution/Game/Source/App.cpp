@@ -39,7 +39,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	player = new ModulePlayer();
 	physics = new ModuleCollisions(false);
 	LOGO = new SceneLogo(false);
-	enemy = new ModuleEnemy(true);
+	enemy = new ModuleEnemy();
 	Title = new SceneTitle(true);
 	fade = new ModuleFadeToBlack(true);
 	enemyvol = new ModuleEnemyVolador(true);

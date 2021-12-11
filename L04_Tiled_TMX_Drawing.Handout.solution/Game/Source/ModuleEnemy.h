@@ -17,15 +17,17 @@ struct SDL_Texture;
 class ModuleEnemy : public Module
 {
 public:
-	ModuleEnemy(bool startEnabled);
+	ModuleEnemy();
 	~ModuleEnemy();
 
 	bool Start() override;
 
 
-	
+
 	bool Update(float dt);
-	
+
+	bool CleanUp();
+
 	bool PostUpdate();
 
 public:
@@ -35,7 +37,7 @@ public:
 
 	// The speed in which we move the player (pixels per frame)
 
-	
+
 	// The player spritesheet
 	SDL_Texture* texture = nullptr;
 
@@ -56,7 +58,7 @@ public:
 	Animation atackRightAnim;
 	Animation atackLeftAnim;
 
-	
+
 	bool vida = true;
 	bool win = false;
 	Collider* colliderE = nullptr;
@@ -68,7 +70,7 @@ public:
 	uint limit = 00;
 	uint stage = 00;
 
-	
+
 	bool canMove = true;
 	int currentScene;
 	uint numBox = 0;
@@ -76,12 +78,14 @@ public:
 	void OnCollision(Collider* c1, Collider* C2)override;
 	bool enemyMovement = true;
 	bool collision;
-	bool dead;
+	bool dead = false;
+	bool left;
+	bool right = false;
 	//bool enemyRight = true;
 	//bool enemyLeft = true;
 
 	//Sets the camera over the dot
-	
+
 };
 
 #endif //!__MODULE_PLAYER_H__
