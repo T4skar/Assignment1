@@ -12,10 +12,10 @@ class Checkpoint : public Module
 {
 public:
 	// Constructor
-	//CheckPo();
+	Checkpoint();
 
 	// Destructor
-	//~CheckPo();
+	~Checkpoint();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the player
@@ -43,14 +43,14 @@ public:
 	bool Debug = false;
 	bool checkpoint = false;
 	bool saved = false;
-	//bool FlagGreen = false;
+	bool BlueFlag = false;
 	SDL_Texture* Chpoint;
 	SDL_Rect Chpointrect;
 
 
 	Animation* currentAnimation;
-	//Animation RedFlag;
-	//Animation GreenFlag;
+	Animation RFlag;
+	Animation BFlag;
 
 	// Countdown to handle shot spacing
 

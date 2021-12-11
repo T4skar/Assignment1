@@ -180,7 +180,19 @@ bool ModulePlayer::Update(float dt)
 	}
 
 
-	
+	/*//Muerte
+	{
+
+		if (PPlayer.y == 1000)
+		{
+			vides--;
+			vidaDown = true;
+			if (vides == 0 && GodMode == false && app->autos->FlagGreen == false)
+			{
+				dead = true;
+			}
+		}
+	}*/
 	
 
 	//pantalla victoria

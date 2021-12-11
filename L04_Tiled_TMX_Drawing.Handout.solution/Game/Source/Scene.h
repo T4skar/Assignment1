@@ -32,7 +32,6 @@ public:
 	bool dLose = false;
 	SDL_Texture* lose = nullptr;
 	SDL_Texture* Win = nullptr;
-	SDL_Texture* checkpoint = nullptr;
 	SDL_Texture* corazon = nullptr;
 	// Called before quitting
 	bool CleanUp();

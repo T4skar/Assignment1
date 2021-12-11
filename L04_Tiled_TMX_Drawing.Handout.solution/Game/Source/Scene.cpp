@@ -39,14 +39,16 @@ bool Scene::Start()
 	// L03: DONE: Load map
 	fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	app->map->Load("mapadef.tmx");
-	//checkpoint = app->tex->Load("Assets/Sprites/bandoleiro.png");
+	//checkpoint = app->tex->Load("Assets/Sprites/Banderas.png");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
 	app->player->position.y = 760;
 	corazon = app->tex->Load("Assets/Sprites/corazones.png");
-
+	//Flag location
+	app->checkp->PChpoint.x = 0;
+	app->checkp->PChpoint.y = 0;
 	return true;
 }
 
@@ -94,7 +96,7 @@ bool Scene::Update(float dt)
 	
 	
 	app->render->DrawTexture(fondo, 0, 509);
-	app->render->DrawTexture(checkpoint, 0, 509);
+	//app->render->DrawTexture(checkp, 0, 509);
 	
 	/*active = false;*/
     // L02: DONE 3: Request Load / Save when pressing F3/F4
@@ -115,12 +117,31 @@ bool Scene::Update(float dt)
 	}
 
 	//Checkpoint teleportation
-	app->checkp->PChpoint.x = 1500;
-	app->checkp->PChpoint.y = 790;
+	app->checkp->PChpoint.x = 0;
+	app->checkp->PChpoint.y = 0;
 	app->checkp->active = false;
 	app->checkp->checkpoint = false;
-	//app->checkp->FlagGreen = false;
+	app->checkp->BlueFlag = false;
 	app->SaveGameRequest();
+
+
+	//Teletransportación por muerte
+	/*if (app->player->vidaDown == true && app->player->vides != 0)
+	{
+		if (app->checkp->BlueFlag == false)
+		{
+			app->player->PPlayer.x = 150;
+			app->player->PPlayer.y = 875;
+			app->player->vidaDown = false;
+		}
+
+		else
+		{
+			app->player->PPlayer.x = 1500;
+			app->player->PPlayer.y = 855;
+			app->player->vidaDown = false;
+		}
+	}*/
 
 	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
 

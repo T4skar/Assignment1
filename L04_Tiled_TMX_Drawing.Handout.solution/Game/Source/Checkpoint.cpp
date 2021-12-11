@@ -7,10 +7,11 @@
 #include "Render.h"
 #include "Window.h"
 #include "Audio.h"
-#include "Collisions.h"
+#include "Collider.h"
 #include "Scene.h"
-#include "Player.h"
+#include "ModulePlayer.h"
 #include "PathFinding.h"
+#include "ModulePhysics.h"
 
 #include "Map.h"
 #include "Defs.h"
@@ -18,24 +19,23 @@
 
 
 
-/*
-Checkpoint::CheckPo() : Module()
-{
-	RedFlag.PushBack({ 119, 5, 76, 128 });
 
-	GreenFlag.PushBack({ 13, 5, 76, 128 });
+Checkpoint::Checkpoint() : Module()
+{
+	RFlag.PushBack({ 119, 5, 76, 128 });
+
+	BFlag.PushBack({ 13, 5, 76, 128 });
 }
 
-Checkpoint::~CheckPo()
+Checkpoint::~Checkpoint()
 {
 }
-*/
 
 bool Checkpoint::Start()
 {
 	bool ret = true;
-	Chpoint = app->tex->Load("Assets/textures/bandoleiro.png");
-	currentAnimation = &RedFlag;
+	Chpoint = app->tex->Load("Assets/textures/Banderas.png");
+	currentAnimation = &RFlag;
 
 	Chpointcoll = app->physics->AddCollider({ PChpoint.x - 5,PChpoint.y - 650, 80 ,800 }, Collider::Type::CHECKPOINT, this);
 	return ret;
@@ -43,17 +43,19 @@ bool Checkpoint::Start()
 
 bool Checkpoint::Update(float dt)
 {
+
+	app->render->DrawTexture(Chpoint, 0, 0);
 	if (checkpoint == false)
 	{
-		currentAnimation = &RedFlag;
+		currentAnimation = &RFlag;
 	}
 
 	if (checkpoint == true)
 	{
-		if (FlagGreen == false)
+		if (BlueFlag == false)
 		{
-			currentAnimation = &GreenFlag;
-			FlagGreen = true;
+			currentAnimation = &BFlag;
+			BlueFlag = true;
 			saved = true;
 		}
 
@@ -71,19 +73,5 @@ bool Checkpoint::Update(float dt)
 bool Checkpoint::PostUpdate()
 {
 
-	/*//draw 
-	Asaverect = currentAnimation->GetCurrentFrame();
-
-	if (app->scene->DeadScreen == false && app->scene->WScrean == false && app->scene->EnterScreen == false && autosave == false)
-	{
-		app->render->DrawTexture(Asave, PAsave.x, PAsave.y, &Asaverect);
-	}
-
-	if (app->scene->DeadScreen == false && app->scene->WScrean == false && app->scene->EnterScreen == false && autosave == true)
-	{
-		app->render->DrawTexture(Asave, PAsave.x, PAsave.y, &Asaverect);
-	}
-	currentAnimation->Update();
-
 	return true;
-}*/
+}
