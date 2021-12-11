@@ -36,6 +36,7 @@ bool Scene::Awake()
 // Called before the first frame
 bool Scene::Start()
 {
+	
 	// L03: DONE: Load map
 	fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	app->map->Load("mapadef.tmx");
@@ -66,22 +67,29 @@ bool Scene::Update(float dt)
 		if (app->player->godmode == true) {
 			god = app->audio->PlayMusic("Assets/audio/music/godmode.ogg", 0.3f);
 		}
-		else {
-			level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
+		else  {
+			if (playlev1 == false) {
+				level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
+				playlev1 = true;
+			}
+			
 		}
 		playMusic = true;
 	}
-
+	
 	//musica pantalla morir
-	if (playMusic == false&& app->player->godmode == false) {
-		if (app->player->dead == true) {
+	/*if (playMusic == false) {
+		if (app->player->vidas <= 0) {
 			Mdead = app->audio->PlayMusic("Assets/audio/music/lose.ogg", 0.3f);
 		}
 		else {
-			level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
+			if (playlev1 == false) {
+				level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
+				playlev1 = true;
+			}
 		}
 		playMusic = true;
-	}
+	}*/
 
 
 	//if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN))		// Reset lvl 1
@@ -100,7 +108,7 @@ bool Scene::Update(float dt)
 	
 	/*active = false;*/
     // L02: DONE 3: Request Load / Save when pressing F3/F4
-	if(app->input->GetKey(SDL_SCANCODE_F3) == KEY_DOWN)
+	if(app->input->GetKey(SDL_SCANCODE_F5) == KEY_DOWN)
 		app->LoadGameRequest();
 
 	if(app->input->GetKey(SDL_SCANCODE_F4) == KEY_DOWN)
@@ -178,6 +186,7 @@ bool Scene::CleanUp()
 	dWin = false;
 	dLose = false;
 	playMusic = false;
+	playlev1 = false;
 	app->tex->UnLoad(fondo);
 	return true;
 }

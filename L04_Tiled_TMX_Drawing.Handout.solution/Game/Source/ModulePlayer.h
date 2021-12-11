@@ -77,7 +77,7 @@ public:
 	char limitText[10] = { "\0" };
 
 
-	int vidas = 0;
+	int vidas = 9;
 
 
 	int stageFont = -1;
@@ -96,6 +96,8 @@ public:
 	bool Left=true;
 	bool godmode = false;
 	bool playingM = false;
+	uint Mdead = 0;
+	bool Mlose=true;
 	//Sets the camera over the dot
 	void set_camera();
 };

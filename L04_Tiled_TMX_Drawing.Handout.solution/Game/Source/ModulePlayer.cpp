@@ -87,7 +87,7 @@ bool ModulePlayer::Start()
 	
 	currentAnimation = &idleRightAnim;
 	
-	vidas = 2;
+	
 	// Posición inicial (depende del lvl)
 	
 	 
@@ -165,36 +165,29 @@ bool ModulePlayer::Update(float dt)
 
 	//pantalla de lose
 	if (dead == true) {
-		vidas--;
-		if (vidas == 0) {
+		app->scene->playMusic = false;
+		
+		
+		if (vidas<= 0) {
 			app->render->camera.x = 0;
 			app->render->camera.y = 0;
 
 			app->render->DrawTexture(app->scene->lose, 200, 100);
 		}
-		
-		
-	
+		else {
+			
 			app->scene->playMusic = false;
+			dead = false;
+			
+
+			position.x = 250;
+			position.y = 760;
+		}
+		 
+		
 		
 	}
-
-
-	/*//Muerte
-	{
-
-		if (PPlayer.y == 1000)
-		{
-			vides--;
-			vidaDown = true;
-			if (vides == 0 && GodMode == false && app->autos->FlagGreen == false)
-			{
-				dead = true;
-			}
-		}
-	}*/
 	
-
 	//pantalla victoria
 	if (Win == true) {
 		app->render->camera.x = 0;
@@ -295,7 +288,7 @@ bool ModulePlayer::Update(float dt)
 		}
 	}
 
-		// player stop the animation when stop walking
+		// player stop the animation when stop walking 
 
 
 
@@ -314,16 +307,10 @@ bool ModulePlayer::Update(float dt)
 		godmode = false;
 		app->scene->playMusic = false;
 		dead = false;
-		if (dead == false) {
-			app->tex->UnLoad(app->scene->lose);
-		}
 		Win = false;
-		if (win == false) {
-			app->tex->UnLoad(app->scene->Win);
-		}
-		
-		position.y = 250;
-		position.y = 760;
+		vidas=3;
+		position.x = 250;
+		position.y = 760; 
 
 	}
 	return true;
@@ -369,17 +356,12 @@ bool ModulePlayer::Update(float dt)
 		if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::DEAD) {
 
 		 dead = true;
-		 gravity = false;
+		
 		// vida = false;
+		 vidas--;
 		 
 		}
-		if (c1->type == Collider::Type::UP && c2->type == Collider::Type::GROUND) {
-
-			
-			//aqui va el bumper
-			
-			
-		}
+		
 	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::WIN) {
 
 		Win = true;

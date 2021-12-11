@@ -38,8 +38,9 @@ public:
 	SDL_Texture* fondo = nullptr;
 	bool playMusic = false;
 	uint nextFx = 0;
-	uint level1 = 0;
 	uint Mdead = 0;
+	uint level1 = 0;
+	bool playlev1=false;
 	uint god = 0;
 private:
 	SDL_Texture* img;

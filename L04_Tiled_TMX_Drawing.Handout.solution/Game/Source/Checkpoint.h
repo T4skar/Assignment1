@@ -44,7 +44,7 @@ public:
 	bool checkpoint = false;
 	bool saved = false;
 	bool BlueFlag = false;
-	SDL_Texture* Chpoint;
+	SDL_Texture* Chpoint=nullptr;
 	SDL_Rect Chpointrect;
 
 

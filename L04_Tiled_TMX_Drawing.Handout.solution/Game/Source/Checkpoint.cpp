@@ -34,17 +34,17 @@ Checkpoint::~Checkpoint()
 bool Checkpoint::Start()
 {
 	bool ret = true;
-	Chpoint = app->tex->Load("Assets/textures/Banderas.png");
+	Chpoint = app->tex->Load("Assets/Sprites/bandoleiro.png");
 	currentAnimation = &RFlag;
 
-	Chpointcoll = app->physics->AddCollider({ PChpoint.x - 5,PChpoint.y - 650, 80 ,800 }, Collider::Type::CHECKPOINT, this);
+	Chpointcoll = app->physics->AddCollider({ PChpoint.x ,PChpoint.y, 25 ,25 }, Collider::Type::CHECKPOINT, this);
 	return ret;
 }
 
 bool Checkpoint::Update(float dt)
 {
 
-	app->render->DrawTexture(Chpoint, 0, 0);
+	app->render->DrawTexture(Chpoint, 0, 0, NULL);
 	if (checkpoint == false)
 	{
 		currentAnimation = &RFlag;

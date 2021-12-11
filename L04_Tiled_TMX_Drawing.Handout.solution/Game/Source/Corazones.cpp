@@ -65,22 +65,17 @@ bool Corazones::Start()
 bool Corazones::Update(float dt)
 {
 	if (app->player->vida = 2) {
-		app->tex->UnLoad(texture3);
+		
 		app->render->DrawTexture(texture2, position.x + 72, position.y, 0, 0, 0);
 		app->render->DrawTexture(texture, position.x, position.y, 0, 0, 0);
 	}
 
 	if (app->player->vida = 1) {
-		app->tex->UnLoad(texture2);
-		app->tex->UnLoad(texture3);
+
 		app->render->DrawTexture(texture, position.x, position.y, 0, 0, 0);
 	}
 	
-	if (app->player->vida = 0) {
-		app->tex->UnLoad(texture2);
-		app->tex->UnLoad(texture3);
-		app->tex->UnLoad(texture);
-	}
+	
 
 	if (app->player->vida = 3) {
 		app->render->DrawTexture(texture, position.x, position.y, 0, 0, 0);
