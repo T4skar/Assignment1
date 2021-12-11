@@ -45,7 +45,7 @@ bool Scene::Start()
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
 	app->player->position.y = 760;
-	
+	corazon = app->tex->Load("Assets/Sprites/corazones.png");
 
 	return true;
 }

@@ -76,6 +76,10 @@ public:
 	int limitFont = -1;
 	char limitText[10] = { "\0" };
 
+
+	int vidas = 0;
+
+
 	int stageFont = -1;
 	char stageText[10] = { "\0" };
 

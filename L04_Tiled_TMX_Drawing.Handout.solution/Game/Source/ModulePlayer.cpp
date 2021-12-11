@@ -86,7 +86,7 @@ bool ModulePlayer::Start()
 	
 	currentAnimation = &idleRightAnim;
 	
-
+	vidas = 2;
 	// Posición inicial (depende del lvl)
 	
 	 
@@ -164,9 +164,14 @@ bool ModulePlayer::Update(float dt)
 
 	//pantalla de lose
 	if (dead == true) {
-		app->render->camera.x = 0;
-		app->render->camera.y = 0;
-		app->render->DrawTexture(app->scene->lose, 200,100);
+		vidas--;
+		if (vidas == 0) {
+			app->render->camera.x = 0;
+			app->render->camera.y = 0;
+
+			app->render->DrawTexture(app->scene->lose, 200, 100);
+		}
+		
 		
 	
 			app->scene->playMusic = false;

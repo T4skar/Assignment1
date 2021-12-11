@@ -38,6 +38,8 @@ public:
 	bool jump = false;
 	// The player spritesheet
 	SDL_Texture* texture = nullptr;
+	SDL_Texture* texture2 = nullptr;
+	SDL_Texture* texture3 = nullptr;
 	
 	//Save i load
 	bool loadState(pugi::xml_node&);
