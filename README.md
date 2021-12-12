@@ -6,14 +6,15 @@ Our first platformer
 https://github.com/T4skar/El_Juego_del_trol-Plataformer-Alpha
 
 ## Description
-We are ElJuegoDelTroll, two students from CITM and here is where we are going to work with our platformer game.
+We are ElJuegoDelTroll, three students from CITM and here is where we are going to work with our platformer game.
 
 ## Members
 * [Laia Pachón Pérez](https://github.com/laiapachon)
 * [Albert Martin Lucena](https://github.com/T4skar)
-
+* [Joan Damia](https://github.com/JoanDamia)
 ## Game Description
-ElJuegoDelTroll is a platformer game, for now is just about move the troll to the end of the levels without falling in the spaces between the platforms.
+ElJuegoDelTroll is a platformer game, for now is just about move Natsu to the end of the levels without falling in the spaces between the platforms and 
+avoiding the slimes and geting the coins.
 
 ## Controls
 
