@@ -32,7 +32,7 @@ ModulePlayer::ModulePlayer() : Module()
 	idleRightAnim.PushBack({ 1278,670,110,170 });
 	idleRightAnim.PushBack({ 1400,670,110,170 });
 	idleRightAnim.loop = true;
-	idleRightAnim.speed = 0.003f;
+	idleRightAnim.speed = 0.03f;
 
 	rightAnim.PushBack({ 1662,687,110,170 });
 	rightAnim.PushBack({ 1795,682,110,170 });
@@ -41,14 +41,14 @@ ModulePlayer::ModulePlayer() : Module()
 	rightAnim.PushBack({ 2192,682,110,170 });
 	rightAnim.PushBack({ 2320,682,110,170 });
 	rightAnim.loop = true;
-	rightAnim.speed = 0.02f;
+	rightAnim.speed = 0.2f;
 
 	upAnim.PushBack({ 52, 924,110,170 });
 	upAnim.PushBack({ 188,887,110,170 });
 	upAnim.PushBack({ 309,920,110,170 });
 	upAnim.PushBack({ 482,893,110,170 });
 	upAnim.loop = true;
-	upAnim.speed = 0.02f;
+	upAnim.speed = 0.2f;
 
 	leftAnim.PushBack({ 1961,1381,110,170 });
 	leftAnim.PushBack({ 2094,1381,110,170 });
@@ -57,14 +57,14 @@ ModulePlayer::ModulePlayer() : Module()
 	leftAnim.PushBack({ 2489,1381,110,170 });
 	leftAnim.PushBack({ 2625,1381,110,170 });
 	leftAnim.loop = true;
-	leftAnim.speed = 0.02f;
+	leftAnim.speed = 0.2f;
 
 	atackRightAnim.PushBack({907, 1272, 110, 170});
 	atackRightAnim.PushBack({1243, 1272, 110, 170});
 	atackRightAnim.PushBack({1414, 1273, 110, 170});
 	atackRightAnim.PushBack({1567, 1275, 110, 170});
 	atackRightAnim.loop = true;
-	atackRightAnim.speed = 0.02f;
+	atackRightAnim.speed = 0.2f;
 }
 
 
@@ -187,7 +187,9 @@ bool ModulePlayer::Update(float dt)
 			position.y = 760;
 		}
 		 
-		
+		app->enemy->position.x = 5200;
+		app->enemy->position.y = 80;
+
 		
 	}
 	
@@ -303,11 +305,11 @@ bool ModulePlayer::Update(float dt)
 	   Left = true;
 
 	currentAnimation->Update();
-	if ((app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN)) {
+	if ((app->input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN)) {
 		godmode = true;
 		
 	}
-	if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)) {
+	if ((app->input->GetKey(SDL_SCANCODE_F1) == KEY_DOWN)) {
 		godmode = false;
 		app->scene->playMusic = false;
 		dead = false;
@@ -316,8 +318,25 @@ bool ModulePlayer::Update(float dt)
 		app->coin->print = false;
 		app->coin->print2 = false;
 		vidas=4;
+		app->enemy->position.x = 5200;
+		app->enemy->position.y = 80;
 		position.x = 250;
 		position.y = 760; 
+
+	}
+	if ((app->input->GetKey(SDL_SCANCODE_F3) == KEY_DOWN)) {
+		godmode = false;
+		app->scene->playMusic = false;
+		dead = false;
+		Win = false;
+		app->corazon->print = false;
+		app->coin->print = false;
+		app->coin->print2 = false;
+		vidas = 4;
+		app->enemy->position.x = 5200;
+		app->enemy->position.y = 80;
+		position.x = 250;
+		position.y = 760;
 
 	}
 	return true;
@@ -402,7 +421,7 @@ bool ModulePlayer::Update(float dt)
 
 
 		app->corazon-> collision = true;
-		vidas +=3;
+		vidas ++;
 
 
 	 }

@@ -109,13 +109,18 @@ bool ModuleEnemy::Update(float dt)
 	{
 		collision = false;
 	}
-
+	
+	
 	if (gravity == false) {
 		position.y += 0;
 	}
-
+	if (app->input->GetKey(SDL_SCANCODE_1 == KEY_DOWN)) {
+		position.x = 5200;
+			position.y = 80;
+	
+	}
 	if (gravity == true) {
-		position.y += 2 * speed * 0.40;
+		position.y += 2 * speed * 0.60;
 	}
 
 	if (collision == false) {
@@ -151,7 +156,7 @@ bool ModuleEnemy::Update(float dt)
 		}
 	}
 	currentAnimation->Update();
-
+	dead = false;
 	right = false;
 	left = false;
 	return true;
