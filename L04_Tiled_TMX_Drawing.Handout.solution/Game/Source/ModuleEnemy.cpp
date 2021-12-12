@@ -22,7 +22,7 @@
 ModuleEnemy::ModuleEnemy() : Module()
 {
 
-	// Aqui van las animaciones del enemigo
+	// Aqui van las animaciones del player
 	idleRightAnim.PushBack({ 47,103,92,75 });
 	idleRightAnim.PushBack({ 171,103,92,75 });
 	idleRightAnim.loop = true;
@@ -35,13 +35,13 @@ ModuleEnemy::ModuleEnemy() : Module()
 	rightAnim.loop = true;
 	rightAnim.speed = 0.03f;
 
-	
-	dieAnim.PushBack({ 47,103,92,75 });
-	dieAnim.PushBack({ 171,103,92,75 });
-	dieAnim.PushBack({ 1086,103,92,75 });
-	dieAnim.PushBack({ 1086,0,92,75 });
-	dieAnim.loop = true;
-	dieAnim.speed = 0.02f;
+	/*upAnim.PushBack({ 52, 924,110,170 });
+	upAnim.PushBack({ 188,887,110,170 });
+	upAnim.PushBack({ 309,920,110,170 });
+	upAnim.PushBack({ 482,893,110,170 });
+
+	upAnim.loop = true;
+	upAnim.speed = 0.02f;*/
 
 	leftAnim.PushBack({ 47,103,92,75 });
 	leftAnim.PushBack({ 171,103,92,75 });
@@ -84,30 +84,12 @@ bool ModuleEnemy::Start()
 
 bool ModuleEnemy::Update(float dt)
 {
-	
+	collision = false;
 
 	colliderE->SetPos(position.x, position.y - 14);
 	enemyRight->SetPos(position.x, position.y - 14);
 	enemyLeft->SetPos(position.x - 500, position.y - 14);
 
-	if (dead == true)
-	{
-		gravity = false;
-		right = false;
-		left = false;
-		position.y = 11000;
-		position.x = 11000;
-
-		if (currentAnimation != &dieAnim) {
-			dieAnim.Reset();
-			currentAnimation = &dieAnim;
-		}
-
-	}
-	else
-	{
-		collision = false;
-	}
 
 	if (gravity == false) {
 		position.y += 0;
@@ -121,7 +103,10 @@ bool ModuleEnemy::Update(float dt)
 		gravity = true;
 	}
 
-	
+	if (dead == true)
+	{
+		collision = false;
+	}
 
 	if (left == true) {
 		position.x -= 1;
