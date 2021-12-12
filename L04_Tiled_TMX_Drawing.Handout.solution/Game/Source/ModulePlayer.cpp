@@ -99,7 +99,7 @@ bool ModulePlayer::Start()
 	right = app->physics->AddCollider({ position.x, position.y, 8, 80 }, Collider::Type::RIGHT, this);
 	left = app->physics->AddCollider({ position.x, position.y, 24, 80 }, Collider::Type::LEFT, this);
 	up = app->physics->AddCollider({ position.x, position.y, 24, 24 }, Collider::Type::UP, this);
-	
+	matar = app->physics->AddCollider({ position.x, position.y, 115, 24 }, Collider::Type::MATAR, this);
 	return ret;
 }
 
@@ -116,7 +116,7 @@ bool ModulePlayer::Update(float dt)
 	right->SetPos(position.x+107, position.y);
 	left->SetPos(position.x, position.y);
 	up->SetPos(position.x, position.y);
-
+	matar->SetPos(position.x, position.y + 160);
 	//godmode
 	if(godmode==true){
 		collision = false;
@@ -420,6 +420,11 @@ bool ModulePlayer::Update(float dt)
 		 app->coin->collision2 = true;
 		app->coin-> print2 = true;
 
+	 }
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY)
+	 {
+		 vidas--;
+		 dead = true;
 	 }
  }
 

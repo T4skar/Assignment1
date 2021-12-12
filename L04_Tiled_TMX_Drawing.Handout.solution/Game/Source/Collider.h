@@ -11,6 +11,7 @@ struct Collider
 	{
 		NONE = -1,
 		PLAYER,
+		MATAR,
 		CORAZON,
 		COIN,
 		COIN2,

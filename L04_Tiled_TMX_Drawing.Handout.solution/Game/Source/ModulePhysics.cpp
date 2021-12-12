@@ -50,6 +50,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT2] = true;
 	matrix[Collider::Type::TELEPORT][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::TELEPORT] = true;
+	matrix[Collider::Type::MATAR][Collider::Type::ENEMY] = true;
+	matrix[Collider::Type::ENEMY][Collider::Type::MATAR] = true;
 }
 
 // Destructor
@@ -190,6 +192,9 @@ void ModuleCollisions::DebugDraw()
 			break;
 		case Collider::Type::TELEPORT://green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
+		case Collider::Type::MATAR: 
+			app->render->DrawRectangle(colliders[i]->rect, 255, 50, 255, alpha);
 			break;
 		}
 	}

@@ -36,13 +36,12 @@ ModuleEnemy::ModuleEnemy() : Module()
 	rightAnim.loop = true;
 	rightAnim.speed = 0.03f;
 
-	/*upAnim.PushBack({ 52, 924,110,170 });
-	upAnim.PushBack({ 188,887,110,170 });
-	upAnim.PushBack({ 309,920,110,170 });
-	upAnim.PushBack({ 482,893,110,170 });
-
-	upAnim.loop = true;
-	upAnim.speed = 0.02f;*/
+	dieAnim.PushBack({ 47,103,92,75 });
+	dieAnim.PushBack({ 171,103,92,75 });
+	dieAnim.PushBack({ 1086,103,92,75 });
+	dieAnim.PushBack({ 1086,0,92,75 });
+	dieAnim.loop = true;
+	dieAnim.speed = 0.03f;
 
 	leftAnim.PushBack({ 47,103,92,75 });
 	leftAnim.PushBack({ 171,103,92,75 });
@@ -92,6 +91,24 @@ bool ModuleEnemy::Update(float dt)
 	enemyRight->SetPos(position.x, position.y - 14);
 	enemyLeft->SetPos(position.x - 500, position.y - 14);
 
+	if (dead == true)
+	{
+		gravity = false;
+		right = false;
+		left = false;
+		position.y = 11000;
+		position.x = 11000;
+
+		if (currentAnimation != &dieAnim) {
+			dieAnim.Reset();
+			currentAnimation = &dieAnim;
+		}
+
+	}
+	else
+	{
+		collision = false;
+	}
 
 	if (gravity == false) {
 		position.y += 0;
@@ -171,6 +188,12 @@ void ModuleEnemy::OnCollision(Collider* c1, Collider* c2)
 	}
 
 	if (c1->type == Collider::Type::ENEMY && c2->type == Collider::Type::PLAYER) {
+
+
+		dead = true;
+
+	}
+	if (c1->type == Collider::Type::ENEMY && c2->type == Collider::Type::MATAR) {
 
 
 		dead = true;

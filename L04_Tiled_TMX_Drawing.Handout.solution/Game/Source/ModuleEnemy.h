@@ -51,7 +51,7 @@ public:
 	Animation idleRightAnim;
 	Animation idleUpAnim;
 	Animation idleDownAnim;
-	Animation upAnim;
+	Animation dieAnim;
 	Animation downAnim;
 	Animation leftAnim;
 	Animation rightAnim;
