@@ -64,7 +64,7 @@ public:
 	bool win = false;
 	Collider* cora = nullptr;
 
-
+	bool musica = false;
 	uint steps = 0000;
 	uint limit = 00;
 	uint stage = 00;

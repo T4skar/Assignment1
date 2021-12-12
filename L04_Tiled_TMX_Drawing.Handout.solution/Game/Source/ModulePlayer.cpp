@@ -90,7 +90,8 @@ bool ModulePlayer::Start()
 	
 	currentAnimation = &idleRightAnim;
 	
-	
+	corazonFx = app->audio->LoadFx("Assets/audio/fx/salto.wav");
+
 	// Posición inicial (depende del lvl)
 	
 	 
@@ -210,16 +211,18 @@ bool ModulePlayer::Update(float dt)
 	}
 	
 	   if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true) {
-
+		   musica= true;
 		position.y -= 500;
 		position.x += 80;
-
-
+		if (musica == true) {
+			app->audio->PlayFx(corazonFx);
+		}
+		
 		if (currentAnimation != &rightAnim) {
 			rightAnim.Reset();
 			currentAnimation = &rightAnim;
 		}
-
+		
 	}
 	  
 	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
@@ -237,12 +240,15 @@ bool ModulePlayer::Update(float dt)
 	
 
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)) {
-		  
+		   musica = true;
+
 				position.y -= 500 ;
 				salto = true;
 				gravity = true;
 				
-
+				if (musica == true) {
+					app->audio->PlayFx(corazonFx);
+				}
 			if (currentAnimation != &upAnim) {
 				upAnim.Reset();
 				currentAnimation = &upAnim;
@@ -251,10 +257,13 @@ bool ModulePlayer::Update(float dt)
 			
 	  }
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true){
-			
+		   musica = true;
+
 				position.y -= 500;
 				position.x -= 80;
-			
+				if (musica == true) {
+					app->audio->PlayFx(corazonFx);
+				}
 			if (currentAnimation == &upAnim) {
 				if (currentAnimation != &idleUpAnim) {
 					idleUpAnim.Reset();

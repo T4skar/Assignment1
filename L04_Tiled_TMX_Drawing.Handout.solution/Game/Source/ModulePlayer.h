@@ -66,11 +66,11 @@ public:
 	Collider* left = nullptr;
 	Collider* up = nullptr;
 	Collider* matar = nullptr;
-	
+	bool musica = false;
 	uint steps = 0000;
 	uint limit = 00;
 	uint stage = 00;
-
+	uint corazonFx = 0;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 

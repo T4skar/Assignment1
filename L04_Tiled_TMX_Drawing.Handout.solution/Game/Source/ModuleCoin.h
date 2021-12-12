@@ -60,6 +60,7 @@ public:
 	Animation atackRightAnim;
 	Animation atackLeftAnim;
 
+	bool musica = false;
 	bool God = false;
 	bool vida = true;
 	bool win = false;

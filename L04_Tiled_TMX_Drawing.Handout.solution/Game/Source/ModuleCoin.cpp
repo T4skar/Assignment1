@@ -46,7 +46,7 @@ bool ModuleCoin::Start()
 	bool ret = true;
 
 
-	corazonFx = app->audio->LoadFx("Assets/fx/salto.wav");
+	corazonFx = app->audio->LoadFx("Assets/audio/fx/coin.wav");
 
 	textureC = app->tex->Load("Assets/Sprites/coin.png");
 	textureC2 = app->tex->Load("Assets/Sprites/coin.png");
@@ -85,35 +85,50 @@ bool ModuleCoin::Update(float dt)
 
 	if (collision == true) {
 		print = true;
-		app->audio->PlayFx(corazonFx);
+		musica = true;
+		if (musica == true) {
+			app->audio->PlayFx(corazonFx);
+
+		}
+		Cposition.x = 10000;
+		Cposition.y = 15000;
 	}
 	
 	if (collision2 == true) {
 		print2 = true;
-		app->audio->PlayFx(corazonFx);
+		musica = true;
+		if (musica == true) {
+			app->audio->PlayFx(corazonFx);
+
+		}
+		COposition.x = 10000;
+		COposition.y = 15000;
+		
 	}
-	
 	/*if (app->corazon->print == false) {
 		app->render->DrawTexture(texturecora, app->corazon->Cposition.x, app->corazon->Cposition.y);
 	}*/
-	if (app->coin->print == false) {
+	if (print == false) {
 		app->render->DrawTexture(textureC,Cposition.x, Cposition.y);
 		
 	}
-	if (app->coin->print == false) {
+	if (print == false) {
 		app->render->DrawTexture(textureC2, COposition.x, COposition.y);
 	}
-	
-	return true;
+	musica = false;
 
+	return true;
+	
 }
 
 bool ModuleCoin::PostUpdate()
 {
+	
+	collision2 = false;
 
+	collision = false;
 
-
-
+	
 
 
 
