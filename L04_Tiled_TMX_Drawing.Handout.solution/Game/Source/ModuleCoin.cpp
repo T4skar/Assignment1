@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "Render.h"
 #include "Audio.h"
+#include"Scene.h"
 #include "Defs.h"
 #include "Log.h"
 #include "Animation.h"
@@ -47,10 +48,12 @@ bool ModuleCoin::Start()
 
 	corazonFx = app->audio->LoadFx("Assets/fx/salto.wav");
 
-
+	textureC = app->tex->Load("Assets/Sprites/coin.png");
+	textureC2 = app->tex->Load("Assets/Sprites/coin.png");
+	//texturecora = app->tex->Load("Assets/Sprites/corazones.png");
 	// Posición inicial (depende del lvl)
-	coin = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::COIN2, this);
-	COposition.x = 4200;
+	coin2 = app->physics->AddCollider({ COposition.x, COposition.y, 115, 171 }, Collider::Type::COIN2, this);
+	COposition.x = 4350;
 	COposition.y = 1500;
 	// X, Y, anchura, altura, 
 	coin = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::COIN, this);
@@ -70,6 +73,7 @@ bool ModuleCoin::Update(float dt)
 
 
 	coin->SetPos(Cposition.x, Cposition.y);
+	coin2->SetPos(COposition.x, COposition.y);
 
 
 	//godmode
@@ -80,10 +84,28 @@ bool ModuleCoin::Update(float dt)
 	}
 
 	if (collision == true) {
+		print = true;
 		app->audio->PlayFx(corazonFx);
 	}
-
+	
+	if (collision2 == true) {
+		print2 = true;
+		app->audio->PlayFx(corazonFx);
+	}
+	
+	/*if (app->corazon->print == false) {
+		app->render->DrawTexture(texturecora, app->corazon->Cposition.x, app->corazon->Cposition.y);
+	}*/
+	if (app->coin->print == false) {
+		app->render->DrawTexture(textureC,Cposition.x, Cposition.y);
+		
+	}
+	if (app->coin->print == false) {
+		app->render->DrawTexture(textureC2, COposition.x, COposition.y);
+	}
+	
 	return true;
+
 }
 
 bool ModuleCoin::PostUpdate()
@@ -102,20 +124,7 @@ bool ModuleCoin::PostUpdate()
 void ModuleCoin::OnCollision(Collider* c1, Collider* c2)
 {
 
-	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::COIN) {
-		
-
-		collision = true;
-
-
-	}
-	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::COIN2) {
-
-
-		collision = true;
-
-
-	}
+	
 }
 
 bool ModuleCoin::loadState(pugi::xml_node& data)

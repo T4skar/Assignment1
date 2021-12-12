@@ -46,7 +46,7 @@ bool Corazones::Start()
 	
 	
 	corazonFx = app->audio->LoadFx("Assets/fx/salto.wav");
-	
+	textureC = app->tex->Load("Assets/Sprites/corazones.png");
 
 	// Posición inicial (depende del lvl)
 	
@@ -65,7 +65,7 @@ bool Corazones::Update(float dt)
 {
 	
 	
-	collision = false;
+	
 	
 	
 	
@@ -80,15 +80,22 @@ bool Corazones::Update(float dt)
 	}
 	
 	if (collision == true) {
+		print = true;
 		app->audio->PlayFx(corazonFx);
 	}
 
+	if (print == false) {
+		
+			app->render->DrawTexture(textureC, Cposition.x, Cposition.y);
+
+		
+	}
+	
 	return true;
 }
 
  bool Corazones::PostUpdate()
 {
-	
 	
 	 
 		
@@ -102,13 +109,7 @@ bool Corazones::Update(float dt)
  void Corazones::OnCollision(Collider* c1, Collider* c2)
  {
 	
-		 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CORAZON) {
-			 
-			
-			 collision = true;
 		
-			 
-		 }
  }
 
  bool Corazones::loadState(pugi::xml_node& data)

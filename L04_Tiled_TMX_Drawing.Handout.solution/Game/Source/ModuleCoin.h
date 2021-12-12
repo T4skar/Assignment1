@@ -64,11 +64,16 @@ public:
 	bool vida = true;
 	bool win = false;
 	Collider* coin = nullptr;
+	Collider* coin2 = nullptr;
 
-
+	bool print = false;
+	bool print2 = false;
 	uint steps = 0000;
 	uint limit = 00;
 	uint stage = 00;
+	SDL_Texture* textureC2 = nullptr;
+	SDL_Texture* textureC = nullptr;
+	SDL_Texture* texturecora = nullptr;
 	bool corazon;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
@@ -86,6 +91,7 @@ public:
 	void OnCollision(Collider* c1, Collider* C2)override;
 	bool playerMovement = true;
 	bool collision;
+	bool collision2;
 	bool dead;
 	bool Win;
 	bool Right = true;

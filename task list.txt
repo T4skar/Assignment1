@@ -26,3 +26,5 @@ Laia:
 - Save
 - Load
 - camara
+- 60/30 frames
+- dt

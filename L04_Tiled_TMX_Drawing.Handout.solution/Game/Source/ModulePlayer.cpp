@@ -7,6 +7,9 @@
 #include "Defs.h"
 #include "Log.h"
 #include "Animation.h"
+#include "ModuleCoin.h"
+
+#include"Corazones.h"
 #include "Module.h"
 #include "ModulePhysics.h"
 #include "Map.h"
@@ -152,7 +155,7 @@ bool ModulePlayer::Update(float dt)
 
 	//activacion gravedad
 	if (gravity == true  ) {
-		position.y += 2*speed*0.30;
+		position.y += 2*speed*0.40;
 	}
 
 
@@ -309,6 +312,9 @@ bool ModulePlayer::Update(float dt)
 		app->scene->playMusic = false;
 		dead = false;
 		Win = false;
+		app->corazon->print = false;
+		app->coin->print = false;
+		app->coin->print2 = false;
 		vidas=4;
 		position.x = 250;
 		position.y = 760; 
@@ -391,6 +397,29 @@ bool ModulePlayer::Update(float dt)
 		 CheckActive2 = true;
 		 app->scene->ActiveTeleport2 = true;
 		 app->scene->tps2 == 1;
+	 }
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CORAZON) {
+
+
+		app->corazon-> collision = true;
+		vidas +=3;
+
+
+	 }
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::COIN) {
+
+
+		app->coin-> collision = true;
+		 app->coin->print = true;
+
+
+	 }
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::COIN2) {
+
+
+		 app->coin->collision2 = true;
+		app->coin-> print2 = true;
+
 	 }
  }
 

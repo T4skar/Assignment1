@@ -58,7 +58,7 @@ public:
 	Animation rightAnim;
 	Animation atackRightAnim;
 	Animation atackLeftAnim;
-	
+	SDL_Texture* textureC = nullptr;
 	bool God = false;
 	bool vida = true;
 	bool win = false;
@@ -69,6 +69,7 @@ public:
 	uint limit = 00;
 	uint stage = 00;
 	bool corazon;
+	bool print=false;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 
@@ -84,7 +85,7 @@ public:
 	bool gravity = true;
 	void OnCollision(Collider* c1, Collider* C2)override;
 	bool playerMovement = true;
-	bool collision;
+	bool collision=false;
 	bool dead;
 	bool Win;
 	bool Right=true;

@@ -85,7 +85,7 @@ bool ModuleEnemy::Start()
 
 bool ModuleEnemy::Update(float dt)
 {
-	float speed = 1.0f * dt * 0.2;
+	float speed = 1.0f * dt * 0.3;
 	collision = false;
 
 	colliderE->SetPos(position.x, position.y - 14);
@@ -98,7 +98,7 @@ bool ModuleEnemy::Update(float dt)
 	}
 
 	if (gravity == true) {
-		position.y += 2 * speed * 0.50;
+		position.y += 2 * speed * 0.40;
 	}
 
 	if (collision == false) {

@@ -9,6 +9,7 @@
 #include "ModulePlayer.h"
 #include "ModulePhysics.h"
 #include "Corazones.h"
+#include "ModuleCoin.h"
 #include "Checkpoint.h"
 #include "SDL/include/SDL_Scancode.h"
 //#include "Pathfinding.h"
@@ -37,7 +38,7 @@ bool Scene::Awake()
 // Called before the first frame
 bool Scene::Start()
 {
-	textureC = app->tex->Load("Assets/Sprites/coins2.png");
+	
 	// L03: DONE: Load map
 	fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	app->map->Load("mapadef.tmx");
@@ -83,37 +84,20 @@ bool Scene::Update(float dt)
 		playMusic = true;
 	}
 	
-	//musica pantalla morir
-	/*if (playMusic == false) {
-		if (app->player->vidas <= 0) {
-			Mdead = app->audio->PlayMusic("Assets/audio/music/lose.ogg", 0.3f);
-		}
-		else {
-			if (playlev1 == false) {
-				level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
-				playlev1 = true;
-			}
-		}
-		playMusic = true;
-	}*/
-
-
-	//if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN))		// Reset lvl 1
-	//{
-	//	app->audio->PlayFx(nextFx);
-	//	CleanUp();
-	//	
-
-	//}
+	
 		
 
 	
-	app->render->DrawTexture(textureC, app->corazon->Cposition.x, app->corazon->Cposition.y, 0, 0, 0);
+	
 	app->render->DrawTexture(fondo, 0, 509);
 	app->render->DrawTexture(fondo, 2100, 509);
 	app->render->DrawTexture(fondo, 4200, 509);
 	app->render->DrawTexture(fondo, 6300, 509);
 	app->render->DrawTexture(fondo, 8400, 509);
+
+	
+	
+	
 	//app->render->DrawTexture(checkp, 0, 509);
 	
 	/*active = false;*/
@@ -142,25 +126,14 @@ bool Scene::Update(float dt)
 
 	StartChTpColliders();
 
-	/*Pathfinding();
-	if (app->player->salto==true) {
-		app->audio->PlayFx(selectFx);
-	}*/
+	
 
-
-	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
-
-	// Draw map
+	// Draw ma
 	app->map->Draw();
 
-	// L03: DONE 7: Set the window title with map/tileset info
-	/*SString title("Map:%dx%d Tiles:%dx%d Tilesets:%d",
-				   app->map->mapData.width, app->map->mapData.height,
-				   app->map->mapData.tileWidth, app->map->mapData.tileHeight,
-				   app->map->mapData.tilesets.count());
-
-	app->win->SetTitle(title.GetString());*/
-
+	
+	
+	
 	return true;
 }
 
@@ -191,6 +164,10 @@ bool Scene::PostUpdate()
 		app->render->DrawTexture(texture2, app->corazon->position.x + 72, app->corazon->position.y, 0, 0, 0);
 		app->render->DrawTexture(texture3, app->corazon->position.x + 144, app->corazon->position.y, 0, 0, 0);
 	}
+
+
+
+	
 	return ret;
 }
 

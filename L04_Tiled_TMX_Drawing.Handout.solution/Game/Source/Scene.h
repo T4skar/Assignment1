@@ -32,7 +32,8 @@ public:
 	bool dLose = false;
 	SDL_Texture* lose = nullptr;
 	SDL_Texture* Win = nullptr;
-	SDL_Texture* textureC = nullptr;
+	
+
 	//SDL_Texture* corazon = nullptr;
 	SDL_Texture* texture = nullptr;
 	SDL_Texture* texture2 = nullptr;
