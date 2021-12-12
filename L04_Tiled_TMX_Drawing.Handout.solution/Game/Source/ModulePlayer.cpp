@@ -374,9 +374,24 @@ bool ModulePlayer::Update(float dt)
 	 }
 	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT)
 	 {
-		 app->checkp->checkpoint = true;
+		 if (app->scene->Point == false) {
+			 app->audio->PlayFx(GetCheckpoint);
+		 }
+		 app->scene->Point = true;
+		 CheckActive = true;
+		 app->scene->ActiveTeleport = true;
+		 app->scene->tps == 1;
 	 }
-	
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT2)
+	 {
+		 if (app->scene->Point2 == false) {
+			 app->audio->PlayFx(GetCheckpoint);
+		 }
+		 app->scene->Point2 = true;
+		 CheckActive2 = true;
+		 app->scene->ActiveTeleport2 = true;
+		 app->scene->tps2 == 1;
+	 }
  }
 
  bool ModulePlayer::loadState(pugi::xml_node& data)

@@ -47,9 +47,9 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	fade = new ModuleFadeToBlack(true);
 	enemyvol = new ModuleEnemyVolador(true);
 	corazon = new Corazones();
-	checkp = new Checkpoint();
+	//checkp = new Checkpoint();
 	coin = new ModuleCoin();
-	
+	//pathfinding = new Pathfinding();
 	
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
@@ -68,10 +68,10 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(enemyvol);
 	AddModule(fade);
 	AddModule(corazon);
-	AddModule(checkp);
+	//AddModule(checkp);
 	AddModule(coin);
-	
 	//AddModule(pathfinding);
+
 	// Render last to swap buffer
 	AddModule(render);
 	ptimer = new PerfTimer();
@@ -132,6 +132,7 @@ bool App::Awake()
 			
 			ret = item->data->Awake(config.child(item->data->name.GetString()));
 			item = item->next;
+			LOG("awake took: %f ms", ret);
 		}
 	}
 
@@ -364,28 +365,28 @@ bool App::LoadGame()
 {
 	bool ret = true;
 
-	//pugi::xml_document saveFile;
-	//pugi::xml_parse_result result = saveFile.load_file("save_game.xml");
+	pugi::xml_document gameStateFile;
+	pugi::xml_parse_result result = gameStateFile.load_file("savegame.xml");
 
-	//if (result == NULL)
-	//{
-	//	LOG("Could not load xml file savegame.xml. pugi error: %s", result.description());
-	//	ret = false;
-	//}
-	//else
-	//{
-	//	save = saveFile.child("save_state");
-	//	ListItem<Module*>* item;
-	//	item = modules.start;
+	if (result == NULL)
+	{
+		LOG("Could not load xml file savegame.xml. pugi error: %s", result.description());
+		ret = false;
+	}
+	else
+	{
+		//save = saveFile.child("save_state");
+		ListItem<Module*>* item;
+		item = modules.start;
 
-	//	while (item != NULL && ret == true)
-	//	{
-	//		ret = item->data->LoadState(saveFile.child("save_state").child(item->data->name.GetString()));
-	//		item = item->next;
-	//	}
-	//}
+		while (item != NULL && ret == true)
+		{
+			ret = item->data->LoadState(gameStateFile.child("save_state").child(item->data->name.GetString()));
+			item = item->next;
+	}
+	}
 
-	//loadGameRequested = false;
+	loadGameRequested = false;
 
 	return ret;
 }

@@ -11,7 +11,7 @@
 #include "Corazones.h"
 #include "Checkpoint.h"
 #include "SDL/include/SDL_Scancode.h"
-
+//#include "Pathfinding.h"
 
 #include "Defs.h"
 #include "Log.h"
@@ -45,7 +45,7 @@ bool Scene::Start()
 	texture2 = app->tex->Load("Assets/Sprites/corazones.png");
 	texture3 = app->tex->Load("Assets/Sprites/corazones.png");
 	selectFx = app->audio->LoadFx("Assets/fx/salto.wav");
-	//checkpoint = app->tex->Load("Assets/Sprites/Banderas.png");
+	CheckpointText = app->tex->Load("Assets/textures/Banderas.png");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
@@ -53,8 +53,8 @@ bool Scene::Start()
 	app->player->position.y = 760;
 	//corazon = app->tex->Load("Assets/Sprites/corazones.png");
 	//Flag location
-	app->checkp->PChpoint.x = 0;
-	app->checkp->PChpoint.y = 0;
+	//app->checkp->PChpoint.x = 0;
+	//app->checkp->PChpoint.y = 0;
 	return true;
 }
 
@@ -134,34 +134,19 @@ bool Scene::Update(float dt)
 		app->player->dead = true;
 	}
 
-	//Checkpoint teleportation
-	app->checkp->PChpoint.x = 0;
-	app->checkp->PChpoint.y = 0;
-	app->checkp->active = false;
-	app->checkp->checkpoint = false;
-	app->checkp->BlueFlag = false;
-	app->SaveGameRequest();
+	//Checkpoints
+	Checkpoints();
 
+	//Teleport
+	Teleports();
+
+	StartChTpColliders();
+
+	/*Pathfinding();
 	if (app->player->salto==true) {
 		app->audio->PlayFx(selectFx);
-	}
-	//Teletransportación por muerte
-	/*if (app->player->vidaDown == true && app->player->vides != 0)
-	{
-		if (app->checkp->BlueFlag == false)
-		{
-			app->player->PPlayer.x = 150;
-			app->player->PPlayer.y = 875;
-			app->player->vidaDown = false;
-		}
-
-		else
-		{
-			app->player->PPlayer.x = 1500;
-			app->player->PPlayer.y = 855;
-			app->player->vidaDown = false;
-		}
 	}*/
+
 
 	//app->render->DrawTexture(img, 380, 100); // Placeholder not needed any more
 
@@ -220,3 +205,122 @@ bool Scene::CleanUp()
 	app->tex->UnLoad(fondo);
 	return true;
 }
+
+void Scene::Checkpoints()
+{
+	if (actualScene == 1) {
+		if (Point == true && CheckU == false) {
+			app->SaveGameRequest();
+			Point = false;
+			CheckU = true;
+		}
+		if (Point2 == true && CheckU2 == false) {
+			app->SaveGameRequest();
+			Point2 = false;
+			CheckU2 = true;
+		}
+
+		if (Point == false) {
+			app->render->DrawTexture(CheckpointText, 70, 255);
+		}
+
+		if (Point2 == false) {
+			app->render->DrawTexture(CheckpointText, 233, 23);
+		}
+
+
+		if (app->player->CheckActive == true) {
+			app->render->DrawTexture(NameCheckText, app->player->position.x - 20, app->player->position.y + 90, NULL);
+			app->player->CheckActive = false;
+		}
+		if (app->player->CheckActive2 == true) {
+			app->render->DrawTexture(NameCheckText2, app->player->position.x - 20, app->player->position.y + 90, NULL);
+			app->player->CheckActive2 = false;
+		}
+	}
+}
+
+void Scene::Teleports()
+{
+	if (actualScene == 1) {
+
+		if (ActiveTeleport == true) { //TP 1
+			if (tps == 1) {
+				app->render->DrawTexture(Teleport2Text, app->player->position.x - 52, app->player->position.y + 80, NULL);
+			}
+			if (app->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_DOWN) {
+				tps += 1;
+			}
+			if (tps == 3) {
+				tps = 1;
+			}
+			if (app->input->GetKey(SDL_SCANCODE_RETURN) == KEY_DOWN && tps == 1 && Point2 == true) {
+				app->player->position.x = 233;
+				app->player->position.y = 5;
+				ActiveTeleport = false;
+			}
+			ActiveTeleport = false;
+		}
+
+		if (ActiveTeleport2 == true) { //TP 2
+			if (tps2 == 1) {
+				app->render->DrawTexture(TeleportText, app->player->position.x - 52, app->player->position.y + 80, NULL);
+			}
+	
+			if (app->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_DOWN) {
+				tps2 += 1;
+			}
+			if (app->input->GetKey(SDL_SCANCODE_LEFT) == KEY_DOWN) {
+				tps2 -= 1;
+			}
+			if (tps2 == 3 || tps2 == 0) {
+				tps2 = 1;
+			}
+			if (app->input->GetKey(SDL_SCANCODE_RETURN) == KEY_DOWN && tps2 == 1 && Point == true) {
+				app->player->position.x = 70;
+				app->player->position.y = 240;
+				ActiveTeleport2 = false;
+			
+			}
+			ActiveTeleport2 = false;
+		}
+	}
+
+}
+
+void Scene::StartChTpColliders()
+{
+	//Checkpoints
+	CheckP = app->physics->AddCollider({ 70, 260, 20,20 }, Collider::Type::CHECKPOINT, this);
+	CheckP2 = app->physics->AddCollider({ 233, 28, 20,20 }, Collider::Type::CHECKPOINT2, this);
+
+	//Teleport
+	Teleport = app->physics->AddCollider({ 80,44, 12,12 }, Collider::Type::TELEPORT, this);
+}
+
+/*void Scene::Pathfinding()
+{
+	{int mouseX, mouseY;
+	app->input->GetMousePosition(mouseX, mouseY);
+	iPoint mouseTile = app->map->WorldToMap(mouseX - app->render->camera.x, mouseY - app->render->camera.y);
+
+	app->input->GetMousePosition(mouseX, mouseY);
+	iPoint p = app->render->ScreenToWorld(mouseX, mouseY);
+	p = app->map->WorldToMap(p.x, p.y);
+	p = app->map->MapToWorld(p.x, p.y);
+
+	app->render->DrawTexture(pathTex, p.x, p.y);
+
+	const DynArray<iPoint>* path = app->pathfinding->GetLastPath();
+
+	for (uint i = 0; i < path->Count(); ++i)
+	{
+		iPoint pos = app->map->MapToWorld(path->At(i)->x, path->At(i)->y);
+		app->render->DrawTexture(pathTex, pos.x, pos.y);
+	}
+
+	iPoint originScreen = app->map->MapToWorld(origin1.x, origin1.y);
+	app->render->DrawTexture(originTex, originScreen.x, originScreen.y);
+	}
+
+}*/

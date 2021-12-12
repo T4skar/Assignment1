@@ -80,9 +80,14 @@ public:
 
 	int vidas = 4;
 
+	//Checkpoint points and check state
+	bool CheckActive = false;
+	bool CheckActive2 = false;
+	uint GetCheckpoint = 0;
 
 	int stageFont = -1;
 	char stageText[10] = { "\0" };
+
 
 	bool canMove = true;
 	int currentScene;

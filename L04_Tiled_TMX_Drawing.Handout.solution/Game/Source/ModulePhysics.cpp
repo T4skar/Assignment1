@@ -43,8 +43,13 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::COIN][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::COIN2] = true;
 	matrix[Collider::Type::COIN2][Collider::Type::PLAYER] = true;
-
-
+	matrix[Collider::Type::CHECKPOINT][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::CHECKPOINT][Collider::Type::CHECKPOINT] = false;
+	matrix[Collider::Type::CHECKPOINT2][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::CHECKPOINT2][Collider::Type::CHECKPOINT2] = false;
+	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT2] = true;
+	matrix[Collider::Type::TELEPORT][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::TELEPORT] = true;
 }
 
 // Destructor
@@ -174,13 +179,18 @@ void ModuleCollisions::DebugDraw()
 		case Collider::Type::CHECKPOINT: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
+		case Collider::Type::CHECKPOINT2: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
 		case Collider::Type::COIN: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
 		case Collider::Type::COIN2: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
-
+		case Collider::Type::TELEPORT://green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
 		}
 	}
 	

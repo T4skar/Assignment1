@@ -49,6 +49,31 @@ public:
 	uint level1 = 0;
 	bool playlev1=false;
 	uint god = 0;
+
+	void StartChTpColliders();
+	void Pathfinding();
+	//Teleports and Checkpoints
+	void Checkpoints();
+	bool Point = false;
+	bool CheckU = false;
+	bool Point2 = false;
+	bool CheckU2 = false;
+	int actualScene = 1;
+	SDL_Texture* CheckpointText = nullptr;
+	Collider* CheckP = nullptr;
+	Collider* CheckP2 = nullptr;
+	SDL_Texture* NameCheckText = nullptr;
+	SDL_Texture* NameCheckText2 = nullptr;
+
+	void Teleports();
+	bool ActiveTeleport = false;
+	int tps = 1;
+	bool ActiveTeleport2 = false;
+	int tps2 = 1;
+	SDL_Texture* TeleportText = nullptr;
+	SDL_Texture* Teleport2Text = nullptr;
+	Collider* Teleport = nullptr;
+
 private:
 	SDL_Texture* img;
 };

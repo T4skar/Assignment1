@@ -24,6 +24,8 @@ struct Collider
 		DEAD,
 		WIN,
 		CHECKPOINT,
+		CHECKPOINT2,
+		TELEPORT,
 
 		MAX
 	};
