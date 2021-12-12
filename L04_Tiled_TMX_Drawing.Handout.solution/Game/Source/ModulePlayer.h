@@ -59,7 +59,7 @@ public:
 	Animation atackLeftAnim;
 	
 	bool God = false;
-	bool vida = true;
+	//bool vida = true;
 	bool win = false;
 	Collider* collider = nullptr;
 	Collider* right = nullptr;
@@ -76,8 +76,9 @@ public:
 	int limitFont = -1;
 	char limitText[10] = { "\0" };
 
+	/*float speed = 1.0f;*/
 
-	int vidas = 9;
+	int vidas = 4;
 
 
 	int stageFont = -1;

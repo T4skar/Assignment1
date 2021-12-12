@@ -14,7 +14,10 @@
 #include "ModulePlayer.h"
 #include "Corazones.h"
 #include "Animation.h"
+#include"PerfTimer.h"
 #include "Checkpoint.h"
+#include "Timer.h"
+#include"ModuleCoin.h"
 //#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
 
@@ -45,6 +48,9 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	enemyvol = new ModuleEnemyVolador(true);
 	corazon = new Corazones();
 	checkp = new Checkpoint();
+	coin = new ModuleCoin();
+	
+	
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -63,9 +69,13 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(fade);
 	AddModule(corazon);
 	AddModule(checkp);
+	AddModule(coin);
+	
 	//AddModule(pathfinding);
 	// Render last to swap buffer
 	AddModule(render);
+	ptimer = new PerfTimer();
+	frameDuration = new PerfTimer();
 }
 
 // Destructor
@@ -109,6 +119,7 @@ bool App::Awake()
 		// L01: DONE 4: Read the title from the config file
 		title.Create(configApp.child("title").child_value());
 		organization.Create(configApp.child("organization").child_value());
+		maxFrameRate = configApp.child("frcap").attribute("value").as_int();
 	}
 
 	if (ret == true)
@@ -130,6 +141,8 @@ bool App::Awake()
 // Called before the first frame
 bool App::Start()
 {
+	startupTime.Start();
+	lastSecFrameTime.Start();
 	bool ret = true;
 	ListItem<Module*>* item;
 	item = modules.start;
@@ -182,6 +195,12 @@ pugi::xml_node App::LoadConfig(pugi::xml_document& configFile) const
 // ---------------------------------------------
 void App::PrepareUpdate()
 {
+	frameCount++;
+	lastSecFrameCount++;
+
+	// L08: DONE 4: Calculate the dt: differential time since last frame
+	dt = frameDuration->ReadMs();
+	frameDuration->Start();
 }
 
 // ---------------------------------------------
@@ -190,6 +209,30 @@ void App::FinishUpdate()
 	// L02: DONE 1: This is a good place to call Load / Save methods
 	if (loadGameRequested == true) LoadGame();
 	if (saveGameRequested == true) SaveGame();
+	float secondsSinceStartup = startupTime.ReadSec();
+
+	if (lastSecFrameTime.Read() > 1000) {
+		lastSecFrameTime.Start();
+		framesPerSecond = lastSecFrameCount;
+		lastSecFrameCount = 0;
+		averageFps = (averageFps + framesPerSecond) / 2;
+	}
+
+	static char title[256];
+	sprintf_s(title, 256, "Av.FPS: %.2f Last sec frames: %i Last dt: %.3f Time since startup: %.3f Frame Count: %I64u ",
+		averageFps, framesPerSecond, dt, secondsSinceStartup, frameCount);
+
+	// L08: DONE 2: Use SDL_Delay to make sure you get your capped framerate
+	float delay = float(maxFrameRate) - frameDuration->ReadMs();
+	//LOG("F: %f Delay:%f", frameDuration->ReadMs(), delay);
+
+	// L08: DONE 3: Measure accurately the amount of time SDL_Delay() actually waits compared to what was expected
+	PerfTimer* delayt = new PerfTimer();
+	delayt->Start();
+	if (maxFrameRate > 0 && delay > 0) SDL_Delay(delay);
+	LOG("Expected %f milliseconds and the real delay is % f", delay, delayt->ReadMs());
+
+	app->win->SetTitle(title);
 }
 
 // Call modules before each loop iteration
@@ -319,11 +362,30 @@ void App::SaveGameRequest() const
 // then call all the modules to load themselves
 bool App::LoadGame()
 {
-	bool ret = false;
+	bool ret = true;
 
-	//...
+	//pugi::xml_document saveFile;
+	//pugi::xml_parse_result result = saveFile.load_file("save_game.xml");
 
-	loadGameRequested = false;
+	//if (result == NULL)
+	//{
+	//	LOG("Could not load xml file savegame.xml. pugi error: %s", result.description());
+	//	ret = false;
+	//}
+	//else
+	//{
+	//	save = saveFile.child("save_state");
+	//	ListItem<Module*>* item;
+	//	item = modules.start;
+
+	//	while (item != NULL && ret == true)
+	//	{
+	//		ret = item->data->LoadState(saveFile.child("save_state").child(item->data->name.GetString()));
+	//		item = item->next;
+	//	}
+	//}
+
+	//loadGameRequested = false;
 
 	return ret;
 }

@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "Render.h"
 #include "Audio.h"
+#include"ModulePlayer.h"
 #include "Defs.h"
 #include "Log.h"
 #include "Animation.h"
@@ -70,8 +71,8 @@ bool ModuleEnemy::Start()
 
 	currentAnimation = &idleRightAnim;
 
-	position.x = 9800;
-	position.y = 700;
+	position.x = 5200;
+	position.y = 80;
 	// X, Y, anchura, altura, 
 	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
 
@@ -84,6 +85,7 @@ bool ModuleEnemy::Start()
 
 bool ModuleEnemy::Update(float dt)
 {
+	float speed = 1.0f * dt * 0.2;
 	collision = false;
 
 	colliderE->SetPos(position.x, position.y - 14);
@@ -96,7 +98,7 @@ bool ModuleEnemy::Update(float dt)
 	}
 
 	if (gravity == true) {
-		position.y += 2;
+		position.y += 2 * speed * 0.50;
 	}
 
 	if (collision == false) {
@@ -109,7 +111,7 @@ bool ModuleEnemy::Update(float dt)
 	}
 
 	if (left == true) {
-		position.x -= 1;
+		position.x -= speed;
 
 		if (currentAnimation != &rightAnim) {
 			rightAnim.Reset();
@@ -117,7 +119,7 @@ bool ModuleEnemy::Update(float dt)
 		}
 	}
 	else if (right == true) {
-		position.x += 1;
+		position.x += speed;
 
 		if (currentAnimation != &rightAnim) {
 			rightAnim.Reset();

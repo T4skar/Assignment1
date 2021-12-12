@@ -32,7 +32,10 @@ public:
 	bool dLose = false;
 	SDL_Texture* lose = nullptr;
 	SDL_Texture* Win = nullptr;
-	SDL_Texture* corazon = nullptr;
+	//SDL_Texture* corazon = nullptr;
+	SDL_Texture* texture = nullptr;
+	SDL_Texture* texture2 = nullptr;
+	SDL_Texture* texture3 = nullptr;
 	// Called before quitting
 	bool CleanUp();
 	SDL_Texture* fondo = nullptr;

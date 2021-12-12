@@ -1,82 +1,8 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-<<<<<<< HEAD
-<<<<<<< HEAD
   App.cpp
 C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Audio.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Checkpoint.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Collider.cpp
-  Corazones.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Corazones.cpp(67,27): warning C4305: '=': truncamiento de 'int' a 'bool'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Corazones.cpp(80,27): warning C4305: '=': truncamiento de 'int' a 'bool'
-  pugixml.cpp
-  Input.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Log.cpp
-  Main.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Map.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Map.cpp(39,20): warning C4018: '<': no coinciden signed/unsigned
-  ModuleEnemy.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  ModuleEnemyVolador.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  ModuleFadeToBlack.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(81,19): warning C4244: '=': conversión de 'float' a 'Uint32'; posible pérdida de datos
-  ModulePhysics.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(177,68): warning C4305: 'argumento': truncamiento de 'int' a 'Uint8'
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(177,54): warning C4309: 'argumento': truncamiento de valor constante
-  ModulePlayer.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Pathfinding.cpp
-  Render.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Scene.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(72,76): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-  SceneCredits.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  SceneTitle.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-  Compilando...
-  Textures.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Window.cpp
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-  LINK : no se encontró C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(202,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(226,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(232,47): warning C4244: 'argumento': conversión de 'float' a 'Uint32'; posible pérdida de datos
   Game.vcxproj -> C:\Users\Laia\Desktop\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
-=======
-  Game.vcxproj -> D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
->>>>>>> parent of 533d032 (El enemigo desaparece)
-=======
-  ModuleEnemy.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Game.vcxproj -> D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
->>>>>>> parent of 90d4b78 (AAAAAAAAAAAA)

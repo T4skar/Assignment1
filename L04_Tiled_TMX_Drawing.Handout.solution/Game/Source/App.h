@@ -5,7 +5,8 @@
 #include "ModuleEnemyVolador.h"
 #include "ModuleEnemy.h"
 #include "List.h"
-
+#include"PerfTimer.h"
+#include"Timer.h"
 #include "PugiXml/src/pugixml.hpp"
 
 #define CONFIG_FILENAME		"config.xml"
@@ -33,6 +34,7 @@ class PathFinding;
 class ModuleEnemyVolador;
 class Corazones;
 class Checkpoint;
+class ModuleCoin;
 
 enum class update_status
 {
@@ -122,9 +124,29 @@ public:
 	PathFinding* pathfinding;
 	Corazones* corazon;
 	Checkpoint* checkp;
+	ModuleCoin* coin;
 
+
+
+
+	
+
+	uint64 frameCount = 0;
+	uint32 framesPerSecond = 0;
+	uint32 lastSecFrameCount = 0;
+
+	float averageFps = 0.0f;
+	float dt = 0.0f;
+
+	uint32 maxFrameRate = 0;
+	
 private:
+	PerfTimer* ptimer;
+	PerfTimer* frameDuration;
 
+	Timer startupTime;
+	Timer frameTime;
+	Timer lastSecFrameTime;
 	int argc;
 	char** args;
 	SString title;
@@ -135,7 +157,7 @@ private:
 
 
 	uint frames;
-	float dt;
+	
 
 	mutable bool saveGameRequested;
 	bool loadGameRequested;

@@ -4,10 +4,13 @@
   <app>
     <title>Game Development Testbed</title>
     <organization>UPC</organization>
+	  <frcap value="16"/> 
+		  
   </app>
 
   <renderer>
     <vsync value="false"/>
+	  
   </renderer>
 
   <window>

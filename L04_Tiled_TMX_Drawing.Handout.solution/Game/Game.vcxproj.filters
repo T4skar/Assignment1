@@ -27,6 +27,9 @@
     <ClCompile Include="Source\Pathfinding.cpp" />
     <ClCompile Include="Source\Corazones.cpp" />
     <ClCompile Include="Source\Checkpoint.cpp" />
+    <ClCompile Include="Source\ModuleCoin.cpp" />
+    <ClCompile Include="Source\PerfTimer.cpp" />
+    <ClCompile Include="Source\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -74,6 +77,9 @@
     <ClInclude Include="Source\Pathfinding.h" />
     <ClInclude Include="Source\Corazones.h" />
     <ClInclude Include="Source\Checkpoint.h" />
+    <ClInclude Include="Source\ModuleCoin.h" />
+    <ClInclude Include="Source\PerfTimer.h" />
+    <ClInclude Include="Source\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

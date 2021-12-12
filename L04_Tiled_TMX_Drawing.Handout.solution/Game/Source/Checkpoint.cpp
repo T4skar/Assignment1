@@ -34,7 +34,7 @@ Checkpoint::~Checkpoint()
 bool Checkpoint::Start()
 {
 	bool ret = true;
-	Chpoint = app->tex->Load("Assets/Sprites/bandoleiro.png");
+//	Chpoint = app->tex->Load("Assets/Sprites/bandoleiro.png");
 	currentAnimation = &RFlag;
 
 	Chpointcoll = app->physics->AddCollider({ PChpoint.x ,PChpoint.y, 25 ,25 }, Collider::Type::CHECKPOINT, this);
@@ -44,7 +44,7 @@ bool Checkpoint::Start()
 bool Checkpoint::Update(float dt)
 {
 
-	app->render->DrawTexture(Chpoint, 0, 0, NULL);
+	//app->render->DrawTexture(Chpoint, 0, 0, NULL);
 	if (checkpoint == false)
 	{
 		currentAnimation = &RFlag;

@@ -44,10 +44,7 @@ bool Corazones::Start()
 
 	bool ret = true;
 	
-	texture = app->tex->Load("Assets/Sprites/corazones.png");
-	texture2 = app->tex->Load("Assets/Sprites/corazones.png");
-	texture3 = app->tex->Load("Assets/Sprites/corazones.png");
-
+	
 	
 	
 
@@ -64,24 +61,7 @@ bool Corazones::Start()
 
 bool Corazones::Update(float dt)
 {
-	if (app->player->vida = 2) {
-		
-		app->render->DrawTexture(texture2, position.x + 72, position.y, 0, 0, 0);
-		app->render->DrawTexture(texture, position.x, position.y, 0, 0, 0);
-	}
-
-	if (app->player->vida = 1) {
-
-		app->render->DrawTexture(texture, position.x, position.y, 0, 0, 0);
-	}
 	
-	
-
-	if (app->player->vida = 3) {
-		app->render->DrawTexture(texture, position.x, position.y, 0, 0, 0);
-		app->render->DrawTexture(texture2, position.x + 72, position.y, 0, 0, 0);
-		app->render->DrawTexture(texture3, position.x + 144, position.y, 0, 0, 0);
-	}
 
 	collision = false;
 	

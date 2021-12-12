@@ -2,7 +2,7 @@
 #include "Window.h"
 #include "Render.h"
 #include"ModulePlayer.h"
-
+#include"Input.h"
 #include "Defs.h"
 #include "Log.h"
 
@@ -117,6 +117,16 @@ bool Render::Update(float dt)
 
 bool Render::PostUpdate()
 {
+	if ((app->input->GetKey(SDL_SCANCODE_F11) == KEY_DOWN)) {
+		if (tf == true) {
+			tf = false;
+			app->maxFrameRate = 16;
+		}
+		else {
+			tf = true;
+			app->maxFrameRate = 32;
+		}
+	}
 	SDL_SetRenderDrawColor(renderer, background.r, background.g, background.g, background.a);
 	SDL_RenderPresent(renderer);
 	return true;

@@ -104,7 +104,7 @@ bool ModulePlayer::Start()
 bool ModulePlayer::Update(float dt)
 {
 
-
+	float speed = 1.0f*dt*0.9;
 	collision = false;
 	
 	
@@ -121,10 +121,10 @@ bool ModulePlayer::Update(float dt)
 		Right = true;
 		Left = true;
 		if ((app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)) {
-			position.y += 1;
+			position.y += speed;
 		}
 		if ((app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT)) {
-			position.y -= 1;
+			position.y -= speed;
 		}
 		if (playingM==false) {
 			playingM = true;
@@ -152,7 +152,7 @@ bool ModulePlayer::Update(float dt)
 
 	//activacion gravedad
 	if (gravity == true  ) {
-		position.y += 2;
+		position.y += 2*speed*0.30;
 	}
 
 
@@ -168,7 +168,7 @@ bool ModulePlayer::Update(float dt)
 		app->scene->playMusic = false;
 		
 		
-		if (vidas<= 0) {
+		if (vidas== 0) {
 			app->render->camera.x = 0;
 			app->render->camera.y = 0;
 
@@ -178,7 +178,7 @@ bool ModulePlayer::Update(float dt)
 			
 			app->scene->playMusic = false;
 			dead = false;
-			
+			vidas--;
 
 			position.x = 250;
 			position.y = 760;
@@ -219,7 +219,7 @@ bool ModulePlayer::Update(float dt)
 	  
 	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
 
-		position.x += 1;
+		position.x += speed;
 
 
 		if (currentAnimation != &rightAnim) {
@@ -233,7 +233,7 @@ bool ModulePlayer::Update(float dt)
 
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)) {
 			
-				position.y -= 500;
+				position.y -= 500 ;
 
 				gravity = true;
 			
@@ -260,7 +260,7 @@ bool ModulePlayer::Update(float dt)
 	
 	  else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left ==true) {		// mov izquierda
 
-			position.x -= 1;
+			position.x -= speed;
 
 
 			if (currentAnimation != &leftAnim) {
@@ -308,7 +308,7 @@ bool ModulePlayer::Update(float dt)
 		app->scene->playMusic = false;
 		dead = false;
 		Win = false;
-		vidas=3;
+		vidas=4;
 		position.x = 250;
 		position.y = 760; 
 
@@ -358,7 +358,7 @@ bool ModulePlayer::Update(float dt)
 		 dead = true;
 		
 		// vida = false;
-		 vidas--;
+		// vidas--;
 		 
 		}
 		
