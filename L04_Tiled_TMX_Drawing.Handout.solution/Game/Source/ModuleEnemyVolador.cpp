@@ -86,9 +86,9 @@ bool ModuleEnemyVolador::Start()
 	// X, Y, anchura, altura, 
 	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
 
-	colliderE = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
+	/*colliderE = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
 	enemyRight = app->physics->AddCollider({ position.x, position.y, 500, 80 }, Collider::Type::ENEMYR, this);
-	enemyLeft = app->physics->AddCollider({ position.x, position.y, -500, 80 }, Collider::Type::ENEMYL, this);
+	enemyLeft = app->physics->AddCollider({ position.x, position.y, -500, 80 }, Collider::Type::ENEMYL, this);*/
 	return ret;
 }
 
@@ -135,10 +135,7 @@ bool ModuleEnemyVolador::Update(float dt)
 			}*/
 	collision = false;
 
-	colliderE->SetPos(position.x, position.y - 14);
-	enemyRight->SetPos(position.x, position.y - 14);
-	enemyLeft->SetPos(position.x, position.y - 14);
-
+	
 	if (gravity == false) {
 		position.y += 0;
 	}
@@ -175,26 +172,5 @@ bool ModuleEnemyVolador::PostUpdate()
 void ModuleEnemyVolador::OnCollision(Collider* c1, Collider* c2)
 {
 
-	if (c1->type == Collider::Type::ENEMY && c2->type == Collider::Type::GROUND) {
-
-		// app->player->position.y = 3198;
-		collision = true;
-		gravity = false;
-
-	}
-	if (c1->type == Collider::Type::ENEMYR && c2->type == Collider::Type::GROUND) {
-
-		// app->player->position.y = 3198;
-		collision = true;
-		gravity = false;
-
-	}
-	if (c1->type == Collider::Type::ENEMYL && c2->type == Collider::Type::GROUND) {
-
-		// app->player->position.y = 3198;
-		collision = true;
-		gravity = false;
-
-	}
-
+	
 }

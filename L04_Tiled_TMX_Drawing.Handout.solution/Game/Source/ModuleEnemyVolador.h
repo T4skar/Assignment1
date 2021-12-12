@@ -59,10 +59,7 @@ public:
 	
 	bool vida = true;
 	bool win = false;
-	Collider* colliderE = nullptr;
-	Collider* enemyRight = nullptr;
-	Collider* enemyLeft = nullptr;
-	Collider* up = nullptr;
+	
 
 	uint steps = 0000;
 	uint limit = 00;

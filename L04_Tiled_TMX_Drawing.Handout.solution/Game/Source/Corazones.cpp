@@ -45,7 +45,7 @@ bool Corazones::Start()
 	bool ret = true;
 	
 	
-	corazonFx = app->audio->LoadFx("Assets/fx/salto.wav");
+	corazonFx = app->audio->LoadFx("Assets/audio/fx/corazones.ogg");
 	textureC = app->tex->Load("Assets/Sprites/corazones.png");
 
 	// Posición inicial (depende del lvl)
