@@ -32,6 +32,7 @@ public:
 	bool dLose = false;
 	SDL_Texture* lose = nullptr;
 	SDL_Texture* Win = nullptr;
+	SDL_Texture* textureC = nullptr;
 	//SDL_Texture* corazon = nullptr;
 	SDL_Texture* texture = nullptr;
 	SDL_Texture* texture2 = nullptr;
@@ -40,6 +41,9 @@ public:
 	bool CleanUp();
 	SDL_Texture* fondo = nullptr;
 	bool playMusic = false;
+
+	uint selectFx = 0;
+	
 	uint nextFx = 0;
 	uint Mdead = 0;
 	uint level1 = 0;

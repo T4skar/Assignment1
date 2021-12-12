@@ -65,7 +65,7 @@ public:
 	Collider* right = nullptr;
 	Collider* left = nullptr;
 	Collider* up = nullptr;
-
+	
 	uint steps = 0000;
 	uint limit = 00;
 	uint stage = 00;
@@ -75,7 +75,7 @@ public:
 
 	int limitFont = -1;
 	char limitText[10] = { "\0" };
-
+	bool salto = false;
 	/*float speed = 1.0f;*/
 
 	int vidas = 4;

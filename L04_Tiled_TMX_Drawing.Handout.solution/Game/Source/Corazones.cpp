@@ -45,14 +45,16 @@ bool Corazones::Start()
 	bool ret = true;
 	
 	
-	
+	corazonFx = app->audio->LoadFx("Assets/fx/salto.wav");
 	
 
 	// Posición inicial (depende del lvl)
 	
 	 
 	// X, Y, anchura, altura, 
-	cora = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::CORAZON, this);
+	cora = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::CORAZON, this);
+	Cposition.x = 7180;
+	Cposition.y = 999;
 	position.x = 25;
 	position.y = 25;
 	return ret;
@@ -62,12 +64,12 @@ bool Corazones::Start()
 bool Corazones::Update(float dt)
 {
 	
-
+	
 	collision = false;
 	
 	
 	
-	cora->SetPos(25,25);
+	cora->SetPos(Cposition.x,Cposition.y);
 
 
 	//godmode
@@ -77,17 +79,10 @@ bool Corazones::Update(float dt)
 		
 	}
 	
-	
-
-	if ((app->input->GetKey(SDL_SCANCODE_F2) == KEY_DOWN)) {
-		godmode = true;
-		
+	if (collision == true) {
+		app->audio->PlayFx(corazonFx);
 	}
-	if ((app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)) {
-		godmode = false;
-		
 
-	}
 	return true;
 }
 
@@ -111,7 +106,7 @@ bool Corazones::Update(float dt)
 			 
 			
 			 collision = true;
-			 gravity = false;
+		
 			 
 		 }
  }

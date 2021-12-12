@@ -1,5 +1,5 @@
-#ifndef __MODULE_CORAZONES_H__
-#define __MODULE_CORAZONES_H__
+#ifndef __CORAZONES_H__
+#define __CORAZONES_H__
 
 #include "Module.h"
 #include "List.h"
@@ -32,9 +32,10 @@ public:
 	List<SDL_Texture*> player;
 	// Position of the player in the map
 	iPoint position;	
-
+	iPoint Cposition;
+	SDL_Texture* texture = nullptr;
 	// The speed in which we move the player (pixels per frame)
-	
+	uint corazonFx = 0;
 	bool jump = false;
 	// The player spritesheet
 	

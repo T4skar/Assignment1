@@ -39,8 +39,11 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::ENEMYL][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::CORAZON][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::CORAZON] = true;
-	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT] = true;
-	matrix[Collider::Type::CHECKPOINT][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::COIN] = true;
+	matrix[Collider::Type::COIN][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::COIN2] = true;
+	matrix[Collider::Type::COIN2][Collider::Type::PLAYER] = true;
+
 
 }
 
@@ -109,34 +112,7 @@ bool ModuleCollisions::Update(float dt)
 		}
 	}
 	
-	//if (app->input->GetKey(SDL_SCANCODE_F10) == KEY_DOWN) {
-	//	
-	//	app->player->God = !app->player->God;
 
-	//	app->player->gravity = 0.0f;
-	//	if (app->input->GetKey(SDL_SCANCODE_W) == KEY_REPEAT) {
-	//		app->player->position.y -= 1;
-	//		
-
-	//	}
-	//	if (app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT) {
-	//		app->player->position.y = app->player->position.y;
-	//		app->render->camera.y = app->player->position.y;
-
-	//	}
-	//	if (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) {
-	//		app->player->position.x -= 1;
-	//		app->render->camera.x = app->player->position.x;
-
-
-	//	}
-	//	if (app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) {
-	//		app->player->position.x += 1;
-	//		
-
-	//	}
-	//	
-	//}
 	return true;
 }
 
@@ -193,9 +169,15 @@ void ModuleCollisions::DebugDraw()
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break; 
 		case Collider::Type::CORAZON: // green
-				app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+				app->render->DrawRectangle(colliders[i]->rect, 80, 25, 150, alpha);
 				break;
 		case Collider::Type::CHECKPOINT: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
+		case Collider::Type::COIN: // green
+			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
+			break;
+		case Collider::Type::COIN2: // green
 			app->render->DrawRectangle(colliders[i]->rect, 3, 25, 150, alpha);
 			break;
 

@@ -232,16 +232,17 @@ bool ModulePlayer::Update(float dt)
 	
 
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)) {
-			
+		  
 				position.y -= 500 ;
-
+				salto = true;
 				gravity = true;
-			
+				
 
 			if (currentAnimation != &upAnim) {
 				upAnim.Reset();
 				currentAnimation = &upAnim;
 			}
+			
 			
 	  }
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true){

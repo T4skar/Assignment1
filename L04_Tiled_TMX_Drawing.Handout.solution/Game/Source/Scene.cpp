@@ -37,14 +37,14 @@ bool Scene::Awake()
 // Called before the first frame
 bool Scene::Start()
 {
-	
+	textureC = app->tex->Load("Assets/Sprites/coins2.png");
 	// L03: DONE: Load map
 	fondo = app->tex->Load("Assets/Sprites/fondo.png");
 	app->map->Load("mapadef.tmx");
 	texture = app->tex->Load("Assets/Sprites/corazones.png");
 	texture2 = app->tex->Load("Assets/Sprites/corazones.png");
 	texture3 = app->tex->Load("Assets/Sprites/corazones.png");
-
+	selectFx = app->audio->LoadFx("Assets/fx/salto.wav");
 	//checkpoint = app->tex->Load("Assets/Sprites/Banderas.png");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
@@ -108,8 +108,12 @@ bool Scene::Update(float dt)
 		
 
 	
-	
+	app->render->DrawTexture(textureC, app->corazon->Cposition.x, app->corazon->Cposition.y, 0, 0, 0);
 	app->render->DrawTexture(fondo, 0, 509);
+	app->render->DrawTexture(fondo, 2100, 509);
+	app->render->DrawTexture(fondo, 4200, 509);
+	app->render->DrawTexture(fondo, 6300, 509);
+	app->render->DrawTexture(fondo, 8400, 509);
 	//app->render->DrawTexture(checkp, 0, 509);
 	
 	/*active = false;*/
@@ -138,7 +142,9 @@ bool Scene::Update(float dt)
 	app->checkp->BlueFlag = false;
 	app->SaveGameRequest();
 
-
+	if (app->player->salto==true) {
+		app->audio->PlayFx(selectFx);
+	}
 	//Teletransportación por muerte
 	/*if (app->player->vidaDown == true && app->player->vides != 0)
 	{

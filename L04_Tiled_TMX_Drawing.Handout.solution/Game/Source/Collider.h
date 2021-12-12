@@ -12,6 +12,8 @@ struct Collider
 		NONE = -1,
 		PLAYER,
 		CORAZON,
+		COIN,
+		COIN2,
 		RIGHT,
 		LEFT,
 		UP,

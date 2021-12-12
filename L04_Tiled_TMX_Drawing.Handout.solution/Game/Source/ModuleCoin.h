@@ -31,21 +31,20 @@ public:
 public:
 	List<SDL_Texture*> player;
 	// Position of the player in the map
-	iPoint position;	
-
+	iPoint position;
+	iPoint Cposition;
+	iPoint COposition;
+	SDL_Texture* texture = nullptr;
 	// The speed in which we move the player (pixels per frame)
-	
+	uint corazonFx = 0;
 	bool jump = false;
 	// The player spritesheet
-	SDL_Texture* texture = nullptr;
-	SDL_Texture* texture2 = nullptr;
-	SDL_Texture* texture3 = nullptr;
-	
-	
+
+
 	//Save i load
 	bool loadState(pugi::xml_node&);
 	bool saveState(pugi::xml_node&) const;
-	
+
 	// The pointer to the current player animation
 	Animation* currentAnimation;
 
@@ -60,11 +59,11 @@ public:
 	Animation rightAnim;
 	Animation atackRightAnim;
 	Animation atackLeftAnim;
-	
+
 	bool God = false;
 	bool vida = true;
 	bool win = false;
-	Collider* cora = nullptr;
+	Collider* coin = nullptr;
 
 
 	uint steps = 0000;
@@ -82,15 +81,15 @@ public:
 
 	bool canMove = true;
 	int currentScene;
-	uint numBox=0;
+	uint numBox = 0;
 	bool gravity = true;
 	void OnCollision(Collider* c1, Collider* C2)override;
 	bool playerMovement = true;
 	bool collision;
 	bool dead;
 	bool Win;
-	bool Right=true;
-	bool Left=true;
+	bool Right = true;
+	bool Left = true;
 	bool godmode = false;
 	bool playingM = false;
 	//Sets the camera over the dot

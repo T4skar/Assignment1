@@ -1,0 +1,28 @@
+Joan Damià:
+- checkpoints
+- Pathfinding
+
+Albert:
+- enemigo
+- enemigo volador
+- Mapa
+
+Laia:
+- Todo el Player
+- Colisiones
+- Mapa
+- scene
+- SceneTitulo
+- ModuleCoins
+- Corazones(recuperacion de vida)
+- FadeToBlack
+- Sprites
+- Lose
+- Win
+- ModulePhysics
+- Creacion e Implementacion de todos los modulos
+- Diseño y arte
+- todo el audio
+- Save
+- Load
+- camara
