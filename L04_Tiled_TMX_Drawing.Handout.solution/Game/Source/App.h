@@ -35,7 +35,9 @@ class ModuleEnemyVolador;
 class Corazones;
 class Checkpoint;
 class ModuleCoin;
-
+class UiAdmin;
+class Slider;
+class UiElements;
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -125,9 +127,9 @@ public:
 	Corazones* corazon;
 	Checkpoint* checkp;
 	ModuleCoin* coin;
-
-
-
+	UiAdmin* uiAdmin;
+	Slider* slider;
+	UiElements* uiElements;
 
 	
 

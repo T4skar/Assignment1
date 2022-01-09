@@ -109,8 +109,11 @@
     <ClCompile Include="Source\Render.cpp" />
     <ClCompile Include="Source\SceneCredits.cpp" />
     <ClCompile Include="Source\SceneTitle.cpp" />
+    <ClCompile Include="Source\Slider.cpp" />
     <ClCompile Include="Source\Textures.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
+    <ClCompile Include="Source\UiAdmin.cpp" />
+    <ClCompile Include="Source\UiElements.cpp" />
     <ClCompile Include="Source\Window.cpp" />
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Checkpoint.h" />
@@ -133,8 +136,11 @@
     <ClInclude Include="Source\Render.h" />
     <ClInclude Include="Source\SceneCredits.h" />
     <ClInclude Include="Source\SceneTitle.h" />
+    <ClInclude Include="Source\Slider.h" />
     <ClInclude Include="Source\Textures.h" />
     <ClInclude Include="Source\Timer.h" />
+    <ClInclude Include="Source\UiAdmin.h" />
+    <ClInclude Include="Source\UiElements.h" />
     <ClInclude Include="Source\Window.h" />
     <ClInclude Include="Source\Defs.h" />
     <ClInclude Include="Source\List.h" />
