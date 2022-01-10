@@ -20,8 +20,8 @@
 #include"ModuleCoin.h"
 //#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
-#include "UiAdmin.h"
-#include "Slider.h"
+#include "GuiManager.h"
+
 
 #include "Defs.h"
 #include "Log.h"
@@ -51,9 +51,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	corazon = new Corazones();
 	//checkp = new Checkpoint();
 	coin = new ModuleCoin();
-	//uiAdmin = new UiAdmin();
-	//slider = new Slider();
-	//uiElements = new UiElements();
+	guiManager = new GuiManager();
 	//pathfinding = new Pathfinding();
 	
 	//pathfinding = new PathFinding();
@@ -75,9 +73,8 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(corazon);
 	//AddModule(checkp);
 	AddModule(coin);
-	/*AddModule(uiAdmin);
-	AddModule(slider);
-	AddModule(uiElements);*/
+	AddModule(guiManager);
+
 	//AddModule(pathfinding);
 
 	// Render last to swap buffer

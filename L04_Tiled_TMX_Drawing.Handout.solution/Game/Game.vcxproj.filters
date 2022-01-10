@@ -30,9 +30,9 @@
     <ClCompile Include="Source\ModuleCoin.cpp" />
     <ClCompile Include="Source\PerfTimer.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
-    <ClCompile Include="Source\UiAdmin.cpp" />
     <ClCompile Include="Source\Slider.cpp" />
-    <ClCompile Include="Source\UiElements.cpp" />
+    <ClCompile Include="Source\GuiManager.cpp" />
+    <ClCompile Include="Source\GuiButton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -83,9 +83,10 @@
     <ClInclude Include="Source\ModuleCoin.h" />
     <ClInclude Include="Source\PerfTimer.h" />
     <ClInclude Include="Source\Timer.h" />
-    <ClInclude Include="Source\UiAdmin.h" />
     <ClInclude Include="Source\Slider.h" />
-    <ClInclude Include="Source\UiElements.h" />
+    <ClInclude Include="Source\GuiControl.h" />
+    <ClInclude Include="Source\GuiManager.h" />
+    <ClInclude Include="Source\GuiButton.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

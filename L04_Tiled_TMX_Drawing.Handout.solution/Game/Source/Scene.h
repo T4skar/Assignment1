@@ -2,7 +2,7 @@
 #define __SCENE_H__
 
 #include "Module.h"
-
+#include "GuiButton.h"
 struct SDL_Texture;
 
 class Scene : public Module
@@ -77,6 +77,9 @@ public:
 
 private:
 	SDL_Texture* img;
+	//Declare a GUI Button and create it using the GuiManager
+	GuiButton* btn1;
+	GuiButton* btn2;
 };
 
 #endif // __SCENE_H__

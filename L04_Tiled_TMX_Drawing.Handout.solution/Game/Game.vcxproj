@@ -92,6 +92,7 @@
     <ClCompile Include="Source\Checkpoint.cpp" />
     <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\Corazones.cpp" />
+    <ClCompile Include="Source\GuiButton.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\App.cpp" />
     <ClCompile Include="Source\Audio.cpp" />
@@ -112,13 +113,13 @@
     <ClCompile Include="Source\Slider.cpp" />
     <ClCompile Include="Source\Textures.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
-    <ClCompile Include="Source\UiAdmin.cpp" />
-    <ClCompile Include="Source\UiElements.cpp" />
+    <ClCompile Include="Source\GuiManager.cpp" />
     <ClCompile Include="Source\Window.cpp" />
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Checkpoint.h" />
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\Corazones.h" />
+    <ClInclude Include="Source\GuiButton.h" />
     <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\ModuleCoin.h" />
     <ClInclude Include="Source\ModuleEnemy.h" />
@@ -139,8 +140,8 @@
     <ClInclude Include="Source\Slider.h" />
     <ClInclude Include="Source\Textures.h" />
     <ClInclude Include="Source\Timer.h" />
-    <ClInclude Include="Source\UiAdmin.h" />
-    <ClInclude Include="Source\UiElements.h" />
+    <ClInclude Include="Source\GuiManager.h" />
+    <ClInclude Include="Source\GuiControl.h" />
     <ClInclude Include="Source\Window.h" />
     <ClInclude Include="Source\Defs.h" />
     <ClInclude Include="Source\List.h" />
