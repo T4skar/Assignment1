@@ -7,7 +7,7 @@
 //#include "ModulePhysics.h"
 
 class App;
-
+class GuiControl;
 class Module
 {
 public:
@@ -94,6 +94,10 @@ public:
 
 	}
 
+	virtual bool OnGuiMouseClickEvent(GuiControl* control)
+	{
+		return true;
+	}
 	
 public:
 

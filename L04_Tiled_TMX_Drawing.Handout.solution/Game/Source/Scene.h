@@ -74,6 +74,8 @@ public:
 	SDL_Texture* TeleportText = nullptr;
 	SDL_Texture* Teleport2Text = nullptr;
 	Collider* Teleport = nullptr;
+	bool fading = false;
+
 
 private:
 	SDL_Texture* img;
