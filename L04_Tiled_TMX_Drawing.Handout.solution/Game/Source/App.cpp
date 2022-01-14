@@ -18,6 +18,7 @@
 #include "Checkpoint.h"
 #include "Timer.h"
 #include"ModuleCoin.h"
+#include "EntityManeger.h"
 //#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
 
@@ -49,6 +50,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	corazon = new Corazones();
 	//checkp = new Checkpoint();
 	coin = new ModuleCoin();
+	entities = new EntityManager();
 	//pathfinding = new Pathfinding();
 	
 	//pathfinding = new PathFinding();
@@ -70,6 +72,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(corazon);
 	//AddModule(checkp);
 	AddModule(coin);
+	AddModule(entities);
 	//AddModule(pathfinding);
 
 	// Render last to swap buffer

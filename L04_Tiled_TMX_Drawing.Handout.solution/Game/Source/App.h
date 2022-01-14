@@ -35,6 +35,7 @@ class ModuleEnemyVolador;
 class Corazones;
 class Checkpoint;
 class ModuleCoin;
+class EntityManeger;
 
 enum class update_status
 {
@@ -125,6 +126,7 @@ public:
 	Corazones* corazon;
 	Checkpoint* checkp;
 	ModuleCoin* coin;
+	EntityManeger* entities;
 
 
 
