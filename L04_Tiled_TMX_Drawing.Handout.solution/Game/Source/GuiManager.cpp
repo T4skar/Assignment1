@@ -1,7 +1,7 @@
 #include "GuiManager.h"
 #include "App.h"
 #include "Textures.h"
-
+#include "GuiSlider.h"
 #include "GuiButton.h"
 #include "Audio.h"
 
@@ -17,31 +17,29 @@ bool GuiManager::Start()
 	return true;
 }
 
-GuiControl* GuiManager::CreateGuiControl(GuiControlType type, int id, const char* text, SDL_Rect bounds, Module* observer, SDL_Rect sliderBounds)
+GuiControl* GuiManager::CreateGuiControl(GuiControlType type, int x, int y, SDL_Rect bounds, int id)
 {
-	// L14: TODO1: Create a GUI control and add it to the list of controls
-
 	GuiControl* control = nullptr;
 
-	//Call the constructor according to the GuiControlType
 	switch (type)
 	{
 	case GuiControlType::BUTTON:
-		control = new GuiButton(id, bounds, text);
+		control = new GuiButton(id, bounds, arrowMenuTex);
+		control->SetObserver(app->scene);
+		break;
+	//case GuiControlType::CHECKBOX:
+	//	control = new GuiCheckBox(id, bounds, checkBoxTex);
+	//	control->SetObserver(app->scene);
+	//	break;
+	case GuiControlType::SLIDER:
+		control = new GuiSlider(id, bounds, sliderTex);
+		control->SetObserver(app->scene);
 		break;
 
-		// More Gui Controls can go here
-
-	default:
-		break;
+	default: break;
 	}
 
-	//Set the observer
-
-	control->SetObserver(observer);
-	//control->SetTexture(texture);
-
-	// Created GuiControls are added to the list of controls
+	// Created entities are added to the list
 	if (control != nullptr) controls.add(control);
 
 	return control;
@@ -106,4 +104,22 @@ bool GuiManager::CleanUp()
 	return true;
 
 	return false;
+}
+
+void GuiManager::DestroyAllGuiControls()
+{
+	int u = controls.count();
+
+	for (int i = 0; i < u; i++)
+	{
+		delete controls.At(0)->data;
+		controls.del(controls.At(0));
+	}
+}
+
+void GuiManager::DestroyGuiControl(GuiControl* entity)
+{
+	int i = controls.find(entity);
+	ListItem<GuiControl*>* c = controls.At(i);
+	controls.del(c);
 }

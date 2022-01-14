@@ -9,6 +9,19 @@ class Scene : public Module
 {
 public:
 
+	enum GameplayState
+	{
+		LOGO_SCREEN,
+		TITLE_SCREEN,
+		TITLE_MENU,
+		PLAYING,
+		PAUSE,
+		GAME_OVER_SCREEN,
+		CREDITS_SCREEN
+	};
+
+
+
 	Scene(bool startEnabled);
 
 	// Destructor
@@ -38,8 +51,24 @@ public:
 	SDL_Texture* texture = nullptr;
 	SDL_Texture* texture2 = nullptr;
 	SDL_Texture* texture3 = nullptr;
+
 	// Called before quitting
+
 	bool CleanUp();
+
+	bool Load(pugi::xml_node&);
+	bool Save(pugi::xml_node&);
+
+	void LoadLevel(SString name, bool loadEntities = true);
+
+	void ChangeGameplayState(GameplayState newState);
+	void FadeToNewState(GameplayState newState);
+
+	// Define multiple Gui Event methods
+	virtual bool OnGuiMouseClickEvent(GuiControl* control);
+
+public:
+	GameplayState gameplayState = LOGO_SCREEN;
 	SDL_Texture* fondo = nullptr;
 	bool playMusic = false;
 

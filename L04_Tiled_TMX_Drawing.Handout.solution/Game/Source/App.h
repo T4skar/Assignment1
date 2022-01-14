@@ -36,6 +36,7 @@ class Corazones;
 class Checkpoint;
 class ModuleCoin;
 class GuiManager;
+class ModuleUI;
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -126,9 +127,9 @@ public:
 	Checkpoint* checkp;
 	ModuleCoin* coin;
 	GuiManager* guiManager;
+	ModuleUI* ui;
 
-
-	
+	bool saving = false;
 
 	uint64 frameCount = 0;
 	uint32 framesPerSecond = 0;

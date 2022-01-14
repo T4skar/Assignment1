@@ -21,7 +21,7 @@
 //#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
 #include "GuiManager.h"
-
+#include "ModuleUI"
 
 #include "Defs.h"
 #include "Log.h"
@@ -53,6 +53,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	coin = new ModuleCoin();
 	guiManager = new GuiManager();
 	//pathfinding = new Pathfinding();
+	ui = new ModuleUI();
 	
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
@@ -74,7 +75,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	//AddModule(checkp);
 	AddModule(coin);
 	AddModule(guiManager);
-
+	AddModule(ui);
 	//AddModule(pathfinding);
 
 	// Render last to swap buffer

@@ -104,6 +104,7 @@
     <ClCompile Include="Source\ModuleFadeToBlack.cpp" />
     <ClCompile Include="Source\ModulePhysics.cpp" />
     <ClCompile Include="Source\ModulePlayer.cpp" />
+    <ClCompile Include="Source\ModuleUI.cpp" />
     <ClCompile Include="Source\Pathfinding.cpp" />
     <ClCompile Include="Source\PerfTimer.cpp" />
     <ClCompile Include="Source\Scene.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="Source\ModuleFadeToBlack.h" />
     <ClInclude Include="Source\ModulePhysics.h" />
     <ClInclude Include="Source\ModulePlayer.h" />
+    <ClInclude Include="Source\ModuleUI.h" />
     <ClInclude Include="Source\Pathfinding.h" />
     <ClInclude Include="Source\PerfTimer.h" />
     <ClInclude Include="Source\Scene.h" />

@@ -39,6 +39,7 @@
     <ClCompile Include="Source\GuiSlider.cpp">
       <Filter>Gui</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -101,6 +102,7 @@
     <ClInclude Include="Source\GuiSlider.h">
       <Filter>Gui</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ModuleUI.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">
