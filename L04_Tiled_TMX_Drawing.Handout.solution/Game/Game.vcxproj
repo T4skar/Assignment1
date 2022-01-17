@@ -89,10 +89,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EntityManeger.cpp" />
     <ClCompile Include="Source\Checkpoint.cpp" />
     <ClCompile Include="Source\Collider.cpp" />
     <ClCompile Include="Source\Corazones.cpp" />
+    <ClCompile Include="Source\EntityManeger.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\App.cpp" />
     <ClCompile Include="Source\Audio.cpp" />
@@ -113,12 +113,12 @@
     <ClCompile Include="Source\Textures.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="Source\Window.cpp" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="EntityManeger.h" />
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Checkpoint.h" />
     <ClInclude Include="Source\Collider.h" />
     <ClInclude Include="Source\Corazones.h" />
+    <ClInclude Include="Source\Entity.h" />
+    <ClInclude Include="Source\EntityManeger.h" />
     <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\ModuleCoin.h" />
     <ClInclude Include="Source\ModuleEnemy.h" />

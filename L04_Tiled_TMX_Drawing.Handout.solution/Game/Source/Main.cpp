@@ -12,6 +12,10 @@
 
 #include <stdlib.h>
 
+
+App* app = NULL;
+
+
 enum MainState
 {
 	CREATE = 1,

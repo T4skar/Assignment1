@@ -1,117 +1,157 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
   EntityManeger.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\EntityManeger.h(5,10): fatal error C1083: No se puede abrir el archivo incluir: 'Module.h': No such file or directory
-  Checkpoint.cpp
-  Collider.cpp
-  Corazones.cpp
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Main.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(53,6): error C2143: error de sintaxis: falta ';' delante de '<'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(53,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(53,24): error C2238: símbolos (token) inesperados delante de ';'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(168,16): error C2071: 'EntityManager::app': clase de almacenamiento no válida
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(9,16): error C2027: uso del tipo 'EntityManager::EntityManeger' sin definir
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(38): message : vea la declaración de 'EntityManager::EntityManeger'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(9,32): error C2590: '{ctor}': solo un constructor puede tener una lista de inicializadores de base o miembro
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(9,32): error C2535: 'EntityManager::EntityManager(void)': función miembro ya definida o declarada
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(15): message : vea la declaración de 'EntityManager::EntityManager'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(17,17): error C2027: uso del tipo 'EntityManager::EntityManeger' sin definir
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(38): message : vea la declaración de 'EntityManager::EntityManeger'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(18,1): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(18,1): error C2556: 'int EntityManager::{dtor}(void)': la función sobrecargada solo se diferencia de 'EntityManager::~EntityManager(void)' por el tipo de valor devuelto
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(17): message : vea la declaración de 'EntityManager::~EntityManager'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(17,30): error C2371: 'EntityManager::~EntityManager': nueva definición; tipos básicos distintos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(17): message : vea la declaración de 'EntityManager::~EntityManager'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(18,1): warning C4183: '{dtor}': falta el tipo de valor devuelto; se supone que se trata de una función miembro que devuelve 'int'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(22,1): error C2628: 'EntityManager' seguido de 'void' no es válido (¿ha olvidado ';'?)
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(23,1): error C2556: 'EntityManager EntityManager::Init(void)': la función sobrecargada solo se diferencia de 'void EntityManager::Init(void)' por el tipo de valor devuelto
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(18): message : vea la declaración de 'EntityManager::Init'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(22,21): error C2371: 'EntityManager::Init': nueva definición; tipos básicos distintos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(18): message : vea la declaración de 'EntityManager::Init'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(81,21): error C2039: "Load": no es un miembro de "EntityManager"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(12): message : vea la declaración de 'EntityManager'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(88,21): error C2039: "Save": no es un miembro de "EntityManager"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.h(12): message : vea la declaración de 'EntityManager'
   App.cpp
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(21,10): fatal error C1083: No se puede abrir el archivo incluir: 'EntityManeger.h': No such file or directory
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(507,1): error C2059: error de sintaxis: 'namespace'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(507,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(522,17): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(522,37): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(522,37): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(522,12): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(522,12): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(522,12): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(522,119): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(544,17): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(544,37): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(544,37): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(544,12): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(544,12): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(544,12): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(544,49): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(545,72): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(576,6): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(576,26): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(576,26): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(576,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(576,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(576,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(576,111): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(617,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(617,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(617,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(617,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(617,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(617,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(644,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(644,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(644,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(644,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(644,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(644,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(662,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(662,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(662,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(662,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(662,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(662,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(663,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(663,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(663,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(663,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(663,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(663,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(665,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(665,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(665,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(665,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(665,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(665,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(667,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(667,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(667,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(667,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(667,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(667,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(669,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(669,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(669,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(669,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(669,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(669,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(670,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(670,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(670,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(670,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(670,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(670,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(671,1): error C2039: "_Common_float_type_t": no es un miembro de "std"
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\External\PugiXml\src\pugixml.hpp(1315): message : vea la declaración de 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(671,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(671,1): error C2143: error de sintaxis: falta ';' delante de '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(671,1): error C2238: símbolos (token) inesperados delante de ';'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(671,1): error C2059: error de sintaxis: '<'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(671,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(683,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(683,1): error C2059: error de sintaxis: 'namespace'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath(683,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\__msvc_system_error_abi.hpp(26,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\__msvc_system_error_abi.hpp(26,1): error C2059: error de sintaxis: 'cadena'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\__msvc_system_error_abi.hpp(26,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdexcept(20,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdexcept(20,1): error C2059: error de sintaxis: 'namespace'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\stdexcept(20,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xcall_once.h(19,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xcall_once.h(19,1): error C2059: error de sintaxis: 'namespace'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xcall_once.h(19,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xerrc.h(19,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xerrc.h(19,1): error C2059: error de sintaxis: 'namespace'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xerrc.h(19,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\atomic(134,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\atomic(134,1): error C2059: error de sintaxis: 'namespace'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\atomic(134,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\system_error(28,1): error C2988: declaración o definición de plantilla irreconocible
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\system_error(28,1): error C2059: error de sintaxis: 'namespace'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\system_error(28,1): error C2334: símbolos (token) inesperados delante de '{'; se pasará por alto el cuerpo de función aparente
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_typeinfo.h(31,50): error C2071: 'EntityManager::__type_info_root_node': clase de almacenamiento no válida
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_typeinfo.h(31,50): error C2079: 'EntityManager::__type_info_root_node' utiliza struct 'EntityManager::__type_info_node' sin definir
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_typeinfo.h(31,50): fatal error C1003: el recuento de errores supera 100; se detiene la compilación
   Audio.cpp
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Input.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Map.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Map.cpp(39,20): warning C4018: '<': no coinciden signed/unsigned
-  ModuleCoin.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  ModuleEnemy.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(87,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(123,33): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(136,22): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(144,22): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-  ModuleEnemyVolador.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  ModuleFadeToBlack.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.cpp(81,19): warning C4244: '=': conversión de 'float' a 'Uint32'; posible pérdida de datos
-  ModulePhysics.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(160,68): warning C4305: 'argumento': truncamiento de 'int' a 'Uint8'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(160,54): warning C4309: 'argumento': truncamiento de valor constante
-  ModulePlayer.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(111,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(128,23): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(131,23): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(159,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(230,22): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(278,23): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(417,20): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(427,21): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-  Pathfinding.cpp
-  PerfTimer.cpp
-  Scene.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(79,76): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-  Render.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  SceneCredits.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-  Compilando...
-  SceneTitle.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Textures.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Timer.cpp
-  Window.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Log.cpp
   pugixml.cpp
   Generando código...

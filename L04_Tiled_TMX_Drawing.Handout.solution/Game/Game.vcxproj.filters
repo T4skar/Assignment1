@@ -30,7 +30,7 @@
     <ClCompile Include="Source\ModuleCoin.cpp" />
     <ClCompile Include="Source\PerfTimer.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
-    <ClCompile Include="EntityManeger.cpp" />
+    <ClCompile Include="Source\EntityManeger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -81,8 +81,8 @@
     <ClInclude Include="Source\ModuleCoin.h" />
     <ClInclude Include="Source\PerfTimer.h" />
     <ClInclude Include="Source\Timer.h" />
-    <ClInclude Include="EntityManeger.h" />
-    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Source\Entity.h" />
+    <ClInclude Include="Source\EntityManeger.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

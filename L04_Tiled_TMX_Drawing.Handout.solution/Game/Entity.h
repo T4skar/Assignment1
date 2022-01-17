@@ -3,9 +3,8 @@
 
 #include "Point.h"
 #include "SString.h"
-#include "Animation.h"
-#include "ModulePhysics.h"
-#include "DynArray.h"
+#include "Input.h"
+#include "Render.h"
 
 
 class Collider;
@@ -31,7 +30,7 @@ class Entity
 {
 public:
 	// Constructor
-	Entity(int x, int y, EntityType type, EnemyType eType = EnemyType::NO_TYPE) : type(type), eType(eType)
+	Entity(EntityType type) : type(type), active(true) {}
 	{}
 
 	// Called each loop iteration
@@ -54,8 +53,8 @@ public:
 public:
 	EntityType type;
 	SDL_Rect entityRect;
-	Collider* collider;
-	Physics physics;
+	//Collider* collider;
+	//Physics physics;
 	iPoint nextPos;
 	uint destroyedFx;
 
@@ -64,7 +63,7 @@ public:
 	iPoint spawnPos;
 
 
-	Animation* currentAnim = nullptr;
+	//Animation* currentAnim = nullptr;
 	bool invert = false;
 
 	bool isDead = false;
@@ -73,4 +72,4 @@ public:
 
 };
 
-#endif
+#endif // __ENTITY_H__
