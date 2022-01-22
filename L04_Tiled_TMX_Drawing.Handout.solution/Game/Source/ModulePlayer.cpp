@@ -23,7 +23,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-ModulePlayer::ModulePlayer() : Module()
+ModulePlayer::ModulePlayer(int x, int y) : Entity(x, y, EntityType::PLAYER)
 {
 
 	// Aqui van las animaciones del player
@@ -96,11 +96,11 @@ bool ModulePlayer::Start()
 	
 	 
 	// X, Y, anchura, altura, 
-	collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
-	right = app->physics->AddCollider({ position.x, position.y, 8, 80 }, Collider::Type::RIGHT, this);
-	left = app->physics->AddCollider({ position.x, position.y, 24, 80 }, Collider::Type::LEFT, this);
-	up = app->physics->AddCollider({ position.x, position.y, 24, 24 }, Collider::Type::UP, this);
-	matar = app->physics->AddCollider({ position.x, position.y, 115, 24 }, Collider::Type::MATAR, this);
+	collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER);
+	right = app->physics->AddCollider({ position.x, position.y, 8, 80 }, Collider::Type::RIGHT);
+	left = app->physics->AddCollider({ position.x, position.y, 24, 80 }, Collider::Type::LEFT);
+	up = app->physics->AddCollider({ position.x, position.y, 24, 24 }, Collider::Type::UP);
+	matar = app->physics->AddCollider({ position.x, position.y, 115, 24 }, Collider::Type::MATAR);
 	return ret;
 }
 

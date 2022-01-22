@@ -18,6 +18,7 @@
 #include "Checkpoint.h"
 #include "Timer.h"
 #include"ModuleCoin.h"
+#include "EntityManeger.h"
 //#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
 #include "GuiManager.h"
@@ -51,6 +52,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	corazon = new Corazones();
 	//checkp = new Checkpoint();
 	coin = new ModuleCoin();
+	entities = new EntityManager();
 	guiManager = new GuiManager();
 	//pathfinding = new Pathfinding();
 	ui = new ModuleUI();
@@ -74,6 +76,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(corazon);
 	//AddModule(checkp);
 	AddModule(coin);
+	AddModule(entities);
 	AddModule(guiManager);
 	AddModule(ui);
 	//AddModule(pathfinding);

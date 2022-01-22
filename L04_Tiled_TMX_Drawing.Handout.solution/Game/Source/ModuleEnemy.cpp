@@ -20,7 +20,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-ModuleEnemy::ModuleEnemy() : Module()
+ModuleEnemy::ModuleEnemy(int x, int y, EnemyType enemyType, Entity* playerPointer) : Entity(x, y, EntityType::ENEMY, enemyType)
 {
 
 	// Aqui van las animaciones del player
@@ -75,9 +75,9 @@ bool ModuleEnemy::Start()
 	// X, Y, anchura, altura, 
 	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
 
-	colliderE = app->physics->AddCollider({ position.x, position.y, 92,75 }, Collider::Type::ENEMY, this);
-	enemyRight = app->physics->AddCollider({ position.x, position.y, 500, 75 }, Collider::Type::ENEMYR, this);
-	enemyLeft = app->physics->AddCollider({ position.x, position.y, 500, 75 }, Collider::Type::ENEMYL, this);
+	colliderE = app->physics->AddCollider({ position.x, position.y, 92,75 }, Collider::Type::ENEMY);
+	enemyRight = app->physics->AddCollider({ position.x, position.y, 500, 75 }, Collider::Type::ENEMYR);
+	enemyLeft = app->physics->AddCollider({ position.x, position.y, 500, 75 }, Collider::Type::ENEMYL);
 	//enemyLeft = app->physics->AddCollider({ position.x, position.y, -500, 80 }, Collider::Type::ENEMYL, this);
 	return ret;
 }

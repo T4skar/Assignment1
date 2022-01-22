@@ -20,7 +20,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-Corazones::Corazones() : Module()
+Corazones::Corazones(int x, int y) : Entity(x, y, EntityType::HEART)
 {
 
 	
@@ -52,7 +52,7 @@ bool Corazones::Start()
 	
 	 
 	// X, Y, anchura, altura, 
-	cora = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::CORAZON, this);
+	cora = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::CORAZON);
 	Cposition.x = 7180;
 	Cposition.y = 999;
 	position.x = 25;

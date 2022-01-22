@@ -8,6 +8,7 @@
 #include "Point.h"
 #include "Map.h"
 #include "Render.h"
+#include "Entity.h"
 
 struct SDL_Texture;
 
@@ -20,7 +21,9 @@ public:
 	ModuleEnemy();
 	~ModuleEnemy();
 
-	bool Start() override;
+	ModuleEnemy(int x, int y, EnemyType enemyType, Entity* playerPointer);
+
+	bool Start();
 
 
 

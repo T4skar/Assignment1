@@ -40,6 +40,7 @@
       <Filter>Gui</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleUI.cpp" />
+    <ClCompile Include="Source\EntityManeger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -103,6 +104,8 @@
       <Filter>Gui</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleUI.h" />
+    <ClInclude Include="Source\Entity.h" />
+    <ClInclude Include="Source\EntityManeger.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

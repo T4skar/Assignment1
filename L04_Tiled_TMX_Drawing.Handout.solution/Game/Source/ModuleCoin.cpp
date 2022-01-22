@@ -21,7 +21,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-ModuleCoin::ModuleCoin() : Module()
+ModuleCoin::ModuleCoin(int x, int y) : Entity(x, y, EntityType::COIN)
 {
 
 	
@@ -56,7 +56,7 @@ bool ModuleCoin::Start()
 	COposition.x = 4350;
 	COposition.y = 1500;
 	// X, Y, anchura, altura, 
-	coin = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::COIN, this);
+	coin = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::COIN);
 	Cposition.x = 4500;
 	Cposition.y = 1500;
 	position.x = 25;
