@@ -19,7 +19,7 @@
 #include "Timer.h"
 #include"ModuleCoin.h"
 #include "EntityManeger.h"
-//#include "Pathfinding.h"
+#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
 #include "GuiManager.h"
 #include "ModuleUI"
@@ -54,9 +54,9 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	coin = new ModuleCoin();
 	entities = new EntityManager();
 	guiManager = new GuiManager();
-	//pathfinding = new Pathfinding();
 	ui = new ModuleUI();
-	
+	pathfinding = new PathFinding();
+
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp

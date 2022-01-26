@@ -30,7 +30,7 @@ class SceneLogo;
 class ModuleCamera;
 class ModuleEnemy;
 class SceneTitle;
-//class Pathfinding;
+class PathFinding;
 class ModuleEnemyVolador;
 class Corazones;
 class Checkpoint;
@@ -123,7 +123,7 @@ public:
 	ModuleEnemy* enemy;
 	SceneTitle* Title;
 	ModuleEnemyVolador* enemyvol;
-	//Pathfinding* pathfinding;
+	PathFinding* pathfinding;
 	Corazones* corazon;
 	Checkpoint* checkp;
 	ModuleCoin* coin;

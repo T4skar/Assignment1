@@ -16,14 +16,14 @@
 //// Details: http://theory.stanford.edu/~amitp/GameProgramming/
 //// --------------------------------------------------
 //
-//class Pathfinding : public Module
+//class PathFinding : public Module
 //{
 //public:
 //
-//	Pathfinding();
+//	PathFinding();
 //
 //	// Destructor
-//	~Pathfinding();
+//	~PathFinding();
 //
 //	// Called before quitting
 //	bool CleanUp();
@@ -32,7 +32,7 @@
 //	void SetMap(uint width, uint height, uchar* data);
 //
 //	// Main function to request a path from A to B
-//	int CreatePath(const iPoint& origin, const iPoint& destination);
+//	int CreatePath(const iPoint& origin, const iPoint& destination, bool useGravity = false, int maxJump = 0, int maxLength = 10, int maxNodes = 200);
 //
 //	// To request all tiles involved in the last generated path
 //	const DynArray<iPoint>* GetLastPath() const;
@@ -45,6 +45,10 @@
 //
 //	// Utility: return the walkability value of a tile
 //	uchar GetTileAt(const iPoint& pos) const;
+//
+//	void DrawPath(const DynArray<iPoint>* path, int r, int g, int b);
+//
+//	iPoint GetGroundTile(iPoint pos);
 //
 //private:
 //
@@ -69,20 +73,26 @@
 //{
 //	int g;
 //	int h;
+//	int jump;
 //	iPoint pos;
 //	const PathNode* parent; // needed to reconstruct the path in the end
 //
 //	// Convenient constructors
 //	PathNode();
-//	PathNode(int g, int h, const iPoint& pos, const PathNode* parent);
+//	PathNode(int g, int h, const iPoint& pos, const PathNode* parent, int jump = 0);
 //	PathNode(const PathNode& node);
 //
 //	// Fills a list (PathList) of all valid adjacent pathnodes
-//	uint FindWalkableAdjacents(PathList& list_to_fill) const;
+//	uint FindWalkableAdjacents(PathList& listToFill, bool useGravity, int maxJump) const;
 //	// Calculates this tile score
 //	int Score() const;
 //	// Calculate the F for a specific destination tile
-//	int CalculateF(const iPoint& destination);
+//	int CalculateF(const iPoint& destination, bool useGravity = false);
+//
+//	const bool operator ==(const PathNode other)
+//	{
+//		return pos == other.pos && jump == other.jump;
+//	}
 //};
 //
 //// ---------------------------------------------------------------------
@@ -91,7 +101,7 @@
 //struct PathList
 //{
 //	// Looks for a node in this list and returns it's list node or NULL
-//	ListItem<PathNode>* Find(const iPoint& point) const;
+//	const ListItem<PathNode>* Find(const iPoint& point) const;
 //
 //	// Returns the Pathnode with lowest score in this list or NULL if empty
 //	ListItem<PathNode>* GetNodeLowestScore() const;
