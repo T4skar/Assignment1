@@ -20,7 +20,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-ModuleEnemy::ModuleEnemy(int x, int y, EnemyType enemyType, Entity* playerPointer) : Entity(x, y, EntityType::ENEMY, enemyType)
+ModuleEnemy::ModuleEnemy(int x, int y, EnemyType enemyType, Entity* playerPointer)
 {
 
 	// Aqui van las animaciones del player

@@ -18,10 +18,10 @@ public:
 	virtual ~EntityManager();
 	void Init();
 
-	
+
 	bool Awake(pugi::xml_node&);
 
-	
+
 	bool Start();
 
 
@@ -56,5 +56,6 @@ public:
 
 	int enemyDestroyedFx = 0;
 
+}
 
-#endif
+#endif 

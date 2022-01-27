@@ -23,7 +23,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-ModulePlayer::ModulePlayer(int x, int y) : Entity(x, y, EntityType::PLAYER)
+ModulePlayer::ModulePlayer(int x, int y)
 {
 
 	// Aqui van las animaciones del player

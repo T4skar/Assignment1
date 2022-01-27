@@ -52,7 +52,7 @@ bool ModuleCoin::Start()
 	textureC2 = app->tex->Load("Assets/Sprites/coin.png");
 	//texturecora = app->tex->Load("Assets/Sprites/corazones.png");
 	// Posición inicial (depende del lvl)
-	coin2 = app->physics->AddCollider({ COposition.x, COposition.y, 115, 171 }, Collider::Type::COIN2, this);
+	coin2 = app->physics->AddCollider({ COposition.x, COposition.y, 115, 171 }, Collider::Type::COIN2);
 	COposition.x = 4350;
 	COposition.y = 1500;
 	// X, Y, anchura, altura, 

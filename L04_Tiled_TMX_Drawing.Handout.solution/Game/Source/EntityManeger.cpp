@@ -5,7 +5,6 @@
 
 #include "Window.h"
 #include "Input.h"
-#include "Render.h"
 #include "Textures.h"
 #include "Audio.h"
 #include "Scene.h"
@@ -105,20 +104,20 @@ Entity* EntityManager::CreateEntity(int x, int y, EntityType type, Entity* playe
 
 	switch (type)
 	{
-	case EntityType::PLAYER:
+	/*case EntityType::PLAYER:
 	{
 		ret = new ModulePlayer(x, y);
 		break;
-	}
+	}*/
 	case EntityType::ENEMY:
 	{
 		switch (eType)
 		{
-		case EnemyType::SUELO:
+		/*case EnemyType::SUELO:
 		{
 			ret = new ModuleEnemy(x, y, eType, playerPointer);
 			break;
-		}
+		}*/
 		default:
 			break;
 		}
