@@ -94,6 +94,7 @@
     <ClCompile Include="Source\Corazones.cpp" />
     <ClCompile Include="Source\EntityManeger.cpp" />
     <ClCompile Include="Source\GuiButton.cpp" />
+    <ClCompile Include="Source\GuiCheckbox.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\App.cpp" />
     <ClCompile Include="Source\Audio.cpp" />
@@ -124,6 +125,7 @@
     <ClInclude Include="Source\Entity.h" />
     <ClInclude Include="Source\EntityManeger.h" />
     <ClInclude Include="Source\GuiButton.h" />
+    <ClInclude Include="Source\GuiCheckBox.h" />
     <ClInclude Include="Source\Map.h" />
     <ClInclude Include="Source\ModuleCoin.h" />
     <ClInclude Include="Source\ModuleEnemy.h" />

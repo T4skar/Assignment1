@@ -3,6 +3,7 @@
 #include "Textures.h"
 #include "GuiSlider.h"
 #include "GuiButton.h"
+#include "GuiCheckBox.h"
 #include "Audio.h"
 
 GuiManager::GuiManager() :Module()

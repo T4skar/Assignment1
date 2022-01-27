@@ -41,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Source\ModuleUI.cpp" />
     <ClCompile Include="Source\EntityManeger.cpp" />
+    <ClCompile Include="Source\GuiCheckbox.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -106,6 +109,9 @@
     <ClInclude Include="Source\ModuleUI.h" />
     <ClInclude Include="Source\Entity.h" />
     <ClInclude Include="Source\EntityManeger.h" />
+    <ClInclude Include="Source\GuiCheckBox.h">
+      <Filter>Gui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">
