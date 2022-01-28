@@ -21,7 +21,7 @@ public:
 	ModuleEnemy();
 	~ModuleEnemy();
 
-	ModuleEnemy(int x, int y, EnemyType enemyType, Entity* playerPointer);
+	//ModuleEnemy(int x, int y, EnemyType enemyType, Entity* playerPointer);
 
 	bool Start();
 

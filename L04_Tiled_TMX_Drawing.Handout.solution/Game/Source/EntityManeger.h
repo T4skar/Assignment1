@@ -58,4 +58,4 @@ public:
 
 }
 
-#endif 
+#endif //!__MODULE_PLAYER_H__ 

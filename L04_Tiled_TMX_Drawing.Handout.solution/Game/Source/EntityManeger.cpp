@@ -123,7 +123,7 @@ Entity* EntityManager::CreateEntity(int x, int y, EntityType type, Entity* playe
 		}
 		break;
 	}
-	case EntityType::COIN:
+	/*case EntityType::COIN:
 	{
 		ret = new ModuleCoin(x, y);
 		break;
@@ -132,7 +132,7 @@ Entity* EntityManager::CreateEntity(int x, int y, EntityType type, Entity* playe
 	{
 		ret = new Corazones(x, y);
 		break;
-	}
+	}*/
 	default:
 	{
 		break;

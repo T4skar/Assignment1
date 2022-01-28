@@ -22,7 +22,7 @@
 #include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
 #include "GuiManager.h"
-#include "ModuleUI"
+#include "ModuleUI.h"
 
 #include "Defs.h"
 #include "Log.h"
@@ -52,10 +52,10 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	corazon = new Corazones();
 	//checkp = new Checkpoint();
 	coin = new ModuleCoin();
-	entities = new EntityManager();
+	//entities = new EntityManager();
 	guiManager = new GuiManager();
 	ui = new ModuleUI();
-	pathfinding = new PathFinding();
+	//pathfinding = new PathFinding();
 
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
@@ -76,7 +76,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(corazon);
 	//AddModule(checkp);
 	AddModule(coin);
-	AddModule(entities);
+	//AddModule(entities);
 	AddModule(guiManager);
 	AddModule(ui);
 	//AddModule(pathfinding);

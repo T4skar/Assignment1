@@ -8,20 +8,20 @@
 #include "Point.h"
 #include "Map.h"
 #include "Render.h"
-#include "Entity.h"
+
 
 struct SDL_Texture;
 //struct Collider;
 
 
 
-class Corazones : public Entity
+class Corazones : public Module
 {
 public:
 	Corazones();
 	~Corazones();
 
-	Corazones(int x, int y);
+	//Corazones(int x, int y);
 
 	bool Start();
 

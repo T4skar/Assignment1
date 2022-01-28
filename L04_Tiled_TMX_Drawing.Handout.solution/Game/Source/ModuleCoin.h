@@ -15,13 +15,13 @@ struct SDL_Texture;
 
 
 
-class ModuleCoin : public Entity
+class ModuleCoin : public Module
 {
 public:
 	ModuleCoin();
 	~ModuleCoin();
 
-	ModuleCoin(int x, int y);
+	//ModuleCoin(int x, int y);
 
 	bool Start();
 

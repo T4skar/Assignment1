@@ -21,7 +21,7 @@ public:
 	ModulePlayer();
 	~ModulePlayer();
 
-	ModulePlayer(int x, int y);
+	
 
 	bool Start();
 
