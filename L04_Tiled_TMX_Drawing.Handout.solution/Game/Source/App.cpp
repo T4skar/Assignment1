@@ -47,14 +47,14 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	LOGO = new SceneLogo(false);
 	enemy = new ModuleEnemy();
 	Title = new SceneTitle(true);
-	fade = new ModuleFadeToBlack(true);
+	//fade = new ModuleFadeToBlack(true);
 	enemyvol = new ModuleEnemyVolador(true);
 	corazon = new Corazones();
 	//checkp = new Checkpoint();
 	coin = new ModuleCoin();
 	//entities = new EntityManager();
-	guiManager = new GuiManager();
-	ui = new ModuleUI();
+	//guiManager = new GuiManager();
+	//ui = new ModuleUI();
 	//pathfinding = new PathFinding();
 
 	//pathfinding = new PathFinding();
@@ -72,13 +72,13 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(enemy);
 	AddModule(Title);
 	AddModule(enemyvol);
-	AddModule(fade);
+	//AddModule(fade);
 	AddModule(corazon);
 	//AddModule(checkp);
 	AddModule(coin);
 	//AddModule(entities);
-	AddModule(guiManager);
-	AddModule(ui);
+	//AddModule(guiManager);
+	//AddModule(ui);
 	//AddModule(pathfinding);
 
 	// Render last to swap buffer

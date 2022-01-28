@@ -9,20 +9,8 @@ D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Input.h(10,1): error C2236: token inesperado 'struct'. Compruebe si olvidó un ';'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.h(6,1): error C2236: token inesperado 'struct'. Compruebe si olvidó un ';'
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\EntityManeger.cpp(123,3): warning C4065: la instrucción switch contiene etiquetas 'default' pero no etiquetas 'case'
-  GuiButton.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
-  GuiCheckbox.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(41,30): error C2535: 'void GuiManager::DestroyAllGuiControls(void)': función miembro ya definida o declarada
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(34): message : vea la declaración de 'GuiManager::DestroyAllGuiControls'
   Main.cpp
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
@@ -33,52 +21,114 @@ D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.h(7,1): error C2236: token inesperado 'class'. Compruebe si olvidó un ';'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.h(7,25): error C2059: error de sintaxis: ':'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.h(7,27): error C2059: error de sintaxis: 'public'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.h(8,1): error C2143: error de sintaxis: falta ';' delante de '{'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.h(8,1): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(41,30): error C2535: 'void GuiManager::DestroyAllGuiControls(void)': función miembro ya definida o declarada
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(34): message : vea la declaración de 'GuiManager::DestroyAllGuiControls'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleUI.h(13,17): warning C4099: 'Animation': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(7): message : vea la declaración de 'Animation'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(50,36): error C2027: uso del tipo 'ModuleFadeToBlack' sin definir
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleFadeToBlack.h(7): message : vea la declaración de 'ModuleFadeToBlack'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(75,16): error C2664: 'void App::AddModule(Module *)': el argumento 1 no puede convertirse de 'ModuleFadeToBlack *' a 'Module *'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(75,12): message : Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.h(72,7): message : vea la declaración de 'App::AddModule'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Log.h(6,1): error C2628: 'EntityManager' seguido de 'void' no es válido (¿ha olvidado ';'?)
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(212,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(236,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(242,47): warning C4244: 'argumento': conversión de 'float' a 'Uint32'; posible pérdida de datos
   Audio.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Audio.cpp : fatal error C1041: no puede abrir la base de datos de programa 'D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Obj\vc142.idb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-  ModuleUI.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleUI.cpp : fatal error C1041: no puede abrir la base de datos de programa 'D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Obj\vc142.idb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+  Input.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+  Map.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Map.cpp(39,20): warning C4018: '<': no coinciden signed/unsigned
+  ModuleCoin.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+  ModuleEnemy.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(87,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(123,33): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(136,22): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModuleEnemy.cpp(144,22): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+  ModuleEnemyVolador.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+  ModulePhysics.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(160,68): warning C4305: 'argumento': truncamiento de 'int' a 'Uint8'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePhysics.cpp(160,54): warning C4309: 'argumento': truncamiento de valor constante
+  ModulePlayer.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(111,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(128,23): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(131,23): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(159,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(230,22): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(278,23): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(417,20): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(427,21): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
   Scene.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp : fatal error C1041: no puede abrir la base de datos de programa 'D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Obj\vc142.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-  Render.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Render.cpp : fatal error C1041: no puede abrir la base de datos de programa 'D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Obj\vc142.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Scene.cpp(83,76): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  SceneCredits.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
   SceneTitle.cpp
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
-  GuiSlider.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(41,30): error C2535: 'void GuiManager::DestroyAllGuiControls(void)': función miembro ya definida o declarada
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(34): message : vea la declaración de 'GuiManager::DestroyAllGuiControls'
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiSlider.cpp(15,26): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiSlider.cpp(19,26): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiSlider.cpp(22,15): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiSlider.cpp(23,43): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiSlider.cpp(45,17): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiSlider.cpp(50,53): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  GuiManager.cpp
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(41,30): error C2535: 'void GuiManager::DestroyAllGuiControls(void)': función miembro ya definida o declarada
-D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiManager.h(34): message : vea la declaración de 'GuiManager::DestroyAllGuiControls'
+  Textures.cpp
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
@@ -88,4 +138,7 @@ D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Entity.h(11,15): warning C4099: 'Collider': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
 D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Collider.h(8): message : vea la declaración de 'Collider'
+  Log.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Log.cpp(6,6): error C2084: la función 'void Log(const char [],int,const char *,...)' ya tiene un cuerpo
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Log.h(6): message : vea la definición anterior de 'Log'
   Generando código...

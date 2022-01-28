@@ -2,7 +2,7 @@
 #define __SCENE_H__
 
 #include "Module.h"
-#include "GuiButton.h"
+//#include "GuiButton.h"
 struct SDL_Texture;
 
 class Scene : public Module
@@ -65,7 +65,7 @@ public:
 	void FadeToNewState(GameplayState newState);
 
 	// Define multiple Gui Event methods
-	virtual bool OnGuiMouseClickEvent(GuiControl* control);
+	//virtual bool OnGuiMouseClickEvent(GuiControl* control);
 
 public:
 	GameplayState gameplayState = LOGO_SCREEN;
@@ -109,8 +109,8 @@ public:
 private:
 	SDL_Texture* img;
 	//Declare a GUI Button and create it using the GuiManager
-	GuiButton* btn1;
-	GuiButton* btn2;
+	/*GuiButton* btn1;
+	GuiButton* btn2;*/
 };
 
 #endif // __SCENE_H__

@@ -61,7 +61,7 @@ bool SceneTitle::Update(float dt)
 	
 	app->render->DrawTexture(fondo, 0, 509);
 	
-	app->fade->FadeToBlack(this, (Module*)app->scene, 60);
+	//app->fade->FadeToBlack(this, (Module*)app->scene, 60);
 	
 	
 
