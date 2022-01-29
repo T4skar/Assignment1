@@ -1,5 +1,13 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  Corazones.cpp
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Game.vcxproj -> C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe
+  GuiManager.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  GuiSlider.cpp
+  App.cpp
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(206,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(234,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\App.cpp(240,47): warning C4244: 'argumento': conversión de 'float' a 'Uint32'; posible pérdida de datos
+  Generando código...
+  Game.vcxproj -> D:\Assignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe

@@ -23,6 +23,7 @@ class Audio;
 class Scene;
 class ModulePlayer;
 class Map;
+class GuiManager;
 class ModuleFadeToBlack;
 class ModuleRender;
 class ModuleCollisions;
@@ -115,6 +116,7 @@ public:
 	Scene* scene;
 	ModulePlayer* player;
 	Map* map;
+	GuiManager* guiManager;
 	ModuleFadeToBlack* fade;
 	ModuleCollisions* physics;
 	SceneLogo* LOGO;
