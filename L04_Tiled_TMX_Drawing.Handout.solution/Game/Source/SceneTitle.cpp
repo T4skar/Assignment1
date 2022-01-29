@@ -38,9 +38,9 @@ bool SceneTitle::Awake()
 bool SceneTitle::Start()
 {
 	// L03: DONE: Load map
-	fondo = app->tex->Load("Assets/textures/logo.png");
+	Logo = app->tex->Load("Assets/textures/logotroll.png");
 	
-	
+	intro = app->tex->Load("Assets/textures/scenetitulo.png");
 	//TitleMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	
 
@@ -58,10 +58,22 @@ bool SceneTitle::PreUpdate()
 bool SceneTitle::Update(float dt)
 {
 	
+	if (logo == true) {
+		app->render->DrawTexture(Logo, -500, 1700);
+	}
 	
-	app->render->DrawTexture(fondo, 0, 509);
+	if (app->input->GetKey(SDL_SCANCODE_Q)) {
+		logo = false;
+		
+	}
 	
-	app->fade->FadeToBlack(this, (Module*)app->scene, 60);
+	if (Intro == true&& logo == false) {
+		app->render->DrawTexture(intro, -500, 1700);
+	}
+	if (app->input->GetKey(SDL_SCANCODE_R)) {
+		Intro = false;
+		
+	}
 	
 	
 
@@ -88,6 +100,6 @@ bool SceneTitle::CleanUp()
 	LOG("Freeing scene");
 	
 	playMusic = false;
-	app->tex->UnLoad(fondo);
+	app->tex->UnLoad(Logo);
 	return true;
 }

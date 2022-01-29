@@ -32,10 +32,13 @@ public:
 
 	// Called before quitting
 	bool CleanUp();
-	SDL_Texture* fondo = nullptr;
+	SDL_Texture* Logo = nullptr;
+	bool logo = true;
 	bool playMusic = false;
 	uint TitleMusic = 0;
-	
+	bool Intro = true;
+
+	SDL_Texture* intro;
 private:
 	SDL_Texture* img;
 };

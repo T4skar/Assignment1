@@ -35,7 +35,7 @@ public:
 
 	//Background animation
 
-	SDL_Texture* logo;
+	bool Intro = true;
 
 	
 };

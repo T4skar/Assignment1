@@ -12,6 +12,7 @@
 #include "ModuleCoin.h"
 #include "Checkpoint.h"
 #include "SDL/include/SDL_Scancode.h"
+#include"SceneTitle.h"
 //#include "Pathfinding.h"
 
 #include "Defs.h"
@@ -51,7 +52,7 @@ bool Scene::Start()
 	Win = app->tex->Load("Assets/Sprites/win.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
-	app->player->position.y = 760;
+	app->player->position.y = 740;
 	//corazon = app->tex->Load("Assets/Sprites/corazones.png");
 	//Flag location
 	//app->checkp->PChpoint.x = 0;
@@ -145,13 +146,13 @@ bool Scene::PostUpdate()
 	
 	if(app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
 		ret = false;
-	if (app->player->vidas == 2) {
+	if (app->player->vidas == 2 && app->Title->logo == false && app->Title->Intro == false) {
 
 		app->render->DrawTexture(texture2, app->corazon->position.x + 72, app->corazon->position.y, 0, 0, 0);
 		app->render->DrawTexture(texture, app->corazon->position.x, app->corazon->position.y, 0, 0, 0);
 	}
 
-	if (app->player->vidas <= 1) {
+	if (app->player->vidas <= 1 && app->Title->logo == false && app->Title->Intro == false) {
 
 		app->render->DrawTexture(texture, app->corazon->position.x, app->corazon->position.y, 0, 0, 0);
 
@@ -159,7 +160,7 @@ bool Scene::PostUpdate()
 
 
 
-	if (app->player->vidas >= 3) {
+	if (app->player->vidas >= 3 && app->Title->logo == false && app->Title->Intro == false) {
 		app->render->DrawTexture(texture, app->corazon->position.x, app->corazon->position.y, 0, 0, 0);
 		app->render->DrawTexture(texture2, app->corazon->position.x + 72, app->corazon->position.y, 0, 0, 0);
 		app->render->DrawTexture(texture3, app->corazon->position.x + 144, app->corazon->position.y, 0, 0, 0);

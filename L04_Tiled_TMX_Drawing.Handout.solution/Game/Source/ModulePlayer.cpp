@@ -8,7 +8,7 @@
 #include "Log.h"
 #include "Animation.h"
 #include "ModuleCoin.h"
-
+#include"SceneTitle.h"
 #include"Corazones.h"
 #include "Module.h"
 #include "ModulePhysics.h"
@@ -210,7 +210,7 @@ bool ModulePlayer::Update(float dt)
 		position.x += 1;
 	}
 	
-	   if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true) {
+	   if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true&&app->Title->logo==false && app->Title->Intro == false) {
 		   musica= true;
 		position.y -= 500;
 		position.x += 80;
@@ -225,7 +225,7 @@ bool ModulePlayer::Update(float dt)
 		
 	}
 	  
-	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true) {		// mov izquierda
+	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true && app->Title->logo == false && app->Title->Intro == false) {		// mov izquierda
 
 		position.x += speed;
 
@@ -239,7 +239,7 @@ bool ModulePlayer::Update(float dt)
 	 }
 	
 
-	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN)) {
+	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && app->Title->logo == false && app->Title->Intro == false) {
 		   musica = true;
 
 				position.y -= 500 ;
@@ -256,7 +256,7 @@ bool ModulePlayer::Update(float dt)
 			
 			
 	  }
-	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true){
+	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true && app->Title->logo == false && app->Title->Intro == false){
 		   musica = true;
 
 				position.y -= 500;
@@ -273,7 +273,7 @@ bool ModulePlayer::Update(float dt)
 
 	  }
 	
-	  else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left ==true) {		// mov izquierda
+	  else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left ==true && app->Title->logo == false && app->Title->Intro == false) {		// mov izquierda
 
 			position.x -= speed;
 
@@ -285,7 +285,7 @@ bool ModulePlayer::Update(float dt)
 
 
 	   }
-	  else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN)) {
+	  else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN) && app->Title->logo == false && app->Title->Intro == false) {
 		   if (currentAnimation == &idleRightAnim) {
 			   if (currentAnimation != &atackRightAnim) {
 				   atackRightAnim.Reset();
@@ -354,10 +354,12 @@ bool ModulePlayer::Update(float dt)
  bool ModulePlayer::PostUpdate()
 {
 	
+	 if (app->Title->logo == false && app->Title->Intro == false) {
+		 SDL_Rect rect = currentAnimation->GetCurrentFrame();
+
+		 app->render->DrawTexture(texture, position.x, position.y, &rect, 1.0f, 0, 0, 0);
+	}
 	
-	 SDL_Rect rect = currentAnimation->GetCurrentFrame();
-	
-		app->render->DrawTexture(texture, position.x, position.y, &rect,1.0f,0,0, 0);
 		
 	
 

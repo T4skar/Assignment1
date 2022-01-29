@@ -26,7 +26,7 @@ bool SceneLogo::Start()
 
 	bool ret = true;
 
-	logo = app->tex->Load("Assets/textures/logotroll.png");
+	
 
 	
 
@@ -37,7 +37,8 @@ bool SceneLogo::Update()
 {
 	
 	
-	app->render->DrawTexture(logo, 0, 0);
+	
+	
 	if (app->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_DOWN )
 	{
 		/*app->player->active = true;

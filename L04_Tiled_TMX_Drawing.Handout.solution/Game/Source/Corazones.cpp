@@ -10,6 +10,7 @@
 #include"ModulePlayer.h"
 #include "Module.h"
 #include "ModulePhysics.h"
+#include"SceneTitle.h"
 #include "Map.h"
 //#include "ModuleCollisions.h"
 
@@ -90,7 +91,7 @@ bool Corazones::Update(float dt)
 		Cposition.y = 999;
 	}
 	
-	if (print == false) {
+	if (print == false ) {
 		
 			app->render->DrawTexture(textureC, Cposition.x, Cposition.y);
 
