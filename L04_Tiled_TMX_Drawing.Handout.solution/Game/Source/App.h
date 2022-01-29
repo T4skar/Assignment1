@@ -15,15 +15,16 @@
 #define RADTODEG 57.295779513082320876f
 
 // Modules
+
 class Window;
 class Input;
 class Render;
 class Textures;
 class Audio;
+class GuiManager;
 class Scene;
 class ModulePlayer;
 class Map;
-class GuiManager;
 class ModuleFadeToBlack;
 class ModuleRender;
 class ModuleCollisions;
@@ -108,15 +109,16 @@ private:
 public:
 
 	// Modules
+
 	Window* win;
 	Input* input;
 	Render* render;
 	Textures* tex;
 	Audio* audio;
+	GuiManager* guiManager;
 	Scene* scene;
 	ModulePlayer* player;
 	Map* map;
-	GuiManager* guiManager;
 	ModuleFadeToBlack* fade;
 	ModuleCollisions* physics;
 	SceneLogo* LOGO;

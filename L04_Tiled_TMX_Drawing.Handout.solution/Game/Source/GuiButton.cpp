@@ -3,11 +3,13 @@
 #include "App.h"
 #include "Audio.h"
 
-GuiButton::GuiButton(uint32 id, SDL_Rect bounds, SDL_Texture* tex) : GuiControl(GuiControlType::BUTTON, id)
+GuiButton::GuiButton(uint32 id, SDL_Rect bounds, const char* text) : GuiControl(GuiControlType::BUTTON, id)
 {
-	this->id = id;
 	this->bounds = bounds;
-	this->texture = tex;
+	this->text = text;
+
+	canClick = true;
+	drawBasic = false;
 }
 
 GuiButton::~GuiButton()
@@ -23,8 +25,8 @@ bool GuiButton::Update(float dt)
 		int mouseX, mouseY;
 		app->input->GetMousePosition(mouseX, mouseY);
 
-		if ((mouseX > bounds.x) && (mouseX < (bounds.x + bounds.w)) &&
-			(mouseY > bounds.y) && (mouseY < (bounds.y + bounds.h)))
+		if ((mouseX > bounds.x ) && (mouseX < (bounds.x + bounds.w )) &&
+			(mouseY > bounds.y ) && (mouseY < (bounds.y + bounds.h )))
 		{
 			state = GuiControlState::FOCUSED;
 
@@ -52,7 +54,7 @@ bool GuiButton::Draw(Render* render)
 	switch (state)
 	{
 
-	case GuiControlState::DISABLED:
+	case GuiControlState::DISABLED: 
 	{
 		render->DrawRectangle(bounds, 0, 0, 0, 0);
 	} break;

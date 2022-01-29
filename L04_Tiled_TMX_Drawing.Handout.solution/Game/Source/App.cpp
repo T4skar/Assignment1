@@ -33,14 +33,15 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 {
 	frames = 0;
 
+	
 	win = new Window();
 	input = new Input();
 	render = new Render();
 	tex = new Textures();
 	audio = new Audio();
+	guiManager = new GuiManager();
 	scene = new Scene(false);
 	map = new Map();
-	guiManager = new GuiManager();
 	player = new ModulePlayer();
 	physics = new ModuleCollisions(false);
 	LOGO = new SceneLogo(false);
@@ -56,13 +57,14 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
+	
 	AddModule(win);
 	AddModule(input);
 	AddModule(tex);
 	AddModule(audio);
+	AddModule(guiManager);
 	AddModule(scene);
 	AddModule(map);
-	AddModule(guiManager);
 	AddModule(player);
 	AddModule(physics);
 	AddModule(LOGO);

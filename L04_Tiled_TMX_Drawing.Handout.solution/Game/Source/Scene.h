@@ -2,6 +2,8 @@
 #define __SCENE_H__
 
 #include "Module.h"
+#include "GuiButton.h"
+
 
 struct SDL_Texture;
 
@@ -75,8 +77,13 @@ public:
 	SDL_Texture* Teleport2Text = nullptr;
 	Collider* Teleport = nullptr;
 
+	bool OnGuiMouseClickEvent(GuiControl* control);
+
 private:
 	SDL_Texture* img;
+
+	GuiButton* btn1;
+	GuiButton* btn2;
 };
 
 #endif // __SCENE_H__
