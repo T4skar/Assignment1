@@ -1,54 +1,99 @@
-//#ifndef __CHECKPOINT_H__
-//#define  __CHECKPOINT_H__
-//
-//#include "Module.h"
-//#include "Animation.h"
-//#include "Point.h"
-//
-//struct SDL_Texture;
+#ifndef __CHECKPOINT_H__
+#define __CHECKPOINT_H__
+
+#include "Module.h"
+#include "List.h"
+#include "Scene.h"
+#include "Animation.h"
+#include "Point.h"
+#include "Map.h"
+#include "Render.h"
+
+struct SDL_Texture;
 //struct Collider;
-//
-//class Checkpoint : public Module
-//{
-//public:
-//	// Constructor
-//	Checkpoint();
-//
-//	// Destructor
-//	~Checkpoint();
-//
-//	bool Start();
-//
-//	// Called at the middle of the application loop
-//	// Processes new input and handles player movement
-//	bool Update(float dt);
-//
-//	// Called at the end of the application loop
-//	// Performs the render call of the player sprite
-//	bool PostUpdate();
-//
-//
-//public:
-//	// Position of the player in the map
-//	iPoint PChpoint;
-//
-//	float speed = 0.8f;
-//	bool checkpoint = false;
-//	bool Debug = false;
-//	bool saved = false;
-//	bool BlueFlag = false;
-//	SDL_Texture* Chpoint=nullptr;
-//	SDL_Rect Chpointrect;
-//
-//	Animation* currentAnimation;
-//	Animation RFlag;
-//	Animation BFlag;
-//
-//	// The player's collider
-//	Collider* Chpointcoll = nullptr;
-//
-//	// A flag to detect when the player has been destroyed
-//
-//};
-//
-//#endif // __AUTOSAVE_H__
+
+
+
+class Checkpoint : public Module
+{
+public:
+	Checkpoint();
+	~Checkpoint();
+
+	bool Start() override;
+
+
+	// Processes new input and handles player movement
+	bool Update(float dt);
+	// Performs the render call of the player sprite
+	bool PostUpdate();
+
+public:
+	List<SDL_Texture*> player;
+	// Position of the player in the map
+	iPoint position;
+	iPoint Cposition;
+	SDL_Texture* texture = nullptr;
+	// The speed in which we move the player (pixels per frame)
+	uint corazonFx = 0;
+	bool jump = false;
+	// The player spritesheet
+
+
+	//Save i load
+	bool loadState(pugi::xml_node&);
+	bool saveState(pugi::xml_node&) const;
+
+	// The pointer to the current player animation
+	Animation* currentAnimation;
+
+	// A set of animations
+	Animation idle;
+	Animation idleRightAnim;
+	Animation idleUpAnim;
+	Animation idleDownAnim;
+	Animation upAnim;
+	Animation downAnim;
+	Animation leftAnim;
+	Animation rightAnim;
+	Animation atackRightAnim;
+	Animation atackLeftAnim;
+	SDL_Texture* textureC = nullptr;
+	bool God = false;
+	bool vida = true;
+	bool win = false;
+	Collider* cora = nullptr;
+
+	bool musica = false;
+	uint steps = 0000;
+	uint limit = 00;
+	uint stage = 00;
+	bool corazon;
+	bool print = false;
+	int scoreFont = -1;
+	char scoreText[10] = { "\0" };
+
+	int limitFont = -1;
+	char limitText[10] = { "\0" };
+
+	int stageFont = -1;
+	char stageText[10] = { "\0" };
+
+	bool canMove = true;
+	int currentScene;
+	uint numBox = 0;
+	bool gravity = true;
+	void OnCollision(Collider* c1, Collider* C2)override;
+	bool playerMovement = true;
+	bool collision = false;
+	bool dead;
+	bool Win;
+	bool Right = true;
+	bool Left = true;
+	bool godmode = false;
+	bool playingM = false;
+	//Sets the camera over the dot
+	void set_camera();
+};
+
+#endif //!__MODULE_PLAYER_H__

@@ -47,7 +47,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	fade = new ModuleFadeToBlack(true);
 	enemyvol = new ModuleEnemyVolador(true);
 	corazon = new Corazones();
-	//checkp = new Checkpoint();
+	checkp = new Checkpoint();
 	coin = new ModuleCoin();
 	//pathfinding = new Pathfinding();
 	
@@ -68,7 +68,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(enemyvol);
 	AddModule(fade);
 	AddModule(corazon);
-	//AddModule(checkp);
+	AddModule(checkp);
 	AddModule(coin);
 	//AddModule(pathfinding);
 
@@ -208,8 +208,12 @@ void App::PrepareUpdate()
 void App::FinishUpdate()
 {
 	// L02: DONE 1: This is a good place to call Load / Save methods
-	if (loadGameRequested == true) LoadGame();
-	if (saveGameRequested == true) SaveGame();
+	if (loadGameRequested == true) {
+		LoadGame();
+	}
+	if (saveGameRequested == true) {
+		SaveGame();
+	}
 	float secondsSinceStartup = startupTime.ReadSec();
 
 	if (lastSecFrameTime.Read() > 1000) {
@@ -375,7 +379,6 @@ bool App::LoadGame()
 	}
 	else
 	{
-		//save = saveFile.child("save_state");
 		ListItem<Module*>* item;
 		item = modules.start;
 
@@ -395,22 +398,25 @@ bool App::LoadGame()
 bool App::SaveGame() const
 {
 	bool ret = true;
+	pugi::xml_document gameStateFile;
+	pugi::xml_parse_result result = gameStateFile.load_file("save_game.xml");
+	
+	if (result == NULL) {
+		LOG("not loading xml");
+			ret = false;
+		
+	}
 
-	//1 leer xml load document pugi
-	pugi::xml_document doc;
-	doc.load("ls.xml");
-
-	//iteracion sobre cada modulo para guardar informacion
-	doc.child("renderer").child("camera").attribute("x").set_value(3);
-	doc.child("renderer").child("camera").attribute("y").set_value(3);
-
-
-	//3 guardar xml llamando funcion pugi
-	doc.save_file("ls.xml");
-
+	ListItem<Module*>* item;
+	item = modules.start;
+	while (item != NULL && ret == true) {
+		item->data->SaveState(gameStateFile.child("game_state").child(item->data->name.GetString()));
+		item = item->next;
+		LOG("loading xml");
+	}
 
 	saveGameRequested = false;
-
+	gameStateFile.save_file("save_game.xml");
 	return ret;
 }
 
