@@ -60,6 +60,11 @@ public:
 	bool vida = true;
 	bool win = false;
 	
+	Collider* colliderE = nullptr;
+	Collider* enemyRight = nullptr;
+	Collider* enemyLeft = nullptr;
+	Collider* enemyUp = nullptr;
+	Collider* enemyDown = nullptr;
 
 	uint steps = 0000;
 	uint limit = 00;
@@ -74,6 +79,10 @@ public:
 	bool enemyMovement = true;
 	bool collision;
 	bool dead;
+	bool eleft = false;
+	bool eright = false;
+	bool edown = false;
+	bool eup = false;
 	//bool enemyRight = true;
 	//bool enemyLeft = true;
 

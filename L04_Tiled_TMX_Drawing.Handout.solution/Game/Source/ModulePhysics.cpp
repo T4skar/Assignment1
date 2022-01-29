@@ -50,8 +50,20 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT2] = true;
 	matrix[Collider::Type::TELEPORT][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::TELEPORT] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYV] = true;
+	matrix[Collider::Type::ENEMYV][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYVR] = true;
+	matrix[Collider::Type::ENEMYVR][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYVL] = true;
+	matrix[Collider::Type::ENEMYVL][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::MATAR][Collider::Type::ENEMY] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::MATAR] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYUP] = true;
+	matrix[Collider::Type::ENEMYUP][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYDOWN] = true;
+	matrix[Collider::Type::ENEMYDOWN][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::MATAR][Collider::Type::ENEMYV] = true;
+	matrix[Collider::Type::ENEMYV][Collider::Type::MATAR] = true;
 }
 
 // Destructor
@@ -150,12 +162,27 @@ void ModuleCollisions::DebugDraw()
 		case Collider::Type::ENEMY: // green
 			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 234, alpha);
 			break;
-		case Collider::Type::ENEMYR: // green
+		case Collider::Type::ENEMYV: // green
 			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 234, alpha);
+			break;
+		case Collider::Type::ENEMYR: // green
+			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 134, alpha);
 			break; 
 		case Collider::Type::ENEMYL: // green
-				app->render->DrawRectangle(colliders[i]->rect, 34, 255, 234, alpha);
+				app->render->DrawRectangle(colliders[i]->rect, 34, 255, 194, alpha);
 				break;
+		case Collider::Type::ENEMYVR: // green
+			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 134, alpha);
+			break;
+		case Collider::Type::ENEMYVL: // green
+			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 194, alpha);
+			break;
+		case Collider::Type::ENEMYUP: // green
+			app->render->DrawRectangle(colliders[i]->rect, 34, 155, 234, alpha);
+			break;
+		case Collider::Type::ENEMYDOWN: // green
+			app->render->DrawRectangle(colliders[i]->rect, 134, 255, 134, alpha);
+			break;
 		case Collider::Type::GROUND: // green
 			app->render->DrawRectangle(colliders[i]->rect, 0, 300, 10, alpha);
 			break;
