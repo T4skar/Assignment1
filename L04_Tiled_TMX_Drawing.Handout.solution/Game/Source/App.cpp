@@ -18,11 +18,8 @@
 #include "Checkpoint.h"
 #include "Timer.h"
 #include"ModuleCoin.h"
-#include "EntityManeger.h"
-#include "Pathfinding.h"
+//#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
-#include "GuiManager.h"
-#include "ModuleUI.h"
 
 #include "Defs.h"
 #include "Log.h"
@@ -47,16 +44,13 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	LOGO = new SceneLogo(false);
 	enemy = new ModuleEnemy();
 	Title = new SceneTitle(true);
-	//fade = new ModuleFadeToBlack(true);
+	fade = new ModuleFadeToBlack(true);
 	enemyvol = new ModuleEnemyVolador(true);
 	corazon = new Corazones();
 	//checkp = new Checkpoint();
 	coin = new ModuleCoin();
-	//entities = new EntityManager();
-	//guiManager = new GuiManager();
-	//ui = new ModuleUI();
-	//pathfinding = new PathFinding();
-
+	//pathfinding = new Pathfinding();
+	
 	//pathfinding = new PathFinding();
 	// Ordered for awake / Start / Update
 	// Reverse order of CleanUp
@@ -72,13 +66,10 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(enemy);
 	AddModule(Title);
 	AddModule(enemyvol);
-	//AddModule(fade);
+	AddModule(fade);
 	AddModule(corazon);
 	//AddModule(checkp);
 	AddModule(coin);
-	//AddModule(entities);
-	//AddModule(guiManager);
-	//AddModule(ui);
 	//AddModule(pathfinding);
 
 	// Render last to swap buffer

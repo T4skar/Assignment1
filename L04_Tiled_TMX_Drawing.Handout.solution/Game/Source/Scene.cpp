@@ -11,7 +11,6 @@
 #include "Corazones.h"
 #include "ModuleCoin.h"
 #include "Checkpoint.h"
-#include "GuiManager.h"
 #include "SDL/include/SDL_Scancode.h"
 //#include "Pathfinding.h"
 
@@ -57,9 +56,6 @@ bool Scene::Start()
 	//Flag location
 	//app->checkp->PChpoint.x = 0;
 	//app->checkp->PChpoint.y = 0;
-	// Declare a GUI Button and create it using the GuiManager
-	/*btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) - 300, app->win->GetWidth() / 10, 160, 40 }, this);
-	btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) + 300, app->win->GetWidth() / 10, 160, 40 }, this);*/
 	return true;
 }
 

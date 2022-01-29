@@ -30,14 +30,12 @@ class SceneLogo;
 class ModuleCamera;
 class ModuleEnemy;
 class SceneTitle;
-class PathFinding;
+//class Pathfinding;
 class ModuleEnemyVolador;
 class Corazones;
 class Checkpoint;
 class ModuleCoin;
-class EntityManeger;
-class GuiManager;
-class ModuleUI;
+
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -123,15 +121,15 @@ public:
 	ModuleEnemy* enemy;
 	SceneTitle* Title;
 	ModuleEnemyVolador* enemyvol;
-	PathFinding* pathfinding;
+	//Pathfinding* pathfinding;
 	Corazones* corazon;
 	Checkpoint* checkp;
 	ModuleCoin* coin;
-	EntityManeger* entities;
-	GuiManager* guiManager;
-	ModuleUI* ui;
 
-	bool saving = false;
+
+
+
+	
 
 	uint64 frameCount = 0;
 	uint32 framesPerSecond = 0;

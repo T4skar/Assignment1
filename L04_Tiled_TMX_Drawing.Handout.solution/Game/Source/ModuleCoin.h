@@ -8,7 +8,6 @@
 #include "Point.h"
 #include "Map.h"
 #include "Render.h"
-#include "Entity.h"
 
 struct SDL_Texture;
 //struct Collider;
@@ -21,9 +20,7 @@ public:
 	ModuleCoin();
 	~ModuleCoin();
 
-	//ModuleCoin(int x, int y);
-
-	bool Start();
+	bool Start() override;
 
 
 	// Processes new input and handles player movement

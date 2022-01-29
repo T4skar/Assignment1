@@ -22,15 +22,15 @@
 
 Corazones::Corazones() : Module()
 {
-	//pendingToDelete = false;
+
 	
 }
 
 
-//
-//Corazones::~Corazones()
-//{
-//}
+
+Corazones::~Corazones()
+{
+}
 
 
 
