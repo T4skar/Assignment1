@@ -87,6 +87,7 @@ bool Corazones::Update(float dt)
 			app->audio->PlayFx(corazonFx);
 
 		}
+		app->player->vidas ++; 
 		Cposition.x = 10000;
 		Cposition.y = 999;
 	}

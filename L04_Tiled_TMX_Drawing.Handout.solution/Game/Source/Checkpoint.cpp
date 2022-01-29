@@ -54,11 +54,11 @@ bool Checkpoint::Start()
 
 
 	// X, Y, anchura, altura, 
-	checkpoint1 = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::CHECKPOINT, this);
+	//checkpoint1 = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::CHECKPOINT, this);
 	checkpoint2 = app->physics->AddCollider({ Cposition2.x, Cposition2.y, 115, 171 }, Collider::Type::CHECKPOINT2, this);
-	Cposition.x = 0;
-	Cposition.y = 999;
-	Cposition2.x = 250;
+	/*Cposition.x = 0;
+	Cposition.y = 999;*/
+	Cposition2.x = 1500;
 	Cposition2.y = 1800;
 	position.x = 25;
 	position.y = 25;
@@ -74,22 +74,23 @@ bool Checkpoint::Update(float dt)
 
 
 
-	checkpoint1->SetPos(Cposition.x, Cposition.y);
-	checkpoint1->SetPos(Cposition2.x, Cposition2.y);
-	if (print == false && print2 == false) {
-		app->render->DrawTexture(textureC, Cposition.x, Cposition.y);
+	//checkpoint1->SetPos(Cposition.x, Cposition.y);
+	checkpoint2->SetPos(Cposition2.x, Cposition2.y);
+
+	if (print == false && print2 == false&& app->Title->logo == false && app->Title->Intro == false) {
+		//app->render->DrawTexture(textureC, Cposition.x, Cposition.y);
 		app->render->DrawTexture(textureC, Cposition2.x, Cposition2.y);
 	}
 	
 	//godmode
 	if (godmode == true) {
 		collision = false;
-
+		collision2 = false;
 
 
 	}
 
-	if (collision == true) {
+	/*if (collision == true) {
 		print = true;
 		musica = true;
 		if (musica == true) {
@@ -104,23 +105,27 @@ bool Checkpoint::Update(float dt)
 		app->render->DrawTexture(textureC2, Cposition.x, Cposition.y);
 
 
-	}
-	if (collision2 == true) {
+	}*/
+	if (collision2 == true&&cont!=1) {
 		print2 = true;
 		musica = true;
+		cont++;
 		if (musica == true) {
 			app->audio->PlayFx(corazonFx);
 
 		}
-
+		check = true;
 	}
-	if (print2 == true) {
+	if (print2 == true&& app->Title->logo == false && app->Title->Intro == false) {
 
 		app->render->DrawTexture(textureC2, Cposition2.x, Cposition2.y);
 
 
 	}
-	collision = false;
+	
+	//collision = false;
+	collision2 = false;
+	
 	musica = false;
 	return true;
 }
@@ -140,16 +145,7 @@ bool Checkpoint::PostUpdate()
 void Checkpoint::OnCollision(Collider* c1, Collider* c2)
 {
 
-	//CHECKPOINTS
-	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT)
-	{
-		collision = true;
-
-	}
-	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT2)
-	{
-		collision2 = true;
-	}
+	
 
 }
 

@@ -75,10 +75,10 @@ public:
 	bool print2 = false;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
-
+	bool check = false;
 	int limitFont = -1;
 	char limitText[10] = { "\0" };
-
+	int cont = 0;
 	int stageFont = -1;
 	char stageText[10] = { "\0" };
 

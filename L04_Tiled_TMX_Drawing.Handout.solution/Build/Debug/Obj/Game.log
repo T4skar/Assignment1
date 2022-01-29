@@ -1,35 +1,5 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  Checkpoint.cpp
+  Corazones.cpp
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  ModulePlayer.cpp
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(111,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(128,23): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(131,23): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(159,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(230,22): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\ModulePlayer.cpp(278,23): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-  Generando código...
   Game.vcxproj -> C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe

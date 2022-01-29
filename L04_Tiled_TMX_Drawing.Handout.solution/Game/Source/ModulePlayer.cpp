@@ -175,7 +175,7 @@ bool ModulePlayer::Update(float dt)
 		if (vidas== 0) {
 			app->render->camera.x = 0;
 			app->render->camera.y = 0;
-
+			app->checkp->musica = false;
 			app->render->DrawTexture(app->scene->lose, 200, 100);
 		}
 		else {
@@ -184,10 +184,17 @@ bool ModulePlayer::Update(float dt)
 			dead = false;
 			vidas--;
 
+			
+		}
+		 
+		if (app->checkp->check == true) {
+			position.x = app->checkp->Cposition2.x;
+			position.y = app->checkp->Cposition2.y;
+		}
+		else {
 			position.x = 250;
 			position.y = 760;
 		}
-		 
 		app->enemy->position.x = 5200;
 		app->enemy->position.y = 80;
 
@@ -409,7 +416,17 @@ bool ModulePlayer::Update(float dt)
 		 
 	 }
 
-	 
+	 //CHECKPOINTS
+	 /*if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT)
+	 {
+		app->checkp-> collision = true;
+
+	 }*/
+	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT2)
+	 {
+		 app->checkp->collision2 = true;
+
+	 }
 
 
 

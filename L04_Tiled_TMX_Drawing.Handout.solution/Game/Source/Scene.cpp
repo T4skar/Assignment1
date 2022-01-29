@@ -118,6 +118,12 @@ bool Scene::Update(float dt)
 
 		app->player->dead = true;
 	}
+	if (app->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN&&app->checkp->check==true) {
+
+		app->player->position.x = app->checkp->Cposition2.x;
+		app->player->position.y = app->checkp->Cposition2.y;
+	}
+	
 
 	//Checkpoints
 	Checkpoints();
@@ -269,8 +275,8 @@ void Scene::Teleports()
 void Scene::StartChTpColliders()
 {
 	//Checkpoints
-	CheckP = app->physics->AddCollider({ 70, 260, 20,20 }, Collider::Type::CHECKPOINT, this);
-	CheckP2 = app->physics->AddCollider({ 233, 28, 20,20 }, Collider::Type::CHECKPOINT2, this);
+	/*CheckP = app->physics->AddCollider({ 70, 260, 20,20 }, Collider::Type::CHECKPOINT, this);
+	CheckP2 = app->physics->AddCollider({ 233, 28, 20,20 }, Collider::Type::CHECKPOINT2, this);*/
 
 	//Teleport
 	Teleport = app->physics->AddCollider({ 80,44, 12,12 }, Collider::Type::TELEPORT, this);
