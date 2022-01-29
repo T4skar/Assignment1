@@ -33,6 +33,7 @@ public:
 	// Position of the player in the map
 	iPoint position;
 	iPoint Cposition;
+	iPoint Cposition2;
 	SDL_Texture* texture = nullptr;
 	// The speed in which we move the player (pixels per frame)
 	uint corazonFx = 0;
@@ -59,17 +60,19 @@ public:
 	Animation atackRightAnim;
 	Animation atackLeftAnim;
 	SDL_Texture* textureC = nullptr;
+	SDL_Texture* textureC2 = nullptr;
 	bool God = false;
 	bool vida = true;
 	bool win = false;
-	Collider* cora = nullptr;
-
+	Collider* checkpoint1 = nullptr;
+	Collider* checkpoint2 = nullptr;
 	bool musica = false;
 	uint steps = 0000;
 	uint limit = 00;
 	uint stage = 00;
 	bool corazon;
 	bool print = false;
+	bool print2 = false;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
 
@@ -86,6 +89,7 @@ public:
 	void OnCollision(Collider* c1, Collider* C2)override;
 	bool playerMovement = true;
 	bool collision = false;
+	bool collision2 = false;
 	bool dead;
 	bool Win;
 	bool Right = true;

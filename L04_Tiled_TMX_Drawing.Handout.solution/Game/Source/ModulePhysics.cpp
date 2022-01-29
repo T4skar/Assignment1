@@ -44,9 +44,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::PLAYER][Collider::Type::COIN2] = true;
 	matrix[Collider::Type::COIN2][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::CHECKPOINT][Collider::Type::PLAYER] = true;
-	matrix[Collider::Type::CHECKPOINT][Collider::Type::CHECKPOINT] = false;
+	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT] = false;
 	matrix[Collider::Type::CHECKPOINT2][Collider::Type::PLAYER] = true;
-	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT2] = false;
 	matrix[Collider::Type::PLAYER][Collider::Type::CHECKPOINT2] = true;
 	matrix[Collider::Type::TELEPORT][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::TELEPORT] = true;

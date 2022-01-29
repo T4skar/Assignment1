@@ -1,4 +1,4 @@
-#include "Corazones.h"
+#include "Checkpoint.h"
 #include "App.h"
 #include "Textures.h"
 #include "Input.h"
@@ -21,7 +21,7 @@
 #include "Scene.h"
 //#include "ModuleBox.h"
 
-Corazones::Corazones() : Module()
+Checkpoint::Checkpoint() : Module()
 {
 
 
@@ -29,7 +29,7 @@ Corazones::Corazones() : Module()
 
 
 
-Corazones::~Corazones()
+Checkpoint::~Checkpoint()
 {
 }
 
@@ -39,7 +39,7 @@ Corazones::~Corazones()
 
 
 
-bool Corazones::Start()
+bool Checkpoint::Start()
 {
 	LOG("Loading player textures");
 
@@ -47,22 +47,26 @@ bool Corazones::Start()
 
 
 	corazonFx = app->audio->LoadFx("Assets/audio/fx/corazones.wav");
-	textureC = app->tex->Load("Assets/Sprites/bandoleiro.png");
+	textureC = app->tex->Load("Assets/Sprites/bandoleiro1.png");
+	textureC2 = app->tex->Load("Assets/Sprites/bandoleiro2.png");
 
 	// Posición inicial (depende del lvl)
 
 
 	// X, Y, anchura, altura, 
-	cora = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::CORAZON, this);
-	Cposition.x = 7180;
+	checkpoint1 = app->physics->AddCollider({ Cposition.x, Cposition.y, 115, 171 }, Collider::Type::CHECKPOINT, this);
+	checkpoint2 = app->physics->AddCollider({ Cposition2.x, Cposition2.y, 115, 171 }, Collider::Type::CHECKPOINT2, this);
+	Cposition.x = 0;
 	Cposition.y = 999;
+	Cposition2.x = 250;
+	Cposition2.y = 1800;
 	position.x = 25;
 	position.y = 25;
 	return ret;
 }
 
 
-bool Corazones::Update(float dt)
+bool Checkpoint::Update(float dt)
 {
 
 
@@ -70,12 +74,17 @@ bool Corazones::Update(float dt)
 
 
 
-	cora->SetPos(Cposition.x, Cposition.y);
-
-
+	checkpoint1->SetPos(Cposition.x, Cposition.y);
+	checkpoint1->SetPos(Cposition2.x, Cposition2.y);
+	if (print == false && print2 == false) {
+		app->render->DrawTexture(textureC, Cposition.x, Cposition.y);
+		app->render->DrawTexture(textureC, Cposition2.x, Cposition2.y);
+	}
+	
 	//godmode
 	if (godmode == true) {
 		collision = false;
+
 
 
 	}
@@ -87,13 +96,27 @@ bool Corazones::Update(float dt)
 			app->audio->PlayFx(corazonFx);
 
 		}
-		Cposition.x = 10000;
-		Cposition.y = 999;
+		
 	}
 
-	if (print == false) {
+	if (print == true) {
 
-		app->render->DrawTexture(textureC, Cposition.x, Cposition.y);
+		app->render->DrawTexture(textureC2, Cposition.x, Cposition.y);
+
+
+	}
+	if (collision2 == true) {
+		print2 = true;
+		musica = true;
+		if (musica == true) {
+			app->audio->PlayFx(corazonFx);
+
+		}
+
+	}
+	if (print2 == true) {
+
+		app->render->DrawTexture(textureC2, Cposition2.x, Cposition2.y);
 
 
 	}
@@ -102,7 +125,7 @@ bool Corazones::Update(float dt)
 	return true;
 }
 
-bool Corazones::PostUpdate()
+bool Checkpoint::PostUpdate()
 {
 
 
@@ -114,13 +137,23 @@ bool Corazones::PostUpdate()
 	return true;
 }
 
-void Corazones::OnCollision(Collider* c1, Collider* c2)
+void Checkpoint::OnCollision(Collider* c1, Collider* c2)
 {
 
+	//CHECKPOINTS
+	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT)
+	{
+		collision = true;
+
+	}
+	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::CHECKPOINT2)
+	{
+		collision2 = true;
+	}
 
 }
 
-bool Corazones::loadState(pugi::xml_node& data)
+bool Checkpoint::loadState(pugi::xml_node& data)
 {
 	position.x = data.child("position").attribute("x").as_int();
 	position.y = data.child("position").attribute("y").as_int();
@@ -129,7 +162,7 @@ bool Corazones::loadState(pugi::xml_node& data)
 }
 
 
-bool Corazones::saveState(pugi::xml_node& data) const
+bool Checkpoint::saveState(pugi::xml_node& data) const
 {
 	data.child("position").attribute("x").set_value(position.x);
 	data.child("position").attribute("y").set_value(position.y);
