@@ -61,6 +61,7 @@ public:
 	bool CheckU = false;
 	bool Point2 = false;
 	bool CheckU2 = false;
+	bool Menu = false;
 	int actualScene = 1;
 	SDL_Texture* CheckpointText = nullptr;
 	Collider* CheckP = nullptr;

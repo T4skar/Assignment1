@@ -80,7 +80,7 @@ bool Render::PreUpdate()
 bool Render::Update(float dt)
 {
 	
-	if (app->player->dead == false && app->player->Win == false) {
+	if (app->player->dead == false && app->player->Win == false && app->scene->Menu == false) {
 		camera.x = (-app->player->position.x) + app->win->screenSurface->w / 2;
 		camera.y = (-app->player->position.y) + app->win->screenSurface->h / 3;
 	}

@@ -65,7 +65,7 @@ bool Scene::Start()
 	//app->checkp->PChpoint.y = 0;
 	//timer.Start();
 	btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) - 300 , app->win->GetWidth() / 2, 100, 40 }, this);
-	//btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 300, app->win->GetWidth() / 10, 160, 40 }, this);
+	btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 300, app->win->GetWidth() / 10, 160, 40 }, this);
 
 	return true;
 }
@@ -143,7 +143,10 @@ bool Scene::Update(float dt)
 
 	StartChTpColliders();
 
-	
+	if (app->Title->logo ==false)
+	{
+		Menu = true;
+	}
 
 	// Draw ma
 	app->map->Draw();
