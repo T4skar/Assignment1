@@ -83,7 +83,22 @@ private:
 	SDL_Texture* img;
 
 	GuiButton* btn1;
-	GuiButton* btn2;
+	GuiButton* btn2; 
+	GuiControl* resume;
+	GuiControl* load;
+	GuiControl* settings;
+	GuiControl* title;
+	GuiControl* exit;
+	GuiControl* fullscreen;
+	GuiControl* vsync;
+	GuiControl* musicVolume;
+	GuiControl* fxVolume;
+
+
+	int contMenu = 0;
+
+public:
+	bool menu = false;
 };
 
 #endif // __SCENE_H__
