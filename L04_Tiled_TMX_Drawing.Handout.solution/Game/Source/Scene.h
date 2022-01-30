@@ -83,13 +83,20 @@ public:
 	bool OnGuiMouseClickEvent(GuiControl* control);
 	bool credits = false;
 	//Timer timer;
+
+	bool exit = false;
+	bool settings = false;
+	
+
 private:
 	SDL_Texture* img;
 
 	GuiButton* btn1;
 	GuiButton* btn2; 
-	
-
+	GuiButton* btn3;
+	GuiButton* btn4;
+	GuiButton* btn5;
+	GuiButton* btn6;
 	
 
 };

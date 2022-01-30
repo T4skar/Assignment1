@@ -56,6 +56,12 @@ bool Scene::Start()
 	Win = app->tex->Load("Assets/Sprites/win.png");
 	Moneda = app->tex->Load("Assets/Sprites/coin2.png");
 	Credits = app->tex->Load("Assets/Sprites/credis.png");
+
+
+	
+
+
+
 	//font = app->fonts->Load("Assets/Sprites/fonts/font.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
@@ -65,8 +71,10 @@ bool Scene::Start()
 	//app->checkp->PChpoint.x = 0;
 	//app->checkp->PChpoint.y = 0;
 	//timer.Start();
-	btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) + 300 , app->win->GetWidth() / 2, 100, 40 }, this);
-	btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 300, app->win->GetWidth() / 2, 160, 40 }, this);
+	btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) + 280 , app->win->GetWidth() / 2-40, 160, 80 }, this);
+	btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 400, app->win->GetWidth() / 2-40, 160, 80 }, this);
+	btn3 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 3, "Test3", { (app->win->GetWidth() / 2) + 280 , app->win->GetWidth() / 2 - 200, 160, 80 }, this);
+	btn4 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 4, "Test4", { (app->win->GetWidth() / 2) - 400, app->win->GetWidth() / 2 - 200, 160, 80 }, this);
 
 	return true;
 }
@@ -94,6 +102,17 @@ bool Scene::OnGuiMouseClickEvent(GuiControl* control)
 		{
 			credits = true;
 			LOG("Click on button 2");
+		}
+		if (control->id == 3)
+		{
+			settings = true;
+			LOG("Click on button 3");
+		}
+
+		if (control->id == 4)
+		{
+			exit = true;
+			LOG("Click on button 4");
 		}
 
 	}
@@ -176,7 +195,11 @@ bool Scene::Update(float dt)
 		
 		Menu = true;
 	}
-
+	if (play == true) {
+		Menu = false;
+		app->Title->Intro = false;
+	}
+	
 	// Draw ma
 	app->map->Draw();
 	/*if (app->Title->logo == true)
@@ -189,14 +212,7 @@ bool Scene::Update(float dt)
 		app->fonts->BlitText(app->player->position.x, app->player->position.y - (36 * 3), cameraPos.y + 2, font, timer);
 	*/
 
-		if (play == true) {
-			Menu = false;
-			app->Title->Intro = false;
-		}
-		if (credits == true) {
-			app->render->DrawTexture(Credits,0 , credity, NULL);
-			credity -= dt * 0.220;
-		}
+		
 	return true;
 }
 
@@ -205,7 +221,7 @@ bool Scene::PostUpdate()
 {
 	bool ret = true;
 	
-	if(app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
+	if(app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN||app->Title->salir==true)
 		ret = false;
 	if (app->player->vidas == 2 && app->Title->logo == false && app->Title->Intro == false) {
 

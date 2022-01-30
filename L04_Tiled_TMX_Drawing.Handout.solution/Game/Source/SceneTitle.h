@@ -37,8 +37,16 @@ public:
 	bool playMusic = false;
 	uint TitleMusic = 0;
 	bool Intro = true;
-
+	bool salir = false;
 	SDL_Texture* intro;
+
+	//UI
+	SDL_Texture* Play = nullptr;
+	SDL_Texture* Creditss = nullptr;
+	SDL_Texture* settings = nullptr;
+	SDL_Texture* exit = nullptr;
+	SDL_Texture* resume = nullptr;
+	SDL_Texture* Continue = nullptr;
 private:
 	SDL_Texture* img;
 };
