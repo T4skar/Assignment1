@@ -92,6 +92,7 @@ bool ModuleCoin::Update(float dt)
 		}
 		Cposition.x = 10000;
 		Cposition.y = 15000;
+		moneda++;
 	}
 	
 	if (collision2 == true) {
@@ -103,7 +104,7 @@ bool ModuleCoin::Update(float dt)
 		}
 		COposition.x = 10000;
 		COposition.y = 15000;
-		
+		moneda++;
 	}
 	/*if (app->corazon->print == false) {
 		app->render->DrawTexture(texturecora, app->corazon->Cposition.x, app->corazon->Cposition.y);

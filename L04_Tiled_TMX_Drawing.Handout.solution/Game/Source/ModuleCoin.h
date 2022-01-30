@@ -78,7 +78,8 @@ public:
 	bool corazon;
 	int scoreFont = -1;
 	char scoreText[10] = { "\0" };
-
+	int moneda = 0;
+	int moneda2 = 0;
 	int limitFont = -1;
 	char limitText[10] = { "\0" };
 

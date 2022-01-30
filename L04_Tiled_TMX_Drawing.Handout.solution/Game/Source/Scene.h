@@ -3,7 +3,7 @@
 
 #include "Module.h"
 #include "GuiButton.h"
-
+#include"Timer.h"
 
 struct SDL_Texture;
 
@@ -34,7 +34,7 @@ public:
 	bool dLose = false;
 	SDL_Texture* lose = nullptr;
 	SDL_Texture* Win = nullptr;
-	
+	SDL_Texture* Moneda = nullptr;
 
 	//SDL_Texture* corazon = nullptr;
 	SDL_Texture* texture = nullptr;
@@ -78,7 +78,7 @@ public:
 	Collider* Teleport = nullptr;
 
 	bool OnGuiMouseClickEvent(GuiControl* control);
-
+	Timer timer;
 private:
 	SDL_Texture* img;
 

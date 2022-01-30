@@ -14,6 +14,7 @@
 #include "GuiManager.h"
 #include "SDL/include/SDL_Scancode.h"
 #include"SceneTitle.h"
+#include"Timer.h"
 //#include "Pathfinding.h"
 
 #include "Defs.h"
@@ -51,6 +52,7 @@ bool Scene::Start()
 	CheckpointText = app->tex->Load("Assets/textures/Banderas.png");
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
+	Moneda = app->tex->Load("Assets/Sprites/coin2.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
 	app->player->position.y = 740;
@@ -58,8 +60,8 @@ bool Scene::Start()
 	//Flag location
 	//app->checkp->PChpoint.x = 0;
 	//app->checkp->PChpoint.y = 0;
-
-	btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) - 30 , app->win->GetWidth() / 10, 100, 40 }, this);
+	timer.Start();
+	btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) - 300 , app->win->GetWidth() / 2, 100, 40 }, this);
 	//btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 300, app->win->GetWidth() / 10, 160, 40 }, this);
 
 	return true;
@@ -178,8 +180,13 @@ bool Scene::PostUpdate()
 		app->render->DrawTexture(texture3, app->corazon->position.x + 144, app->corazon->position.y, 0, 0, 0);
 	}
 
-
-
+	if (app->coin->moneda == 1 && app->Title->logo == false && app->Title->Intro == false) {
+		app->render->DrawTexture(Moneda, app->corazon->position.x + 250, app->corazon->position.y, 0, 0, 0);
+	}
+	if (app->coin->moneda == 2 && app->Title->logo == false && app->Title->Intro == false) {
+		app->render->DrawTexture(Moneda, app->corazon->position.x + 250, app->corazon->position.y, 0, 0, 0);
+		app->render->DrawTexture(Moneda, app->corazon->position.x + 300, app->corazon->position.y, 0, 0, 0);
+	}
 	
 	return ret;
 }

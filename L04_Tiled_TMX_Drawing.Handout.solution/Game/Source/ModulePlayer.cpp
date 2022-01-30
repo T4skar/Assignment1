@@ -444,7 +444,7 @@ bool ModulePlayer::Update(float dt)
 
 		app->coin-> collision = true;
 		 app->coin->print = true;
-
+		// app->coin->moneda++;
 
 	 }
 	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::COIN2) {
@@ -452,6 +452,7 @@ bool ModulePlayer::Update(float dt)
 
 		 app->coin->collision2 = true;
 		app->coin-> print2 = true;
+		//app->coin->moneda++;
 
 	 }
 	 if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY)

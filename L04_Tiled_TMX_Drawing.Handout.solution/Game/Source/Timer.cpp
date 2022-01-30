@@ -15,16 +15,30 @@ Timer::Timer()
 
 void Timer::Start()
 {
-	//...
-	startTime = SDL_GetTicks();
+	running = true;
+	started_at = SDL_GetTicks();
 }
 
-uint32 Timer::Read() const
+uint Timer::Read() const
 {
-	return SDL_GetTicks() - startTime;
+	if (running == true)
+	{
+		return SDL_GetTicks() - started_at;
+	}
+	else
+	{
+		return stopped_at - started_at;
+	}
 }
-
 float Timer::ReadSec() const
 {
 	return (float)(SDL_GetTicks() - startTime) / 1000.0f;
 }
+
+void Timer::Stop()
+{
+	running = false;
+	stopped_at = SDL_GetTicks();
+}
+
+// ---------------------------------------------
