@@ -47,6 +47,7 @@ public:
 	SDL_Texture* exit = nullptr;
 	SDL_Texture* resume = nullptr;
 	SDL_Texture* Continue = nullptr;
+	SDL_Texture* PRESSQ = nullptr;
 private:
 	SDL_Texture* img;
 };
