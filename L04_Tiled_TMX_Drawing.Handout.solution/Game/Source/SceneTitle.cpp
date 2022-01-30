@@ -38,13 +38,21 @@ bool SceneTitle::Awake()
 bool SceneTitle::Start()
 {
 	// L03: DONE: Load map
-	Logo = app->tex->Load("Assets/textures/logotroll.png");
 	
-	intro = app->tex->Load("Assets/textures/scenetitulo.png");
 	//TitleMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	
+	//UI
+	Creditss = app->tex->Load("Assets/Sprites/UI/Creditos.png");
+	Play = app->tex->Load("Assets/Sprites/UI/Start.png");
+	Continue = app->tex->Load("Assets/Sprites/UI/Continue.png");
+	exit = app->tex->Load("Assets/Sprites/UI/Exit.png");
+	settings = app->tex->Load("Assets/Sprites/UI/Setings.png");
+	resume = app->tex->Load("Assets/Sprites/UI/Resume.png");
 
 
+	Logo = app->tex->Load("Assets/textures/logotroll.png");
+
+	intro = app->tex->Load("Assets/textures/scenetitulo.png");
 	return true;
 }
 
@@ -77,9 +85,22 @@ bool SceneTitle::Update(float dt)
 
 	}
 	
+	if (app->scene->exit == true) {
+		salir = true;
+	}
+	if (app->scene->settings == true) {
 
-
-
+	}
+	if (logo == false && Intro == true) {
+		app->render->DrawTexture(Play, 850, 600);
+		app->render->DrawTexture(Creditss, 200, 600);
+		app->render->DrawTexture(exit, 200, 450);
+		app->render->DrawTexture(settings, 850, 450);
+	}
+	if (app->scene->credits == true) {
+		app->render->DrawTexture(app->scene->Credits, 0, app->scene->credity, NULL);
+		app->scene->credity -= dt * 0.220;
+	}
 	return true;
 }
 
@@ -89,7 +110,7 @@ bool SceneTitle::PostUpdate()
 {
 	bool ret = true;
 	
-	if (app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
+	if (app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN||salir==true)
 		ret = false;
 
 	return ret;

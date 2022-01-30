@@ -21,6 +21,7 @@ class Input;
 class Render;
 class Textures;
 class Audio;
+class GuiManager;
 class Scene;
 class ModulePlayer;
 class Map;
@@ -30,14 +31,13 @@ class ModuleCollisions;
 class SceneLogo;
 class ModuleCamera;
 class ModuleEnemy;
-class SceneTitle;
 //class Pathfinding;
 class ModuleEnemyVolador;
 class Corazones;
 class Checkpoint;
 class ModuleCoin;
-class GuiManager;
 class ModuleFonts;
+class SceneTitle;
 
 enum class update_status
 {
@@ -116,6 +116,7 @@ public:
 	Render* render;
 	Textures* tex;
 	Audio* audio;
+	GuiManager* guiManager;
 	Scene* scene;
 	ModulePlayer* player;
 	Map* map;
@@ -123,14 +124,13 @@ public:
 	ModuleCollisions* physics;
 	SceneLogo* LOGO;
 	ModuleEnemy* enemy;
-	SceneTitle* Title;
 	ModuleEnemyVolador* enemyvol;
 	//Pathfinding* pathfinding;
 	Corazones* corazon;
 	Checkpoint* checkp;
 	ModuleCoin* coin;
-	GuiManager* guiManager;
 	ModuleFonts* fonts;
+	SceneTitle* Title;
 
 
 	

@@ -39,20 +39,20 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	render = new Render();
 	tex = new Textures();
 	audio = new Audio();
+	guiManager = new GuiManager();
 	scene = new Scene(false);
 	map = new Map();
 	player = new ModulePlayer();
 	physics = new ModuleCollisions(false);
 	LOGO = new SceneLogo(false);
 	enemy = new ModuleEnemy();
-	Title = new SceneTitle(true);
 	fade = new ModuleFadeToBlack(true);
 	enemyvol = new ModuleEnemyVolador(true);
 	corazon = new Corazones();
 	checkp = new Checkpoint();
 	coin = new ModuleCoin();
-	guiManager = new GuiManager();
 	fonts = new ModuleFonts(true);
+	Title = new SceneTitle(true);
 	//pathfinding = new Pathfinding();
 	
 	//pathfinding = new PathFinding();
@@ -63,24 +63,25 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(input);
 	AddModule(tex);
 	AddModule(audio);
+	AddModule(guiManager);
 	AddModule(scene);
 	AddModule(map);
 	AddModule(player);
 	AddModule(physics);
 	AddModule(LOGO);
 	AddModule(enemy);
-	AddModule(Title);
 	AddModule(enemyvol);
 	AddModule(fade);
 	AddModule(corazon);
 	AddModule(checkp);
 	AddModule(coin);
 	AddModule(fonts);
-	//AddModule(pathfinding);
-
-	// Render last to swap buffer
 	AddModule(render);
-	AddModule(guiManager);
+	AddModule(Title);
+	//AddModule(pathfinding);
+	// Render last to swap buffer
+	
+	
 	ptimer = new PerfTimer();
 	frameDuration = new PerfTimer();
 }
