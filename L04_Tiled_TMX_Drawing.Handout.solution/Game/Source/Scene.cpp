@@ -59,7 +59,8 @@ bool Scene::Start()
 
 
 	
-
+	SelectedFx = app->audio->LoadFx("Assets/audio/fx/ui.wav");
+	//SelectedFx2 = app->audio->LoadFx("Assets/audio/fx/ui2.wav");
 
 
 	//font = app->fonts->Load("Assets/Sprites/fonts/font.png");
@@ -75,6 +76,12 @@ bool Scene::Start()
 	btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 400, app->win->GetWidth() / 2-40, 160, 80 }, this);
 	btn3 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 3, "Test3", { (app->win->GetWidth() / 2) + 280 , app->win->GetWidth() / 2 - 200, 160, 80 }, this);
 	btn4 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 4, "Test4", { (app->win->GetWidth() / 2) - 400, app->win->GetWidth() / 2 - 200, 160, 80 }, this);
+	btn5 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 5, "Test5", { (app->win->GetWidth() / 2) - 260 , app->win->GetWidth() / 2-480 , 80, 80 }, this);
+	btn6 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 6, "Test6", { (app->win->GetWidth() / 2) - 260, app->win->GetWidth() / 2 - 380, 80, 80 }, this);
+	btn7 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 7, "Test7", { (app->win->GetWidth() / 2) + 40 , app->win->GetWidth() / 2 - 290, 80, 80 }, this);
+	btn8 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 8, "Test8", { (app->win->GetWidth() / 2) -100, app->win->GetWidth() / 2 - 200, 80, 80 }, this);
+	btn9 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 9, "Test9", { (app->win->GetWidth() / 2) +200 , app->win->GetWidth() / 2 - 130, 80, 80 }, this);
+	btn10 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 10, "Test10", { (app->win->GetWidth() / 2) + 280 , app->win->GetWidth() / 2 -300, 160, 80 }, this);
 
 	return true;
 }
@@ -114,10 +121,42 @@ bool Scene::OnGuiMouseClickEvent(GuiControl* control)
 			exit = true;
 			LOG("Click on button 4");
 		}
-
+		
+		if (control->id == 5)
+		{
+			musicon = true;
+			LOG("Click on button 5");
+		}
+		
+		if (control->id == 6)
+		{
+			musiconfx = true;
+			LOG("Click on button 6");
+		}
+		
+		if (control->id == 7)
+		{
+			fullscreen = true;
+			LOG("Click on button 7");
+		}
+		if (control->id == 8)
+		{
+			vsyncon = true;
+			LOG("Click on button 8");
+		}
+		if (control->id == 9)
+		{
+			returnto = true;
+			LOG("Click on button 9");
+		}
+		if (control->id == 10)
+		{
+			continuar = true;
+			LOG("Click on button 10");
+		}
 	}
 	//Other cases here
-
+	
 	default: break;
 	}
 
@@ -126,24 +165,11 @@ bool Scene::OnGuiMouseClickEvent(GuiControl* control)
 // Called each loop iteration
 bool Scene::Update(float dt)
 {
-	
-	//musica godmode
-	if (playMusic == false) {
-		if (app->player->godmode == true) {
-			god = app->audio->PlayMusic("Assets/audio/music/godmode.ogg", 0.3f);
-		}
-		else  {
-			if (playlev1 == false) {
-				level1 = app->audio->PlayMusic("Assets/audio/music/Fairy Tail.ogg", 0.3);
-				playlev1 = true;
-			}
-			
-		}
-		playMusic = true;
-	}
+
+
 	
 	
-		
+
 
 	
 	
@@ -219,6 +245,7 @@ bool Scene::Update(float dt)
 // Called each loop iteration
 bool Scene::PostUpdate()
 {
+	
 	bool ret = true;
 	
 	if(app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN||app->Title->salir==true)

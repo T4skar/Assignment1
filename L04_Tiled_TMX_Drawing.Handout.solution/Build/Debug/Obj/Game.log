@@ -4,5 +4,7 @@ C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.soluti
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiControl.h(36): message : vea la declaración de 'GuiControl'
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\SceneTitle.cpp(103,36): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\SceneTitle.cpp(115,37): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\SceneTitle.cpp(165,37): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\SceneTitle.cpp(209,89): warning C4305: 'argumento': truncamiento de 'double' a 'float'
   Game.vcxproj -> C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Build\Debug\Game.exe

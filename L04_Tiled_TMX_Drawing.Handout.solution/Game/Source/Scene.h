@@ -48,7 +48,8 @@ public:
 	bool playMusic = false;
 	SDL_Texture* font = nullptr;
 	uint selectFx = 0;
-	
+	uint SelectedFx = 0;
+	//uint SelectedFx2 = 0;
 	uint nextFx = 0;
 	uint Mdead = 0;
 	uint level1 = 0;
@@ -86,7 +87,13 @@ public:
 
 	bool exit = false;
 	bool settings = false;
-	
+	bool musicon = false;
+	bool musiconfx = false;
+	bool fullscreen = false;
+	bool vsyncon = false;
+	bool returnto = false;
+	bool musicasi = true;
+	bool continuar = false;
 
 private:
 	SDL_Texture* img;
@@ -97,6 +104,10 @@ private:
 	GuiButton* btn4;
 	GuiButton* btn5;
 	GuiButton* btn6;
+	GuiButton* btn7;
+	GuiButton* btn8;
+	GuiButton* btn9;
+	GuiButton* btn10;
 	
 
 };

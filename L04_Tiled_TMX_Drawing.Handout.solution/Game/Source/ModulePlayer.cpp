@@ -176,7 +176,7 @@ bool ModulePlayer::Update(float dt)
 			app->render->camera.x = 0;
 			app->render->camera.y = 0;
 			app->checkp->musica = false;
-			app->render->DrawTexture(app->scene->lose, 200, 100);
+			app->render->DrawTexture(app->scene->lose, 200, 120);
 		}
 		else {
 			
@@ -205,7 +205,7 @@ bool ModulePlayer::Update(float dt)
 	if (Win == true) {
 		app->render->camera.x = 0;
 		app->render->camera.y = 0;
-		app->render->DrawTexture(app->scene->Win, 200, 100);
+		app->render->DrawTexture(app->scene->Win, 200, 120);
 	}
 
 	

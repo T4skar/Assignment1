@@ -2,6 +2,8 @@
 #include "Render.h"
 #include "App.h"
 #include "Audio.h"
+#include "Scene.h"
+#include"SceneTitle.h"
 
 GuiButton::GuiButton(uint32 id, SDL_Rect bounds, const char* text) : GuiControl(GuiControlType::BUTTON, id)
 {
@@ -69,10 +71,14 @@ bool GuiButton::Draw(Render* render)
 	case GuiControlState::FOCUSED:
 	{
 		render->DrawRectangle(bounds, 255, 255, 255, 160);
+		//app->audio->PlayFx(app->scene->SelectedFx2);
+		//app->Title->verde = true;
+
 	} break;
 	case GuiControlState::PRESSED:
 	{
 		render->DrawRectangle(bounds, 255, 255, 255, 255);
+		app->audio->PlayFx(app->scene->SelectedFx);
 	} break;
 
 	/******/

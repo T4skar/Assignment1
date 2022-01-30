@@ -38,6 +38,7 @@ public:
 	uint TitleMusic = 0;
 	bool Intro = true;
 	bool salir = false;
+	bool verde = false;
 	SDL_Texture* intro;
 
 	//UI
@@ -48,6 +49,39 @@ public:
 	SDL_Texture* resume = nullptr;
 	SDL_Texture* Continue = nullptr;
 	SDL_Texture* PRESSQ = nullptr;
+	SDL_Texture* Salir = nullptr;
+	SDL_Texture* marco = nullptr;
+	SDL_Texture* full = nullptr;
+	SDL_Texture* music = nullptr;
+	SDL_Texture* musicfx = nullptr;
+	SDL_Texture* musicoff = nullptr;
+	SDL_Texture* musicfxoff = nullptr;
+	SDL_Texture* vsync = nullptr;
+	SDL_Texture* vsyncoff = nullptr;
+	SDL_Texture* fulloff = nullptr;
+	SDL_Texture* continuar = nullptr;
+
+
+	//verde
+	SDL_Texture* Playv = nullptr;
+	SDL_Texture* Creditssv = nullptr;
+	SDL_Texture* settingsv = nullptr;
+	SDL_Texture* exitv = nullptr;
+	SDL_Texture* resumev = nullptr;
+	SDL_Texture* Continuev = nullptr;
+	SDL_Texture* PRESSQv = nullptr;
+	SDL_Texture* Salirv = nullptr;
+	SDL_Texture* marcov = nullptr;
+	SDL_Texture* fullv = nullptr;
+	SDL_Texture* musicv = nullptr;
+	SDL_Texture* musicfxv = nullptr;
+	SDL_Texture* musicoffv = nullptr;
+	SDL_Texture* musicfxoffv = nullptr;
+	SDL_Texture* vsyncv = nullptr;
+	SDL_Texture* vsyncoffv = nullptr;
+	SDL_Texture* fulloffv = nullptr;
+	SDL_Texture* continuarv = nullptr;
+	
 private:
 	SDL_Texture* img;
 };
