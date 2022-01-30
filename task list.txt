@@ -1,30 +1,15 @@
 Joan Damià:
-- checkpoints
-- Pathfinding
+- Intento el GUI
+
 
 Albert:
-- enemigo
-- enemigo volador
-- Mapa
+- GUI: Title screen Main Menu
+- Enemigo volador
+- Entity System
 
 Laia:
-- Todo el Player
-- Colisiones
-- Mapa
-- scene
-- SceneTitulo
-- ModuleCoins
-- Corazones(recuperacion de vida)
-- FadeToBlack
-- Sprites
-- Lose
-- Win
-- ModulePhysics
-- Creacion e Implementacion de todos los modulos
-- Diseño y arte
-- todo el audio
-- Save
-- Load
-- camara
-- 60/30 frames
-- dt
+- GUI: Title screen Main Menu
+- GUI: Gameplay screen HUD
+- Enemigo volador
+- Checkpoints
+- Load and save
