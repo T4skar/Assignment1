@@ -68,13 +68,14 @@ bool SceneTitle::Update(float dt)
 	}
 	
 	if (Intro == true&& logo == false) {
-		app->render->DrawTexture(intro, -500, 1700);
-	}
-	if (app->input->GetKey(SDL_SCANCODE_R)) {
-		Intro = false;
-		
+		app->render->DrawTexture(intro, -100, -120);
 	}
 	
+	if (app->input->GetKey(SDL_SCANCODE_R) == KEY_DOWN) {
+		Intro = false;
+		app->scene->Menu = false;
+
+	}
 	
 
 
@@ -87,7 +88,7 @@ bool SceneTitle::Update(float dt)
 bool SceneTitle::PostUpdate()
 {
 	bool ret = true;
-
+	
 	if (app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
 		ret = false;
 

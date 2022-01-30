@@ -40,6 +40,8 @@ public:
 	SDL_Texture* texture = nullptr;
 	SDL_Texture* texture2 = nullptr;
 	SDL_Texture* texture3 = nullptr;
+	SDL_Texture* Credits = nullptr;
+	int credity = 0;
 	// Called before quitting
 	bool CleanUp();
 	SDL_Texture* fondo = nullptr;
@@ -77,8 +79,9 @@ public:
 	SDL_Texture* TeleportText = nullptr;
 	SDL_Texture* Teleport2Text = nullptr;
 	Collider* Teleport = nullptr;
-
+	bool play = false;
 	bool OnGuiMouseClickEvent(GuiControl* control);
+	bool credits = false;
 	//Timer timer;
 private:
 	SDL_Texture* img;
