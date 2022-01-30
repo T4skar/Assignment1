@@ -48,7 +48,7 @@ bool SceneTitle::Start()
 	exit = app->tex->Load("Assets/Sprites/UI/Exit.png");
 	settings = app->tex->Load("Assets/Sprites/UI/Setings.png");
 	resume = app->tex->Load("Assets/Sprites/UI/Resume.png");
-
+	PRESSQ = app->tex->Load("Assets/Sprites/UI/Pressq.png");
 
 	Logo = app->tex->Load("Assets/textures/logotroll.png");
 
@@ -68,6 +68,7 @@ bool SceneTitle::Update(float dt)
 	
 	if (logo == true) {
 		app->render->DrawTexture(Logo, -500, 1700);
+		app->render->DrawTexture(PRESSQ, -5, 2400);
 	}
 	
 	if (app->input->GetKey(SDL_SCANCODE_Q)) {
