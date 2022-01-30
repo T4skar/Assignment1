@@ -83,6 +83,7 @@ public:
 	bool eright = false;
 	bool edown = false;
 	bool eup = false;
+	bool abajo = false;
 	//bool enemyRight = true;
 	//bool enemyLeft = true;
 

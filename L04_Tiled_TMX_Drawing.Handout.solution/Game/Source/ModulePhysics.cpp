@@ -59,8 +59,8 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module()
 	matrix[Collider::Type::ENEMY][Collider::Type::MATAR] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYUP] = true;
 	matrix[Collider::Type::ENEMYUP][Collider::Type::PLAYER] = true;
-	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYDOWN] = true;
 	matrix[Collider::Type::ENEMYDOWN][Collider::Type::PLAYER] = true;
+	matrix[Collider::Type::PLAYER][Collider::Type::ENEMYDOWN] = true;
 	matrix[Collider::Type::MATAR][Collider::Type::ENEMYV] = true;
 	matrix[Collider::Type::ENEMYV][Collider::Type::MATAR] = true;
 }
