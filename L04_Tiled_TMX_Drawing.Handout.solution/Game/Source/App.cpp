@@ -39,7 +39,6 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	render = new Render();
 	tex = new Textures();
 	audio = new Audio();
-	guiManager = new GuiManager();
 	scene = new Scene(false);
 	map = new Map();
 	player = new ModulePlayer();
@@ -52,6 +51,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	corazon = new Corazones();
 	checkp = new Checkpoint();
 	coin = new ModuleCoin();
+	guiManager = new GuiManager();
 	//pathfinding = new Pathfinding();
 	
 	//pathfinding = new PathFinding();
@@ -62,7 +62,6 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(input);
 	AddModule(tex);
 	AddModule(audio);
-	AddModule(guiManager);
 	AddModule(scene);
 	AddModule(map);
 	AddModule(player);
@@ -75,10 +74,12 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(corazon);
 	AddModule(checkp);
 	AddModule(coin);
+
 	//AddModule(pathfinding);
 
 	// Render last to swap buffer
 	AddModule(render);
+	AddModule(guiManager);
 	ptimer = new PerfTimer();
 	frameDuration = new PerfTimer();
 }

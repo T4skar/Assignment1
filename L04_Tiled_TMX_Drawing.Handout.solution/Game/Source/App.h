@@ -21,7 +21,6 @@ class Input;
 class Render;
 class Textures;
 class Audio;
-class GuiManager;
 class Scene;
 class ModulePlayer;
 class Map;
@@ -37,7 +36,7 @@ class ModuleEnemyVolador;
 class Corazones;
 class Checkpoint;
 class ModuleCoin;
-
+class GuiManager;
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -115,7 +114,6 @@ public:
 	Render* render;
 	Textures* tex;
 	Audio* audio;
-	GuiManager* guiManager;
 	Scene* scene;
 	ModulePlayer* player;
 	Map* map;
@@ -129,7 +127,7 @@ public:
 	Corazones* corazon;
 	Checkpoint* checkp;
 	ModuleCoin* coin;
-
+	GuiManager* guiManager;
 
 
 
