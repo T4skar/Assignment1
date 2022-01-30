@@ -7,7 +7,7 @@
 //#include "ModulePhysics.h"
 
 class App;
-
+struct GuiControl;
 class Module
 {
 public:
@@ -93,7 +93,10 @@ public:
 	virtual void OnCollision(Collider* c1, Collider* c2) {
 
 	}
-
+	virtual bool OnGuiMouseClickEvent(GuiControl* control) 
+	{
+		return true;
+	}
 	
 public:
 

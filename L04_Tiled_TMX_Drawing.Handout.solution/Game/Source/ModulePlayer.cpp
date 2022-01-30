@@ -333,6 +333,8 @@ bool ModulePlayer::Update(float dt)
 		app->corazon->print = false;
 		app->coin->print = false;
 		app->coin->print2 = false;
+		app->coin->moneda = 0;
+		app->scene->credits = false;
 		vidas=4;
 		app->enemy->position.x = 5200;
 		app->enemy->position.y = 80;
