@@ -58,8 +58,8 @@ bool Checkpoint::Start()
 	checkpoint2 = app->physics->AddCollider({ Cposition2.x, Cposition2.y, 115, 171 }, Collider::Type::CHECKPOINT2, this);
 	/*Cposition.x = 0;
 	Cposition.y = 999;*/
-	Cposition2.x = 1500;
-	Cposition2.y = 1800;
+	Cposition2.x = 6400;
+	Cposition2.y = 1400;
 	position.x = 25;
 	position.y = 25;
 	return ret;
