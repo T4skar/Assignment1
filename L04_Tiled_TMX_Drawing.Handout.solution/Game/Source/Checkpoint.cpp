@@ -46,7 +46,8 @@ bool Checkpoint::Start()
 	bool ret = true;
 
 
-	corazonFx = app->audio->LoadFx("Assets/audio/fx/corazones.wav");
+	
+	checpoint = app->audio->LoadFx("Assets/fx/chec.wav");
 	textureC = app->tex->Load("Assets/Sprites/bandoleiro1.png");
 	textureC2 = app->tex->Load("Assets/Sprites/bandoleiro2.png");
 
@@ -111,7 +112,7 @@ bool Checkpoint::Update(float dt)
 		musica = true;
 		cont++;
 		if (musica == true) {
-			app->audio->PlayFx(corazonFx);
+			app->audio->PlayFx(checpoint);
 
 		}
 		check = true;

@@ -36,7 +36,8 @@ public:
 	iPoint Cposition2;
 	SDL_Texture* texture = nullptr;
 	// The speed in which we move the player (pixels per frame)
-	uint corazonFx = 0;
+	
+	uint checpoint = 0;
 	bool jump = false;
 	// The player spritesheet
 
