@@ -13,12 +13,7 @@ struct SDL_Texture;
 //struct Collider;
 
 
-class position
-{
-public:
-	~position() {}
-	int x, y;
-};
+
 class ModulePlayer : public Module
 {
 public:
@@ -38,9 +33,9 @@ public:
 public:
 	List<SDL_Texture*> player;
 	// Position of the player in the map
-	//iPoint position;	
+	iPoint position;	
 
-	position position;
+	
 
 	// The speed in which we move the player (pixels per frame)
 	

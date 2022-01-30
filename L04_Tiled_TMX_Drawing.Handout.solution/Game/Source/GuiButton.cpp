@@ -3,7 +3,7 @@
 #include "App.h"
 #include "Audio.h"
 
-GuiButton::GuiButton(int id, SDL_Rect bounds, const char* text, unsigned int clickedFx, unsigned int focusedFx, SDL_Texture* textureButton) : GuiControl(GuiControlType::BUTTON, id)
+GuiButton::GuiButton(uint32 id, SDL_Rect bounds, const char* text) : GuiControl(GuiControlType::BUTTON, id)
 {
 	this->bounds = bounds;
 	this->text = text;
@@ -68,7 +68,7 @@ bool GuiButton::Draw(Render* render)
 	//L14: TODO 4: Draw the button according the GuiControl State
 	case GuiControlState::FOCUSED:
 	{
-		render->DrawRectangle(bounds, 255, 255, 100, 200);
+		render->DrawRectangle(bounds, 255, 255, 255, 160);
 	} break;
 	case GuiControlState::PRESSED:
 	{

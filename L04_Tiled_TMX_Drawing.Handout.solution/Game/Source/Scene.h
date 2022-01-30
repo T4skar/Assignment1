@@ -54,7 +54,7 @@ public:
 	uint god = 0;
 
 	void StartChTpColliders();
-	void Pathfinding();
+	//void Pathfinding();
 	//Teleports and Checkpoints
 	void Checkpoints();
 	bool Point = false;
@@ -84,21 +84,10 @@ private:
 
 	GuiButton* btn1;
 	GuiButton* btn2; 
-	GuiControl* resume;
-	GuiControl* load;
-	GuiControl* settings;
-	GuiControl* title;
-	GuiControl* exit;
-	GuiControl* fullscreen;
-	GuiControl* vsync;
-	GuiControl* musicVolume;
-	GuiControl* fxVolume;
+	
 
+	
 
-	int contMenu = 0;
-
-public:
-	bool menu = false;
 };
 
 #endif // __SCENE_H__

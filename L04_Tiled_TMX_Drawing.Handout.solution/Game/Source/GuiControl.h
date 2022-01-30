@@ -54,7 +54,7 @@ public:
 		return true;
 	}
 
-	virtual bool Draw()
+	virtual bool Draw(Render* render)
 	{
 		return true;
 	}
@@ -91,7 +91,6 @@ public:
 	//Font font;              // Text font
 
 	Module* observer;        // Observer module (it should probably be an array/list)
-	bool pendingToDelete;
 };
 
 #endif // __GUICONTROL_H__

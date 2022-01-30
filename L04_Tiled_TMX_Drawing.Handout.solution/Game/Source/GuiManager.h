@@ -20,34 +20,26 @@ public:
 	 bool Start();
 
 	 bool Update(float dt);
-	 bool PostUpdate();
-	 bool PreUpdate();
-	 void DestroyAllGuiControl();
-	//bool UpdateAll(float dt,bool logic);
 
-	//bool Draw();
+	bool UpdateAll(float dt,bool logic);
+
+	bool Draw();
 
 	// Called before quitting
 	bool CleanUp();
 
 	// Additional methods
-	GuiControl* CreateGuiControl(GuiControlType type, int id, SDL_Rect rect, const char* text);
+	GuiControl* CreateGuiControl(GuiControlType type, int id, const char* text, SDL_Rect bounds, Module* observer, SDL_Rect sliderBounds = { 0,0,0,0 });
 	void DestroyGuiControl(GuiControl* entity);
-	//void AddGuiControl(GuiControl* entity);
+	void AddGuiControl(GuiControl* entity);
 
 public:
-	SDL_Texture* textureButton;
-	SDL_Texture* textureSlider;
+
 	List<GuiControl*> controls;
-	//Animation pausedAnimationIn;
-	//Animation pausedAnimationOut;
-	unsigned int focusedFx;
-	unsigned int clickedFx;
-	unsigned int menuEfect;
+
 	float accumulatedTime = 0.0f;
 	float updateMsCycle = 0.0f;
 	bool doLogic = false;
-	bool outAnimation;
 
 	SDL_Texture* texture;
 

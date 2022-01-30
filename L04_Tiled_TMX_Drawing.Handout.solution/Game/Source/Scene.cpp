@@ -59,8 +59,8 @@ bool Scene::Start()
 	//app->checkp->PChpoint.x = 0;
 	//app->checkp->PChpoint.y = 0;
 
-	//btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) - 100, app->win->GetWidth() / 10, 160, 40 }, this);
-	//btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) + 100, app->win->GetWidth() / 10, 160, 40 }, this);
+	btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) - 30 , app->win->GetWidth() / 10, 100, 40 }, this);
+	//btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 300, app->win->GetWidth() / 10, 160, 40 }, this);
 
 	return true;
 }
@@ -142,124 +142,15 @@ bool Scene::Update(float dt)
 
 	// Draw ma
 	app->map->Draw();
-	if (menu == true && contMenu == 0)
-	{
-		contMenu++;
+	/*if (app->Title->logo == true)
+	{*/
+		app->guiManager->Draw();
+	//}
 
-		app->player->godmode == true;
-		app->player->canMove = false;
-
-		SDL_Rect rect = { app->player->position.x - 500 + 500,app->player->position.y - 250 + 200,200,81 };
-		resume = app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 6, rect, "RESUME");
-		resume->SetObserver(this);
-
-		SDL_Rect rect2 = { app->player->position.x - 500 + 500,app->player->position.y - 250 + 300,200,81 };
-		settings = app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 3, rect2, "SETTINGS");
-		settings->SetObserver(this);
-
-		SDL_Rect rect3 = { app->player->position.x - 500 + 500,app->player->position.y - 250 + 400,200,81 };
-		title = app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 7, rect3, "TITLE");
-		title->SetObserver(this);
-
-		SDL_Rect rect4 = { app->player->position.x - 500 + 500,app->player->position.y - 250 + 500,200,81 };
-		exit = app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 5, rect4, "EXIT");
-		exit->SetObserver(this);
-	}
-	if (app->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
-	{
-		if ((menu == false))
-		{
-			//app->guiManager->pausedAnimationIn.Reset();
-			app->audio->PlayFx(app->guiManager->menuEfect);
-			menu = true;
-			contMenu = 0;
-		}
-		else
-		{
-			//app->guiManager->pausedAnimationOut.Reset();
-			app->guiManager->outAnimation = true;
-			app->audio->PlayFx(app->guiManager->menuEfect);
-			app->guiManager->DestroyAllGuiControl();
-			menu = false;
-			app->player->godmode = false;
-			app->player->canMove = true;
-		}
-	}
 	
 	return true;
 }
 
-bool Scene::OnGuiMouseClickEvent(GuiControl* control)
-{
-	if (control == resume)
-	{
-		app->audio->PlayFx(app->guiManager->menuEfect);
-		//app->guiManager->pausedAnimationOut.Reset();
-		app->guiManager->outAnimation = true;
-		app->guiManager->DestroyAllGuiControl();
-		menu = false;
-		app->player->godmode = false;
-		app->player->canMove = true;
-	}
-	else if (control == settings)
-	{
-		SDL_Rect rect = { app->player->position.x - 500 + 725,app->player->position.y - 250 + 400,91,96 };
-		fullscreen = app->guiManager->CreateGuiControl(GuiControlType::CHECKBOX, 8, rect, "FULLSCREEN");
-		fullscreen->SetObserver(this);
-
-		rect = { app->player->position.x - 500 + 725,app->player->position.y - 250 + 500,91,96 };
-		vsync = app->guiManager->CreateGuiControl(GuiControlType::CHECKBOX, 9, rect, "VSYNC");
-		vsync->SetObserver(this);
-
-		rect = { app->player->position.x - 500 + 825,app->player->position.y - 250 + 200,359,57 };
-		musicVolume = app->guiManager->CreateGuiControl(GuiControlType::SLIDER, 1, rect, "MUSIC");
-		musicVolume->SetObserver(this);
-
-		rect = { app->player->position.x - 500 + 825,app->player->position.y - 250 + 300,359,57 };
-		fxVolume = app->guiManager->CreateGuiControl(GuiControlType::SLIDER, 2, rect, "FX");
-		fxVolume->SetObserver(this);
-	}
-	else if (control == fullscreen)
-	{
-		if (app->win->fullScreenWindow == true)
-		{
-			app->win->fullScreenWindow = false;
-		}
-		else
-		{
-			app->win->fullScreenWindow = true;
-		}
-	}
-	else if (control == vsync)
-	{
-		if (app->maxFPS == 16)
-		{
-			app->maxFPS = 32;
-			app->vsync = true;
-		}
-		else if (app->maxFPS == 32)
-		{
-			app->maxFPS = 16;
-			app->vsync = false;
-		}
-	}
-	else if (control == title)
-	{
-		
-		app->guiManager->outAnimation = false;
-		menu = false;
-	
-		
-	}
-	else if (control == exit)
-	{
-		//app->SaveGame();
-		SDL_Quit();
-	}
-	
-	
-	return true;
-}
 // Called each loop iteration
 bool Scene::PostUpdate()
 {
@@ -293,33 +184,33 @@ bool Scene::PostUpdate()
 	return ret;
 }
 
-//
-//bool Scene::OnGuiMouseClickEvent(GuiControl* control)
-//{
-//
-//	switch (control->type)
-//	{
-//	case GuiControlType::BUTTON:
-//	{
-//		//Checks the GUI element ID
-//		if (control->id == 1)
-//		{
-//			LOG("Click on button 1");
-//		}
-//
-//		if (control->id == 2)
-//		{
-//			LOG("Click on button 2");
-//		}
-//
-//	}
-//	//Other cases here
-//
-//	default: break;
-//	}
-//
-//	return true;
-//}
+
+bool Scene::OnGuiMouseClickEvent(GuiControl* control)
+{
+
+	switch (control->type)
+	{
+	case GuiControlType::BUTTON:
+	{
+		//Checks the GUI element ID
+		if (control->id == 1)
+		{
+			LOG("Click on button 1");
+		}
+
+		if (control->id == 2)
+		{
+			LOG("Click on button 2");
+		}
+
+	}
+	//Other cases here
+
+	default: break;
+	}
+
+	return true;
+}
 
 // Called before quitting
 bool Scene::CleanUp()

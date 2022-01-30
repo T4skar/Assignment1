@@ -164,9 +164,6 @@ private:
 	mutable bool saveGameRequested;
 	bool loadGameRequested;
 
-public:
-	int maxFPS;
-	bool vsync;
 
 };
 

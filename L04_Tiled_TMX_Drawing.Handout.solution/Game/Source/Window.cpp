@@ -1,6 +1,5 @@
 #include "Window.h"
 #include "App.h"
-
 #include "Defs.h"
 #include "Log.h"
 
@@ -103,6 +102,7 @@ uint Window::GetScale() const
 // Retrieve window Width
 int Window::GetWidth() const
 {
+	
 	return (int)width;
 }
 
