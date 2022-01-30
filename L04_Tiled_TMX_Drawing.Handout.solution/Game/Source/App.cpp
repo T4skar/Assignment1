@@ -21,7 +21,7 @@
 #include"ModuleCoin.h"
 //#include "Pathfinding.h"
 #include "ModuleFadeToBlack.h"
-
+#include"ModuleFonts.h"
 #include "Defs.h"
 #include "Log.h"
 
@@ -52,6 +52,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	checkp = new Checkpoint();
 	coin = new ModuleCoin();
 	guiManager = new GuiManager();
+	fonts = new ModuleFonts(true);
 	//pathfinding = new Pathfinding();
 	
 	//pathfinding = new PathFinding();
@@ -74,7 +75,7 @@ App::App(int argc, char* args[]) : argc(argc), args(args)
 	AddModule(corazon);
 	AddModule(checkp);
 	AddModule(coin);
-
+	AddModule(fonts);
 	//AddModule(pathfinding);
 
 	// Render last to swap buffer

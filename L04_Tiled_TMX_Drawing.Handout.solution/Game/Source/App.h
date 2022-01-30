@@ -37,6 +37,8 @@ class Corazones;
 class Checkpoint;
 class ModuleCoin;
 class GuiManager;
+class ModuleFonts;
+
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -128,7 +130,7 @@ public:
 	Checkpoint* checkp;
 	ModuleCoin* coin;
 	GuiManager* guiManager;
-
+	ModuleFonts* fonts;
 
 
 	

@@ -33,6 +33,7 @@
     <ClCompile Include="Source\GuiButton.cpp" />
     <ClCompile Include="Source\GuiManager.cpp" />
     <ClCompile Include="Source\EntityManeger.cpp" />
+    <ClCompile Include="Source\ModuleFonts.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Window.h" />
@@ -88,6 +89,7 @@
     <ClInclude Include="Source\GuiManager.h" />
     <ClInclude Include="Source\Entity.h" />
     <ClInclude Include="Source\EntityManeger.h" />
+    <ClInclude Include="Source\ModuleFonts.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">

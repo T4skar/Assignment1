@@ -44,7 +44,7 @@ public:
 	bool CleanUp();
 	SDL_Texture* fondo = nullptr;
 	bool playMusic = false;
-
+	SDL_Texture* font = nullptr;
 	uint selectFx = 0;
 	
 	uint nextFx = 0;
@@ -52,7 +52,7 @@ public:
 	uint level1 = 0;
 	bool playlev1=false;
 	uint god = 0;
-
+	char timer[6] = { "\0" };
 	void StartChTpColliders();
 	//void Pathfinding();
 	//Teleports and Checkpoints
@@ -78,7 +78,7 @@ public:
 	Collider* Teleport = nullptr;
 
 	bool OnGuiMouseClickEvent(GuiControl* control);
-	Timer timer;
+	//Timer timer;
 private:
 	SDL_Texture* img;
 

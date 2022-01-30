@@ -15,6 +15,8 @@
 #include "SDL/include/SDL_Scancode.h"
 #include"SceneTitle.h"
 #include"Timer.h"
+#include"ModuleFonts.h"
+
 //#include "Pathfinding.h"
 
 #include "Defs.h"
@@ -53,6 +55,7 @@ bool Scene::Start()
 	lose = app->tex->Load("Assets/Sprites/lose.png");
 	Win = app->tex->Load("Assets/Sprites/win.png");
 	Moneda = app->tex->Load("Assets/Sprites/coin2.png");
+	//font = app->fonts->Load("Assets/Sprites/fonts/font.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
 	app->player->position.y = 740;
@@ -60,7 +63,7 @@ bool Scene::Start()
 	//Flag location
 	//app->checkp->PChpoint.x = 0;
 	//app->checkp->PChpoint.y = 0;
-	timer.Start();
+	//timer.Start();
 	btn1 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 1, "Test1", { (app->win->GetWidth() / 2) - 300 , app->win->GetWidth() / 2, 100, 40 }, this);
 	//btn2 = (GuiButton*)app->guiManager->CreateGuiControl(GuiControlType::BUTTON, 2, "Test2", { (app->win->GetWidth() / 2) - 300, app->win->GetWidth() / 10, 160, 40 }, this);
 
@@ -148,8 +151,11 @@ bool Scene::Update(float dt)
 	{*/
 		app->guiManager->Draw();
 	//}
-
-	
+		/*sprintf_s(timer, 6, "%03d", (int)timerValue);
+		app->fonts->BlitText(app->player->position.x, app->player->position.y - offsetTimer - 12, cameraPos.y + 2, font, timerTitle.GetString());
+		app->fonts->BlitText(app->player->position.x, app->player->position.y - (36 * 3) - 30, cameraPos.y + 2, font, ":");
+		app->fonts->BlitText(app->player->position.x, app->player->position.y - (36 * 3), cameraPos.y + 2, font, timer);
+	*/
 	return true;
 }
 
