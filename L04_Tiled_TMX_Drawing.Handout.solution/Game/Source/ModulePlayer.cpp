@@ -219,8 +219,8 @@ bool ModulePlayer::Update(float dt)
 	
 	   if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true&&app->Title->logo==false && app->Title->Intro == false) {
 		   musica= true;
-		position.y -= 500;
-		position.x += 80;
+		position.y -= speed * 25;
+		position.x += speed * 0.68;
 		if (musica == true) {
 			app->audio->PlayFx(corazonFx);
 		}
@@ -234,7 +234,7 @@ bool ModulePlayer::Update(float dt)
 	  
 	else if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && Right == true && app->Title->logo == false && app->Title->Intro == false) {		// mov izquierda
 
-		position.x += speed;
+		position.x += speed * 0.68;
 
 
 		if (currentAnimation != &rightAnim) {
@@ -246,28 +246,35 @@ bool ModulePlayer::Update(float dt)
 	 }
 	
 
-	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && app->Title->logo == false && app->Title->Intro == false) {
-		   musica = true;
+	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && app->Title->logo == false && app->Title->Intro == false ) {
+		   if (playerjump == false) {
 
-				position.y -= 500 ;
-				salto = true;
-				gravity = true;
+			   if (saltos = true) {
+				   musica = true;
+
+				   position.y -= speed * 20;
+				   salto = true;
+				   gravity = true;
+				   if (musica == true) {
+					   app->audio->PlayFx(corazonFx);
+				   }
+				   if (currentAnimation != &upAnim) {
+					   upAnim.Reset();
+					   currentAnimation = &upAnim;
+				   }
+			   }
+		  }
+		  
 				
-				if (musica == true) {
-					app->audio->PlayFx(corazonFx);
-				}
-			if (currentAnimation != &upAnim) {
-				upAnim.Reset();
-				currentAnimation = &upAnim;
-			}
 			
 			
 	  }
+	  
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true && app->Title->logo == false && app->Title->Intro == false){
 		   musica = true;
 
-				position.y -= 500;
-				position.x -= 80;
+				position.y -= speed * 25;
+				position.x -= speed * 0.68;
 				if (musica == true) {
 					app->audio->PlayFx(corazonFx);
 				}
@@ -282,7 +289,7 @@ bool ModulePlayer::Update(float dt)
 	
 	  else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left ==true && app->Title->logo == false && app->Title->Intro == false) {		// mov izquierda
 
-			position.x -= speed;
+			position.x -= speed * 0.68;
 
 
 			if (currentAnimation != &leftAnim) {
@@ -309,7 +316,7 @@ bool ModulePlayer::Update(float dt)
 				currentAnimation = &idleRightAnim;
 		}
 	}
-
+	   
 		// player stop the animation when stop walking 
 
 

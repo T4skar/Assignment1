@@ -111,6 +111,9 @@ public:
 	bool Mlose=true;
 	//Sets the camera over the dot
 	void set_camera();
+	int jumping = 0;
+	bool playerjump = false;
+	bool saltos = true;
 };
 
 #endif //!__MODULE_PLAYER_H__

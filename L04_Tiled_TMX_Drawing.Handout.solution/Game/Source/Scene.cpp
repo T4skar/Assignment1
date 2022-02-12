@@ -66,7 +66,7 @@ bool Scene::Start()
 	//font = app->fonts->Load("Assets/Sprites/fonts/font.png");
 	//winMusic = app->audio->LoadFx("assets/sound/music/win_sound_loop.ogg");
 	app->player->position.x = 250;
-	app->player->position.y = 740;
+	app->player->position.y = 600;
 	//corazon = app->tex->Load("Assets/Sprites/corazones.png");
 	//Flag location
 	//app->checkp->PChpoint.x = 0;
