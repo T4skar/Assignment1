@@ -15,42 +15,24 @@ Source\ModulePlayer.cpp(131,23): warning C4244: '-=': conversión de 'float' a '
           [
               TYPE=int
           ]
-Source\ModulePlayer.cpp(159,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+Source\ModulePlayer.cpp(159,21): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+Source\ModulePlayer.cpp(169,14): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+Source\ModulePlayer.cpp(245,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
           with
           [
               TYPE=int
           ]
-Source\ModulePlayer.cpp(222,27): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+Source\ModulePlayer.cpp(261,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
           with
           [
               TYPE=int
           ]
-Source\ModulePlayer.cpp(223,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+Source\ModulePlayer.cpp(285,31): warning C4244: '-=': conversión de 'double' a 'TYPE'; posible pérdida de datos
           with
           [
               TYPE=int
           ]
-Source\ModulePlayer.cpp(237,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-Source\ModulePlayer.cpp(255,32): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-Source\ModulePlayer.cpp(276,29): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-Source\ModulePlayer.cpp(277,31): warning C4244: '-=': conversión de 'double' a 'TYPE'; posible pérdida de datos
-          with
-          [
-              TYPE=int
-          ]
-Source\ModulePlayer.cpp(292,30): warning C4244: '-=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+Source\ModulePlayer.cpp(302,30): warning C4244: '-=': conversión de 'double' a 'TYPE'; posible pérdida de datos
           with
           [
               TYPE=int

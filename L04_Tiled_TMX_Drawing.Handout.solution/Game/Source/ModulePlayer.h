@@ -114,6 +114,8 @@ public:
 	int jumping = 0;
 	bool playerjump = false;
 	bool saltos = true;
+	int gravedad = 0;
+	bool saltar = false;
 };
 
 #endif //!__MODULE_PLAYER_H__

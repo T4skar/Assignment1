@@ -97,8 +97,8 @@ bool ModulePlayer::Start()
 	 
 	// X, Y, anchura, altura, 
 	collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::PLAYER, this);
-	right = app->physics->AddCollider({ position.x, position.y, 8, 80 }, Collider::Type::RIGHT, this);
-	left = app->physics->AddCollider({ position.x, position.y, 24, 80 }, Collider::Type::LEFT, this);
+	right = app->physics->AddCollider({ position.x, position.y, 8, 120 }, Collider::Type::RIGHT, this);
+	left = app->physics->AddCollider({ position.x, position.y, 24, 130 }, Collider::Type::LEFT, this);
 	up = app->physics->AddCollider({ position.x, position.y, 24, 24 }, Collider::Type::UP, this);
 	matar = app->physics->AddCollider({ position.x, position.y, 115, 24 }, Collider::Type::MATAR, this);
 	return ret;
@@ -156,7 +156,8 @@ bool ModulePlayer::Update(float dt)
 
 	//activacion gravedad
 	if (gravity == true  ) {
-		position.y += 2*speed*0.40;
+		gravedad = 2*speed*0.40;
+		position.y += gravedad;
 	}
 
 
@@ -164,9 +165,29 @@ bool ModulePlayer::Update(float dt)
 	if (collision == false) {
 		gravity = true;	
 	} 
+	if (saltar == true&&jumping <= 20) {
+		playerjump == true;
 
+		
+				musica = true;
+
+				position.y -= gravedad*30;
+				//position.y += gravedad;
+				salto = true;
+				gravity = true;
+				if (musica == true) {
+					app->audio->PlayFx(corazonFx);
+				}
+				if (currentAnimation != &upAnim) {
+					upAnim.Reset();
+					currentAnimation = &upAnim;
+				}
+			
+			//jumping+=10;
+			
+	}
+	saltar = false;
 	
-
 	//pantalla de lose
 	if (dead == true) {
 		app->scene->playMusic = false;
@@ -198,7 +219,7 @@ bool ModulePlayer::Update(float dt)
 		app->enemy->position.x = 5200;
 		app->enemy->position.y = 80;
 
-		
+		//jumping = 0;
 	}
 	
 	//pantalla victoria
@@ -217,10 +238,12 @@ bool ModulePlayer::Update(float dt)
 		position.x += 1;
 	}
 	
-	   if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true&&app->Title->logo==false && app->Title->Intro == false) {
+	if ((app->input->GetKey(SDL_SCANCODE_D) == KEY_REPEAT) && (app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && Right == true&&app->Title->logo==false && app->Title->Intro == false&&jumping<2) {
 		   musica= true;
-		position.y -= speed * 25;
+		   position.y -= gravedad * 30;
+		 
 		position.x += speed * 0.68;
+
 		if (musica == true) {
 			app->audio->PlayFx(corazonFx);
 		}
@@ -229,6 +252,7 @@ bool ModulePlayer::Update(float dt)
 			rightAnim.Reset();
 			currentAnimation = &rightAnim;
 		}
+		//jumping+=10;
 		
 	}
 	  
@@ -246,34 +270,18 @@ bool ModulePlayer::Update(float dt)
 	 }
 	
 
-	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && app->Title->logo == false && app->Title->Intro == false ) {
-		   if (playerjump == false) {
-
-			   if (saltos = true) {
-				   musica = true;
-
-				   position.y -= speed * 20;
-				   salto = true;
-				   gravity = true;
-				   if (musica == true) {
-					   app->audio->PlayFx(corazonFx);
-				   }
-				   if (currentAnimation != &upAnim) {
-					   upAnim.Reset();
-					   currentAnimation = &upAnim;
-				   }
-			   }
-		  }
+	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && app->Title->logo == false && app->Title->Intro == false&&jumping<=20 ) {
 		  
-				
-			
-			
+		   saltar = true;
+		  
+		   
 	  }
 	  
-	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true && app->Title->logo == false && app->Title->Intro == false){
+	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true && app->Title->logo == false && app->Title->Intro == false && jumping <= 20){
 		   musica = true;
 
-				position.y -= speed * 25;
+		   position.y -= gravedad * 30;
+		   salto = true;
 				position.x -= speed * 0.68;
 				if (musica == true) {
 					app->audio->PlayFx(corazonFx);
@@ -284,8 +292,10 @@ bool ModulePlayer::Update(float dt)
 					currentAnimation = &idleUpAnim;
 				}
 			}
-
+			//jumping+=10;
+			
 	  }
+
 	
 	  else if ((app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left ==true && app->Title->logo == false && app->Title->Intro == false) {		// mov izquierda
 
@@ -297,8 +307,9 @@ bool ModulePlayer::Update(float dt)
 				currentAnimation = &leftAnim;
 			}
 
-
+			
 	   }
+	
 	  else if ((app->input->GetKey(SDL_SCANCODE_E) == KEY_DOWN) && app->Title->logo == false && app->Title->Intro == false) {
 		   if (currentAnimation == &idleRightAnim) {
 			   if (currentAnimation != &atackRightAnim) {
@@ -322,7 +333,7 @@ bool ModulePlayer::Update(float dt)
 
 
 	 
-		
+	  
 	
 	   Right = true;
 	   Left = true;
@@ -364,6 +375,9 @@ bool ModulePlayer::Update(float dt)
 		position.y = 760;
 
 	}
+	/*if (jumping > 21) {
+		jumping = 0;
+	}*/
 	return true;
 }
 
@@ -379,7 +393,7 @@ bool ModulePlayer::Update(float dt)
 		
 	
 
-
+	
 	return true;
 }
 
