@@ -124,6 +124,12 @@ bool ModulePlayer::Update(float dt)
 		gravity = false;
 		Right = true;
 		Left = true;
+		dead = false;
+		app->enemyvol->collision = false;
+		app->enemy->collision = false;
+		app->enemy->dead = false;
+		
+		app->enemyvol->dead = false;
 		if ((app->input->GetKey(SDL_SCANCODE_S) == KEY_REPEAT)) {
 			position.y += speed;
 		}
@@ -168,12 +174,16 @@ bool ModulePlayer::Update(float dt)
 	if (saltar == true&&jumping <= 20) {
 		playerjump == true;
 
-		
+		maxsalto = position.y - gravedad * 30;
+		for (int i = position.y; i > maxsalto; i++) {
+			position.y -= 1;
+			i = position.y;
+		}
 				musica = true;
 
-				position.y -= gravedad*30;
-				//position.y += gravedad;
-				salto = true;
+				//position.y -= gravedad*30;
+				////position.y += gravedad;
+				//salto = true;
 				gravity = true;
 				if (musica == true) {
 					app->audio->PlayFx(corazonFx);
@@ -207,7 +217,7 @@ bool ModulePlayer::Update(float dt)
 
 			
 		}
-		 
+		
 		if (app->checkp->check == true) {
 			position.x = app->checkp->Cposition2.x;
 			position.y = app->checkp->Cposition2.y;
@@ -279,8 +289,12 @@ bool ModulePlayer::Update(float dt)
 	  
 	  else if ((app->input->GetKey(SDL_SCANCODE_SPACE) == KEY_DOWN) && (app->input->GetKey(SDL_SCANCODE_A) == KEY_REPEAT) && Left == true && app->Title->logo == false && app->Title->Intro == false && jumping <= 20){
 		   musica = true;
-
-		   position.y -= gravedad * 30;
+		   maxsalto = position.y - gravedad * 30;
+		   for (int i=position.y; i > maxsalto; i++) {
+			   position.y -= 1;
+			   i = position.y;
+		   }
+		   
 		   salto = true;
 				position.x -= speed * 0.68;
 				if (musica == true) {
@@ -354,7 +368,7 @@ bool ModulePlayer::Update(float dt)
 		app->coin->moneda = 0;
 		app->scene->credits = false;
 		vidas=4;
-		app->enemy->position.x = 5200;
+		app->enemy->position.x = 8000;
 		app->enemy->position.y = 80;
 		position.x = 250;
 		position.y = 760; 

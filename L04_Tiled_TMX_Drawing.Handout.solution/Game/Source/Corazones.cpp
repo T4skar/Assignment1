@@ -88,8 +88,8 @@ bool Corazones::Update(float dt)
 
 		}
 		app->player->vidas ++; 
-		Cposition.x = 10000;
-		Cposition.y = 999;
+		Cposition.x = 10000000;
+		Cposition.y = 9000099;
 	}
 	
 	if (print == false ) {

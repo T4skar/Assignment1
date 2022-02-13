@@ -162,7 +162,7 @@ void ModuleCollisions::DebugDraw()
 			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 234, alpha);
 			break;
 		case Collider::Type::ENEMYV: // green
-			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 234, alpha);
+			app->render->DrawRectangle(colliders[i]->rect, 255, 0, 0, alpha);
 			break;
 		case Collider::Type::ENEMYR: // green
 			app->render->DrawRectangle(colliders[i]->rect, 34, 255, 134, alpha);

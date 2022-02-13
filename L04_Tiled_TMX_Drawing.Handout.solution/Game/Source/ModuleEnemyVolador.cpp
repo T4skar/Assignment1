@@ -63,7 +63,7 @@ bool ModuleEnemyVolador::Start()
 	// X, Y, anchura, altura, 
 	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
 
-	colliderE = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMYV, this);
+	colliderE = app->physics->AddCollider({ position.x, position.y, 110, 110 }, Collider::Type::ENEMYV, this);
 	enemyRight = app->physics->AddCollider({ position.x, position.y, 1000, 400 }, Collider::Type::ENEMYVR, this);
 	enemyLeft = app->physics->AddCollider({ position.x, position.y, -500, 161 }, Collider::Type::ENEMYVL, this);
 	enemyUp = app->physics->AddCollider({ position.x, position.y, 1200, 600 }, Collider::Type::ENEMYUP, this);

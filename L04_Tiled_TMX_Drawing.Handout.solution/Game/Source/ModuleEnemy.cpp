@@ -70,7 +70,7 @@ bool ModuleEnemy::Start()
 
 	currentAnimation = &idleRightAnim;
 
-	position.x = 7000;
+	position.x = 8000;
 	position.y = 80;
 	// X, Y, anchura, altura, 
 	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);

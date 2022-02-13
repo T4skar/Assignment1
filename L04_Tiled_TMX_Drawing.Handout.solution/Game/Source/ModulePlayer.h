@@ -116,6 +116,7 @@ public:
 	bool saltos = true;
 	int gravedad = 0;
 	bool saltar = false;
+	float maxsalto = 0.0f;
 };
 
 #endif //!__MODULE_PLAYER_H__

@@ -1,21 +1,40 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  ModuleEnemy.cpp
+  ModulePlayer.cpp
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiControl.h(37,1): warning C4099: 'GuiControl': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\GuiControl.h(36): message : vea la declaración de 'GuiControl'
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(53,19): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
 C:\Users\Laia\Desktop\desarrollo\asignment1\L04_Tiled_TMX_Drawing.Handout.solution\Game\Source\Animation.h(55,30): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-Source\ModuleEnemy.cpp(87,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-Source\ModuleEnemy.cpp(123,33): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+Source\ModulePlayer.cpp(111,14): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+Source\ModulePlayer.cpp(133,23): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
           with
           [
               TYPE=int
           ]
-Source\ModuleEnemy.cpp(136,22): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+Source\ModulePlayer.cpp(136,23): warning C4244: '-=': conversión de 'float' a 'TYPE'; posible pérdida de datos
           with
           [
               TYPE=int
           ]
-Source\ModuleEnemy.cpp(144,22): warning C4244: '+=': conversión de 'float' a 'TYPE'; posible pérdida de datos
+Source\ModulePlayer.cpp(164,21): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+Source\ModulePlayer.cpp(174,14): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+Source\ModulePlayer.cpp(176,25): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Source\ModulePlayer.cpp(254,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+Source\ModulePlayer.cpp(270,29): warning C4244: '+=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+Source\ModulePlayer.cpp(291,28): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Source\ModulePlayer.cpp(298,31): warning C4244: '-=': conversión de 'double' a 'TYPE'; posible pérdida de datos
+          with
+          [
+              TYPE=int
+          ]
+Source\ModulePlayer.cpp(315,30): warning C4244: '-=': conversión de 'double' a 'TYPE'; posible pérdida de datos
           with
           [
               TYPE=int
