@@ -58,8 +58,8 @@ bool ModuleEnemyVolador::Start()
 	
 	texture = app->tex->Load("Assets/Sprites/happy.png");
 
-	position.x = 1800;
-	position.y = 1700;
+	position.x = 2500;
+	position.y = 1450;
 	// X, Y, anchura, altura, 
 	//collider = app->physics->AddCollider({ position.x, position.y, 115, 171 }, Collider::Type::ENEMY, this);
 
